@@ -11,10 +11,10 @@ description: 행안부 AI 친화적 보고서 원칙에 따라 Markdown 또는 H
 
 ## 실행 루프
 
-로컬 aidocready 패키지의 위치를 확인하고 README를 읽는다. 미게시 패키지이므로 인터넷의 동명 `npx aidocready`에 의존하지 않는다. 준비된 패키지 디렉터리에서 빌드한 `dist/cli.js`를 사용한다. 미설치 의존성은 해당 프로젝트의 lockfile로 설치한다.
+프로젝트에 설치된 aidocready 버전과 README를 확인한다. 설치된 패키지는 `npx --no-install aidocready`로 실행한다. 저장소에서 개발할 때만 빌드한 `node dist/cli.js`를 사용한다. 배포 패키지 실행에는 src나 개발 의존성이 필요하지 않다. 설치가 필요하면 프로젝트의 lockfile과 검증된 npm 패키지를 사용한다.
 
 1. 원본을 보존하고 작업 사본을 작성한다.
-2. `node dist/cli.js lint <보고서 절대 경로> --format json --fail-on Warning`을 실행한다.
+2. `npx --no-install aidocready lint <보고서 절대 경로> --format json --fail-on Warning`을 실행한다.
 3. 진단의 ruleId, origin, 위치, coverage와 parserWarnings를 확인한다. 종료 코드 2는 실행 오류를 먼저 해결한다. 검사 불완전이면 통과로 보고하지 않는다.
 4. 원문과 대조하며 구조만 수정한다. 수치·단위·날짜·조건·고유명사·사실이 모두 유지되는지 확인한다. 의미 변경이 필요하면 사용자에게 근거를 확인한다.
 5. 다시 lint를 실행한다. 같은 진단이 남으면 수정 가능한 구조인지 수동 판단인지 확인한다. 무의미한 수정 반복은 중단하고 남은 사항을 보고한다.

@@ -14,7 +14,9 @@ function marker(text:string):{level:number;number:number}|undefined {
 function caption(text:string,kind:string):{number?:number}|undefined {
  const clean=text.trim().replace(/[<>\[\]〈〉【】]/g,'');
  const m=clean.match(new RegExp(`^${kind}(?:\\s*(\\d+))?(?:[.：:]?\\s+|[.：:])(.+)$`));
- return m ? {number:m[1]?Number(m[1]):undefined} : undefined;
+ if(m)return {number:m[1]?Number(m[1]):undefined};
+ const framed=text.trim().match(/^(?:<|〈|【|\[)\s*(.+?)\s*(?:>|〉|】|\])$/);
+ return framed?.[1].trim()?{}:undefined;
 }
 export function lintBlocks(blocks:Block[],profileName:string='recommended',limitations:string[]=[]):LintResult {
  const profile:Profile=requireProfile(profileName);const enabled=new Set(profiles[profile]);const findings:Finding[]=[];
@@ -23,8 +25,9 @@ export function lintBlocks(blocks:Block[],profileName:string='recommended',limit
   const r=rules.find(r=>r.id===ruleId)!;
   findings.push({ruleId,origin:r.origin,severity:r.severity,message,location:{path,...(b.sourceLine?{line:b.sourceLine}:{}),...(b.pageNumber?{page:b.pageNumber}:{})},...(r.source?{source:r.source}:{})});
  }
- let headingLevel=0; let previousMarker:number|undefined;const counters=new Map<number,number>();const captionNumbers=new Map<string,number>();
+ const captionNumbers=new Map<string,number>();
  function walk(list:Block[],prefix:string,nested=false) {
+  let headingLevel=0; let previousMarker:number|undefined; const counters=new Map<number,number>();
   list.forEach((b,i)=>{
    const path=`${prefix}[${i}]`;const text=b.text??'';
    if(b.type==='heading') {

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { VERSION } from './version.js';
 import { lintFile } from './input.js';
 import { profiles, requireProfile, rules } from './rules.js';
 import type { Severity } from './model.js';
@@ -7,7 +8,7 @@ const wantsJson=args.some((arg,i)=>arg==='--format'&&args[i+1]==='json');
 const usage='aidocready lint <report.md|report.hwpx> [--format text|json] [--profile recommended|mois-core] [--fail-on Error|Warning|Suggestion]\naidocready rules [--format text|json]';
 try {
  if(args.length===0||args[0]==='--help'||args[0]==='-h') {console.log(usage);}
- else if(args[0]==='--version')console.log('0.1.0');
+ else if(args[0]==='--version')console.log(VERSION);
  else {
   const command=args.shift();if(command!=='lint'&&command!=='rules')throw new Error(`알 수 없는 명령: ${command}`);
   let file:string|undefined;let format='text';let profile='recommended';let failOn:Severity='Error';
