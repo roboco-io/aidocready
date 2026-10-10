@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { AidocreadyError } from './errors.js';
 import { VERSION } from './version.js';
 import { lintFile } from './input.js';
 import { profiles, requireProfile, rules } from './rules.js';
@@ -44,6 +45,6 @@ try {
  }
 } catch(error) {
  const message=error instanceof Error?error.message:String(error);
- if(wantsJson)console.log(JSON.stringify({schemaVersion:1,error:{code:'INPUT_ERROR',message}}));else console.error(message+'\n'+usage);
+ if(wantsJson)console.log(JSON.stringify({schemaVersion:1,error:{code:'INPUT_ERROR',reason:error instanceof AidocreadyError?error.code:'INVALID_ARGUMENT',...(error instanceof AidocreadyError&&error.causeCode?{causeCode:error.causeCode}:{}),message}}));else console.error(message+'\n'+usage);
  process.exitCode=2;
 }

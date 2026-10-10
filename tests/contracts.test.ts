@@ -1,0 +1,12 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {lintMarkdown} from '../src/index.js';
+import * as api from '../src/index.js';
+import {lintFile} from '../src/input.js';
+const table='| 항목 | 값 |\n| --- | --- |\n| 예산 | 10억 원 |';
+test('checks distinguish absent tables from tested table captions',()=>{const none:any=lintMarkdown('본문이다.');assert.equal(none.checks.find((c:any)=>c.ruleId==='MOIS-TABLE-CAPTION').status,'not-applicable');const r:any=lintMarkdown('표 1. 예산\n\n'+table);assert.equal(r.checks.find((c:any)=>c.ruleId==='MOIS-TABLE-CAPTION').status,'checked');});
+test('unknown HTML coverage is reported as unsupported per rule',()=>{const r:any=lintMarkdown('<table><tr><td>예산</td></tr></table>');assert.equal(r.checks.find((c:any)=>c.ruleId==='MOIS-TABLE-CAPTION').status,'unsupported');});
+test('ambiguous caption ordering is a manual-review status',()=>{const r:any=lintMarkdown('< 예산 >\n\n'+table);assert.equal(r.checks.find((c:any)=>c.ruleId==='MOIS-CAPTION-NUMBER').status,'manual-review');});
+test('diagnostics carry source excerpts and rule documentation',()=>{const r:any=lintMarkdown('# 보고서\n\n### 결과');assert.equal(r.findings[0].excerpt,'### 결과');assert.match(r.findings[0].helpUrl,/adr-heading-level/);});
+test('missing file has a stable SDK error code',async()=>{await assert.rejects(lintFile('missing-contract.md'),(e:any)=>e.code==='FILE_NOT_FOUND');});
+test('public library exports HWPX file linting',()=>assert.equal(typeof (api as any).lintFile,'function'));
