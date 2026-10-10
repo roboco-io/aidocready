@@ -15,3 +15,13 @@ if(document.querySelector('[data-demo]')){
   document.querySelectorAll('[data-demo]').forEach(button=>{button.disabled=false;button.addEventListener('click',()=>select(button.dataset.demo));});select('before');
  }).catch(()=>{document.querySelector('[data-result-detail]').textContent='예시 결과를 불러오지 못했습니다. 사용 매뉴얼에서 CLI를 실행해 보세요.';document.querySelectorAll('[data-demo]').forEach(button=>{button.disabled=true;});});
 }
+
+const writingControls=document.querySelector('[data-writing-controls]');
+if(writingControls){
+ writingControls.hidden=false;
+ const grid=document.querySelector('[data-writing-grid]');grid.dataset.writingView='without';
+ writingControls.querySelectorAll('[data-writing-mode]').forEach(button=>button.addEventListener('click',()=>{
+  grid.dataset.writingView=button.dataset.writingMode;
+  writingControls.querySelectorAll('[data-writing-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+ }));
+}

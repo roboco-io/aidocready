@@ -59,6 +59,19 @@ for(const example of proseMeta.examples){
  tokens['PROSE_'+key+'_AFTER']=renderConversionMarkdown(example.id==='table'?texts.after.split(/\n\s*\n/).find(p=>p.startsWith('종무(천주교) 분야')):texts.after);
  tokens['PROSE_'+key+'_REPORT']=`<p class="prose-check">구조 검사: 재구성 전 Warning ${reports.before.summary.Warning}개 → 재구성 후 Warning ${reports.after.summary.Warning}개</p><p class="micro">정적 입력 검사 범위(coverage.complete): ${reports.before.coverage.complete} → ${reports.after.coverage.complete}. 사실 보존이나 AI 이해도를 판정한 결과가 아닙니다.</p>`;
 }
+const writingRoot=join(source,'assets','writing');
+const writingMeta=JSON.parse(await readFile(join(writingRoot,'provenance.json'),'utf8'));
+if(writingMeta.version!==product.version||writingMeta.sourceMarkdownSha256!==hash(caseMarkdown)||writingMeta.skillSha256!==hash(releaseFile('skills/aidocready/SKILL.md')))throw new Error('Writing comparison source or release mismatch');
+for(const mode of ['without','with']){
+ const markdown=await readFile(join(writingRoot,mode+'.md'),'utf8');
+ const reportText=await readFile(join(writingRoot,mode+'-lint.json'),'utf8');
+ for(const [name,content] of [[mode+'.md',markdown],[mode+'-lint.json',reportText]])if(hash(content)!==writingMeta.artifacts[name])throw new Error('Writing comparison hash mismatch');
+ for(const fact of writingMeta.sharedFacts)if(!markdown.includes(fact))throw new Error('Writing comparison missing shared fact: '+fact);
+ const report=JSON.parse(reportText);
+ for(const severity of ['Error','Warning','Suggestion'])if(report.findings.filter(f=>f.severity===severity).length!==report.summary[severity])throw new Error('Writing report summary mismatch');
+ tokens['WRITING_'+mode.toUpperCase()]=renderConversionMarkdown(markdown);
+ tokens['WRITING_'+mode.toUpperCase()+'_WARNINGS']=report.summary.Warning;
+}
 const replace=s=>s.replace(/\{\{([A-Z_]+)\}\}/g,(m,key)=>key in tokens?String(tokens[key]):m);
 const pages={'conversion-full.html':{title:'전체 변환·검사 결과 — AI Doc Ready',description:'공개 샘플의 전체 Markdown, 원본 PDF, 진단과 검사 한계 확인.'},'conversion.html':{title:'실제 문서 변환·검사 비교 — AI Doc Ready',description:'복잡한 표 세 사례의 원본, 실제 자동 변환과 검사 한계를 비교하세요.'},'index.html':{title:'AI Doc Ready — 보고서의 구조를 점검하세요',description:'Markdown·HWPX 보고서를 로컬에서 검사하는 오픈소스 CLI. 사용 매뉴얼, 제품 FAQ와 보도자료.'},'manual.html':{title:'사용 매뉴얼 — AI Doc Ready',description:`AI Doc Ready ${product.version} 설치, 문서 검사, JSON, 프로파일, 에이전트 연결과 CI 사용 방법.`},'faq.html':{title:'제품 FAQ — AI Doc Ready',description:'고객의 질문에서 출발하는 AI Doc Ready PR/FAQ. 지원 범위, 가격, 검증 방법과 제품 전략.'},'press-release.html':{title:`보도자료 — AI Doc Ready ${product.version} 공개`,description:`Markdown·HWPX 보고서의 AI 친화적 구조를 로컬에서 점검하는 AI Doc Ready ${product.version} 제품 보도자료.`}};
 const logo='<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 4h21l9 9v30H9z" fill="#225bd6"/><path d="M29 5v10h9" fill="none" stroke="#adc7ff" stroke-width="3"/><path d="m17 27 6 6 11-13" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
