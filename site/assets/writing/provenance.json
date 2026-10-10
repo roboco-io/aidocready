@@ -1,23 +1,34 @@
 {
   "version": "0.2.0",
   "executedAt": "2026-10-10",
-  "method": "행안부 공식 PDF 3쪽 향후 계획의 적용 전·후 예시를 발췌. 적용 후 문장의 조사와 종결어미를 웹 문체로 정리했다. AI Doc Ready의 생성 결과가 아니며 공개 CLI로 별도 검사했다.",
+  "method": "Codex가 동일한 가상 사실 목록으로 작성한 비교용 열거형 초안과 공개 AI Doc Ready SKILL 지침을 적용한 서술형 초안. 독립 A/B 실험이나 자동 변환 결과가 아님.",
   "skillSha256": "0f7ddf0781d6cf8e914986031c6e3b7810cc1f5840b4100e7b62257b3bc59a70",
   "sharedFacts": [
-    "프로그램",
-    "기금",
-    "활용",
-    "확대",
-    "개편안",
-    "마련"
+    "민원 처리 기간 단축",
+    "처리 결과 통지",
+    "이메일",
+    "휴대전화",
+    "확인 대기 목록",
+    "다음 영업일",
+    "접수번호",
+    "조회 방법",
+    "민감정보",
+    "민원 한 종류",
+    "정보화팀",
+    "민원팀",
+    "운영책임자",
+    "발송 성공 여부",
+    "실제 발송 비용",
+    "추가 비용",
+    "신규 문자 발송"
   ],
   "artifacts": {
-    "with.md": "4cd70a67ef5b1111e4ba9b1221e711c94c7cba918b53bae602d4d1b869d7aeec",
-    "without.md": "24dce05e230e2cb2b0bf2e8fd0c5b5ed740c6d6b289972eca8f55894994848ce",
+    "with.md": "cda937815007e08f386617672321ac82a91ef7171e9b734f6dd7116c05e92834",
+    "without.md": "72e7ccce6317c460ef126e7e53a43089ce547e5d0466b4b9952377735820a808",
     "with-lint.json": "f3bad8a1d44f4d2bae0c22c8ec6eacd2455166d420d14d7f1ec84cb42fd48555",
     "without-lint.json": "01b5263aa74f92415bf92011187999f9610fa1381d393645e10581f40d99371f"
   },
-  "sourceUrl": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940",
-  "sourcePage": 3,
-  "sourcePdfSha256": "8ec0514e99444ba3e18651d1a93adaa424a3eeeb890cf95ccadef8e157ab09b0"
+  "sourceUrl": "https://roboco.io/posts/cognitive-debt/",
+  "sourceRole": "서술형에서 선택 이유와 실패 조건을 검토 가능하게 드러낸다는 구성 관점만 참고. 시나리오 사실이나 실증 효과의 출처가 아님.",
+  "sourceFactsSha256": "3da464b18ec1a9c74ebcd83eecc9276b26329d4f35a5a09d7f3635e0953bb3e9"
 }

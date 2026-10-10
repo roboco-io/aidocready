@@ -61,7 +61,7 @@ for(const example of proseMeta.examples){
 }
 const writingRoot=join(source,'assets','writing');
 const writingMeta=JSON.parse(await readFile(join(writingRoot,'provenance.json'),'utf8'));
-if(writingMeta.version!==product.version||writingMeta.sourcePdfSha256!==hash(await readFile(join(writingRoot,'source.pdf')))||writingMeta.skillSha256!==hash(releaseFile('skills/aidocready/SKILL.md')))throw new Error('Writing comparison source or release mismatch');
+if(writingMeta.version!==product.version||writingMeta.sourceFactsSha256!==hash(await readFile(join(writingRoot,'source-facts.json')))||writingMeta.skillSha256!==hash(releaseFile('skills/aidocready/SKILL.md')))throw new Error('Writing comparison source or release mismatch');
 for(const mode of ['without','with']){
  const markdown=await readFile(join(writingRoot,mode+'.md'),'utf8');
  const reportText=await readFile(join(writingRoot,mode+'-lint.json'),'utf8');
