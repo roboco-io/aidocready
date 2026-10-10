@@ -1,0 +1,7 @@
+{
+  "id": "team-report",
+  "extends": "recommended",
+  "rules": {
+    "ADR-HEADING-LEVEL": "Warning"
+  }
+}
