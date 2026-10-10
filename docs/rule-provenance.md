@@ -3,7 +3,7 @@
 출처: 행정안전부 혁신행정담당관, 2026-08-24 보도자료 「복잡한 표·그림 대신 고품질 텍스트로 행안부, 인공지능(AI) 친화적 보고서 전면 도입」.
 공식 게시문: https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940
 공식 PDF: https://mois.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_001483394PMYHx-&fileSn=1
-확인일: 2026-10-10. 참조 대화의 첨부 파일은 도구에 노출되지 않았으므로 공식 게시문에서 같은 제목의 PDF를 받아 3쪽 전체를 시각 확인했습니다. 사용자가 첨부한 파일과의 바이트 동일성은 확인하지 않았습니다. 공공누리 제1유형 출처표시.
+확인일: 2026-10-10. 공식 게시문 PDF의 3쪽 전체를 시각 확인했습니다. 이후 사용자가 제공한 Downloads 첨부본도 확인했으며 공식 PDF와 바이트 동일합니다. SHA-256: 8ec0514e99444ba3e18651d1a93adaa424a3eeeb890cf95ccadef8e157ab09b0. 공공누리 제1유형 출처표시.
 
 ## 공식 원칙 (PDF 2쪽)
 

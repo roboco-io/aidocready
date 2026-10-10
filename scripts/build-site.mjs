@@ -61,7 +61,7 @@ for(const example of proseMeta.examples){
 }
 const writingRoot=join(source,'assets','writing');
 const writingMeta=JSON.parse(await readFile(join(writingRoot,'provenance.json'),'utf8'));
-if(writingMeta.version!==product.version||writingMeta.sourceMarkdownSha256!==hash(caseMarkdown)||writingMeta.skillSha256!==hash(releaseFile('skills/aidocready/SKILL.md')))throw new Error('Writing comparison source or release mismatch');
+if(writingMeta.version!==product.version||writingMeta.sourcePdfSha256!==hash(await readFile(join(writingRoot,'source.pdf')))||writingMeta.skillSha256!==hash(releaseFile('skills/aidocready/SKILL.md')))throw new Error('Writing comparison source or release mismatch');
 for(const mode of ['without','with']){
  const markdown=await readFile(join(writingRoot,mode+'.md'),'utf8');
  const reportText=await readFile(join(writingRoot,mode+'-lint.json'),'utf8');
@@ -73,7 +73,7 @@ for(const mode of ['without','with']){
  tokens['WRITING_'+mode.toUpperCase()+'_WARNINGS']=report.summary.Warning;
 }
 const replace=s=>s.replace(/\{\{([A-Z_]+)\}\}/g,(m,key)=>key in tokens?String(tokens[key]):m);
-const pages={'conversion-full.html':{title:'전체 변환·검사 결과 — AI Doc Ready',description:'공개 샘플의 전체 Markdown, 원본 PDF, 진단과 검사 한계 확인.'},'conversion.html':{title:'실제 문서 변환·검사 비교 — AI Doc Ready',description:'복잡한 표 세 사례의 원본, 실제 자동 변환과 검사 한계를 비교하세요.'},'index.html':{title:'AI Doc Ready — 보고서의 구조를 점검하세요',description:'Markdown·HWPX 보고서를 로컬에서 검사하는 오픈소스 CLI. 사용 매뉴얼, 제품 FAQ와 보도자료.'},'manual.html':{title:'사용 매뉴얼 — AI Doc Ready',description:`AI Doc Ready ${product.version} 설치, 문서 검사, JSON, 프로파일, 에이전트 연결과 CI 사용 방법.`},'faq.html':{title:'제품 FAQ — AI Doc Ready',description:'고객의 질문에서 출발하는 AI Doc Ready PR/FAQ. 지원 범위, 가격, 검증 방법과 제품 전략.'},'press-release.html':{title:`보도자료 — AI Doc Ready ${product.version} 공개`,description:`Markdown·HWPX 보고서의 AI 친화적 구조를 로컬에서 점검하는 AI Doc Ready ${product.version} 제품 보도자료.`}};
+const pages={'conversion-full.html':{title:'전체 변환·검사 결과 — AI Doc Ready',description:'공개 샘플의 전체 Markdown, 원본 PDF, 진단과 검사 한계 확인.'},'conversion.html':{title:'실제 문서 변환·검사 비교 — AI Doc Ready',description:'복잡한 표 세 사례의 원본, 실제 자동 변환과 검사 한계를 비교하세요.'},'index.html':{title:'AI Doc Ready — 보고서를 AI 요약·발표·검색의 기반으로',description:'행안부 AI 친화적 보고서 원칙을 에이전트 작성 지침과 구조 검사로 적용하세요. 같은 문서의 작성 비교와 사용 매뉴얼.'},'manual.html':{title:'사용 매뉴얼 — AI Doc Ready',description:`AI Doc Ready ${product.version} 설치, 문서 검사, JSON, 프로파일, 에이전트 연결과 CI 사용 방법.`},'faq.html':{title:'제품 FAQ — AI Doc Ready',description:'고객의 질문에서 출발하는 AI Doc Ready PR/FAQ. 지원 범위, 가격, 검증 방법과 제품 전략.'},'press-release.html':{title:`보도자료 — AI Doc Ready ${product.version} 공개`,description:`Markdown·HWPX 보고서의 AI 친화적 구조를 로컬에서 점검하는 AI Doc Ready ${product.version} 제품 보도자료.`}};
 const logo='<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 4h21l9 9v30H9z" fill="#225bd6"/><path d="M29 5v10h9" fill="none" stroke="#adc7ff" stroke-width="3"/><path d="m17 27 6 6 11-13" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const menu=[['index.html','소개'],['conversion.html','실제 사례'],['manual.html','사용 매뉴얼'],['faq.html','FAQ'],['press-release.html','보도자료']];
 const footer=`<footer class="footer"><div class="wrap footer-row"><div><strong>AI Doc Ready</strong> · v${esc(product.version)}<br>© 2026 roboco-io · MIT 오픈소스</div><div class="footer-links"><a href="${product.repoUrl}">GitHub</a><a href="https://www.npmjs.com/package/aidocready/v/${product.version}">npm</a><a href="https://github.com/chrisryugj/kordoc">Kordoc</a><a href="${product.repoUrl}/issues">문의·제보</a></div></div></footer>`;
