@@ -1,9 +1,27 @@
-# aidocready
+# AI Doc Ready
 
-AI 친화적 보고서의 구조를 검사하는 TypeScript CLI. Node.js 20 이상을 사용합니다.
-Kordoc 4.21.9를 수정하지 않은 라이브러리 의존성으로 사용합니다.
+**AI Doc Ready** (`aidocready`)는 사람과 AI가 보고서의 구조와 맥락을 이해하기 쉽도록 돕는 문서 검사 도구입니다. Markdown과 HWPX 보고서를 읽고, AI 친화적 작성 원칙에 근거한 구조 검사를 수행합니다. TypeScript로 구현했으며 Node.js 20 이상을 사용합니다.
 
-## 로컬 실행
+## 프로젝트의 시작
+
+이 프로젝트는 행정안전부의 [「복잡한 표·그림 대신 고품질 텍스트로 행안부, 인공지능(AI) 친화적 보고서 전면 도입」 발표](https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940)를 계기로 시작되었습니다.
+
+행안부가 제시한 표·그림의 상단 제목과 순서 표시, 단순한 셀 병합, 서술식 문장, 일관된 항목 표시, 불필요한 시각적 꾸미기 지양을 실제 문서 작성 과정에서 적용하고 확인하는 것이 출발점입니다. AI Doc Ready는 이러한 원칙을 여러 AI 에이전트에서 활용할 수 있는 규칙·프로파일·CLI와 작성 → 검사 → 수정의 흐름으로 제공합니다.
+
+공식 원칙과 AI Doc Ready의 자체 보완 규칙을 구분합니다. 구조 검사는 재현 가능한 코드로 수행하고, 문장의 명확성과 사실·수치·의미 보존은 원문 대조와 수동 검토로 확인합니다.
+
+## Kordoc과의 역할 분담
+
+한국 문서 처리 라이브러리 [Kordoc](https://github.com/chrisryugj/kordoc)을 기반으로 HWPX를 읽습니다. Kordoc은 문서 파싱을 담당하고, AI Doc Ready는 추출한 구조에 보고서 검사 규칙을 적용합니다. Kordoc 4.21.9를 수정하지 않은 라이브러리 의존성으로 사용합니다.
+
+## 빠른 시작
+
+```sh
+npx aidocready@0.1.0 lint report.md
+npx aidocready@0.1.0 lint report.hwpx --format json
+```
+
+## 로컬 개발
 
 ```sh
 npm ci
@@ -16,7 +34,7 @@ npm test
 npm run check
 ```
 
-npm 배포 후에는 `npx aidocready@0.1.0 lint report.md` 또는 `npx aidocready@0.1.0 lint report.hwpx --format json`으로 실행합니다. 로컬 개발 중에는 위의 `node dist/cli.js` 명령을 사용하세요.
+로컬 개발 중에는 빌드한 `node dist/cli.js` 명령으로 실행합니다.
 
 ## 범위와 출력
 
