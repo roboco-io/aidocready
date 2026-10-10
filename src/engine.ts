@@ -1,3 +1,4 @@
+import { assertDepth } from './limits.js';
 import type { Block, Finding, LintResult, Profile, CheckStatus, RuleCheck } from './model.js';
 import { rules } from './rules.js';
 import { resolveProfile,type ProfileInput } from './profiles.js';
@@ -26,12 +27,13 @@ export function lintBlocks(blocks:Block[],profileName:ProfileInput='recommended'
  function mark(id:string,status:CheckStatus='checked',reason?:string){const c=checks.find(c=>c.ruleId===id);if(!c||c.status==='disabled')return;if(rank[status]>rank[c.status])c.status=status;if(reason&&!c.reasons.includes(reason))c.reasons.push(reason);}
  function add(ruleId:string,message:string,b:Block,path:string) {
   if(!enabled.has(ruleId))return;
-  const r=rules.find(r=>r.id===ruleId)!;mark(ruleId,selected.severities.get(ruleId)==='Suggestion'?'manual-review':'checked');
-  const excerpt=(b.sourceText??b.text??b.table?.cells.flat().map(c=>c.text).join(' | ')??'').slice(0,160);
+  const r=rules.find(r=>r.id===ruleId)!;mark(ruleId,r.severity==='Suggestion'?'manual-review':'checked');
+  const excerpt=(b.sourceText??b.text??b.table?.cells.slice(0,2).flatMap(row=>row.slice(0,3).map(c=>c.text.slice(0,60))).join(' | ')??'').slice(0,160);
   findings.push({ruleId,origin:r.origin,severity:selected.severities.get(ruleId)!,message,excerpt,helpUrl:`https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#${ruleId.toLowerCase()}`,location:{path,...(b.table?.sourceId?{sourceId:b.table.sourceId}:{}),...(b.sourceLine?{line:b.sourceLine}:{}),...(b.pageNumber?{page:b.pageNumber}:{})},...(r.source?{source:r.source}:{})});
  }
  const captionNumbers=new Map<string,number>();
- function walk(list:Block[],prefix:string,nested=false) {
+ function walk(list:Block[],prefix:string,nested=false,depth=0) {
+  assertDepth(depth);
   let headingLevel=0; let previousMarker:number|undefined; const counters=new Map<number,number>();
   list.forEach((b,i)=>{
    const path=`${prefix}[${i}]`;const text=b.text??'';
@@ -75,11 +77,11 @@ export function lintBlocks(blocks:Block[],profileName:ProfileInput='recommended'
     b.table.cells.forEach((row,r)=>row.forEach((cell,c)=>{
      const cellPath=`${path}.table.cells[${r}][${c}]`;
      if(cell.rowSpan>1&&cell.colSpan>1)add('MOIS-MERGE-REVIEW','행과 열을 함께 병합한 셀입니다. 구조 단순화 가능성을 검토하세요.',b,cellPath);
-     if(cell.blocks)walk(cell.blocks,`${cellPath}.blocks`,true);
+     if(cell.blocks)walk(cell.blocks,`${cellPath}.blocks`,true,depth+1);
     }));
-    if(b.table.captionBlocks)walk(b.table.captionBlocks,`${path}.table.captionBlocks`,true);
+    if(b.table.captionBlocks)walk(b.table.captionBlocks,`${path}.table.captionBlocks`,true,depth+1);
    }
-   if(b.children)walk(b.children,`${path}.children`,nested);
+   if(b.children)walk(b.children,`${path}.children`,nested,depth+1);
   });
  }
  walk(blocks,'blocks');

@@ -10,3 +10,4 @@ test('ambiguous caption ordering is a manual-review status',()=>{const r:any=lin
 test('diagnostics carry source excerpts and rule documentation',()=>{const r:any=lintMarkdown('# 보고서\n\n### 결과');assert.equal(r.findings[0].excerpt,'### 결과');assert.match(r.findings[0].helpUrl,/adr-heading-level/);});
 test('missing file has a stable SDK error code',async()=>{await assert.rejects(lintFile('missing-contract.md'),(e:any)=>e.code==='FILE_NOT_FOUND');});
 test('public library exports HWPX file linting',()=>assert.equal(typeof (api as any).lintFile,'function'));
+test('deep nested block input is rejected with a stable resource reason',()=>{let b:any={type:'paragraph',text:'본문'};for(let i=0;i<70;i++)b={type:'paragraph',children:[b]};assert.throws(()=>api.lintBlocks([b]),(e:any)=>e.code==='INPUT_TOO_LARGE');});

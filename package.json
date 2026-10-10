@@ -23,9 +23,10 @@
     "test": "node --import tsx --test tests/*.test.ts",
     "check": "tsc --noEmit",
     "prepack": "npm run build",
-    "prepublishOnly": "npm run check && npm test",
+    "prepublishOnly": "npm run check && npm test && npm run check:meta && npm run build && npm run test:corpus && npm run test:package",
     "test:corpus": "node scripts/check-corpus.mjs",
-    "check:meta": "tsc && node scripts/export-profiles.mjs --check"
+    "check:meta": "tsc && node scripts/export-profiles.mjs --check",
+    "test:package": "node scripts/check-package.mjs"
   },
   "dependencies": {
     "kordoc": "4.21.9",

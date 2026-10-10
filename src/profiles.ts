@@ -13,7 +13,7 @@ export function parseProfile(data:unknown):ProfileDefinition {
  const base=p.extends??'recommended';if(base!=='recommended'&&base!=='mois-core')return invalid('extends는 기본 프로파일 ID여야 합니다.');
  const overrides=p.rules??{};
  if(typeof overrides!=='object'||overrides===null||Array.isArray(overrides))return invalid('rules는 규칙 ID별 설정 객체여야 합니다.');
- for(const [id,setting] of Object.entries(overrides))if(!rules.some(r=>r.id===id)||!['off','Error','Warning','Suggestion'].includes(String(setting)))return invalid(`잘못된 규칙 설정: ${id}`);
+ for(const [id,setting] of Object.entries(overrides))if(!rules.some(r=>r.id===id)||(typeof setting!=='string'||!['off','Error','Warning','Suggestion'].includes(setting)))return invalid(`잘못된 규칙 설정: ${id}`);
  return {id:p.id,extends:base,rules:overrides as Record<string,Severity|'off'>};
 }
 export function resolveProfile(input:ProfileInput) {
