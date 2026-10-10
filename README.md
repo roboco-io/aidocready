@@ -106,3 +106,7 @@ npm run test:package
 규칙 정본에서 프로파일과 [규칙 도움말](docs/rules.md)을 생성하고, 내용이 어긋나면 검사에 실패합니다. 출처와 사람이 검토한 기대 진단을 기록한 8개 초기 회귀 사례를 문서별로 비교합니다. 이 작은 코퍼스의 통과는 전체 행정문서에 대한 정확도나 공식 준수율을 뜻하지 않습니다. 깨끗한 환경에 npm tarball을 설치해 CLI·공개 API·선택 의존성 없는 HWPX·스킬 자산도 검사합니다. CI와 주간 업스트림 검증에 같은 게이트를 적용합니다.
 
 [경량 설치와 오프라인 운영](docs/offline-usage.md), [회귀 코퍼스 기준](docs/corpus.md), [변경 이력](CHANGELOG.md)을 확인하세요.
+
+## 제품과 웹사이트 유지 규칙
+
+개발 작업은 [AGENTS.md](AGENTS.md)를 따릅니다. 기능·명령·API·규칙·스킬·릴리스가 바뀌면 같은 변경 묶음에서 [웹사이트 영향](docs/site-impact.json)을 기록하고 매뉴얼·FAQ·보도자료를 갱신하거나 미출시 초안을 준비합니다. CI가 검토 누락과 실제 npm latest/공개 소스 참조의 불일치를 검사하며, 통과한 웹사이트를 GitHub Pages로 배포합니다. [상세 기준](docs/website-maintenance.md)을 확인하세요.

@@ -1,0 +1,27 @@
+name: Website synchronization
+on:
+  push:
+    branches: [main]
+  pull_request:
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'release' && 'main' || github.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Check website impact and build
+        env:
+          SITE_SYNC_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node scripts/check-site-sync.mjs && node scripts/build-site.mjs
+      - name: Verify published website release
+        run: node scripts/check-site-release.mjs

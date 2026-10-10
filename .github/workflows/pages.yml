@@ -4,6 +4,17 @@ on:
     branches: [main]
     paths:
       - 'site/**'
+      - 'src/**'
+      - 'profiles/**'
+      - 'package.json'
+      - 'CHANGELOG.md'
+      - 'docs/**'
+      - 'README.md'
+      - 'AGENTS.md'
+      - 'CLAUDE.md'
+      - 'scripts/site-policy-lib.mjs'
+      - 'scripts/check-site-sync.mjs'
+      - 'scripts/check-site-release.mjs'
       - 'scripts/build-site.mjs'
       - 'scripts/site-lib.mjs'
       - 'tests/site.test.ts'
@@ -11,6 +22,8 @@ on:
       - 'skills/**'
       - 'templates/**'
       - '.github/workflows/pages.yml'
+  release:
+    types: [published]
   workflow_dispatch:
 permissions:
   contents: read
@@ -25,12 +38,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 24
       - uses: actions/configure-pages@v5
+      - name: Check website synchronization
+        env:
+          SITE_SYNC_BASE: ${{ github.event.before }}
+        run: node scripts/check-site-sync.mjs
       - run: node scripts/build-site.mjs
+      - run: node scripts/check-site-release.mjs
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site

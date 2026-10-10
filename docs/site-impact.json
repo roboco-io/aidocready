@@ -1,0 +1,6 @@
+{
+  "status": "updated",
+  "publicVersion": "0.2.0",
+  "areas": ["manual", "faq", "press"],
+  "summary": "공개 기능은 유지하면서 버전 표기를 정본으로 통합하고, 향후 코드 변경의 웹 검토 및 npm 공개 릴리스 검증을 저장소 규칙과 CI에 연결했습니다."
+}

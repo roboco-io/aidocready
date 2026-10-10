@@ -26,7 +26,9 @@
     "prepublishOnly": "npm run check && npm test && npm run check:meta && npm run build && npm run test:corpus && npm run test:package",
     "test:corpus": "node scripts/check-corpus.mjs",
     "check:meta": "tsc && node scripts/export-profiles.mjs --check",
-    "test:package": "node scripts/check-package.mjs"
+    "test:package": "node scripts/check-package.mjs",
+    "check:site": "node scripts/check-site-sync.mjs && node scripts/build-site.mjs",
+    "check:site-release": "node scripts/check-site-release.mjs"
   },
   "dependencies": {
     "kordoc": "4.21.9",

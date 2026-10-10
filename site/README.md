@@ -9,3 +9,5 @@
 FAQ 답변의 정본은 faq.json입니다. HTML과 다운로드 txt는 이 데이터에서 함께 생성합니다. Press release txt는 렌더링한 보도자료 본문에서 생성합니다. 새 릴리스에 맞춰 변경할 때 실제 기능과 공개 npm 버전을 확인하고, 성능 효과나 고객 인용문은 근거가 있을 때만 추가하세요.
 
 2026-10-10 브라우저 QA: 데스크톱·390px 모바일 4페이지, 예시 전환, 명령 복사, FAQ 펼치기/접기, 인쇄 호출, 모바일 메뉴, 다운로드와 JavaScript 오류 없음 확인.
+
+제품 변경 시 AGENTS.md와 [웹사이트 유지 규칙](../docs/website-maintenance.md)을 따른다. docs/site-impact.json의 검토 기록과 npm 공개 릴리스 검증을 통과한 변경만 Pages에 배포한다.
