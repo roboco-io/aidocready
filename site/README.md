@@ -15,3 +15,5 @@ FAQ 답변의 정본은 faq.json입니다. HTML과 다운로드 txt는 이 데�
 실제 변환 사례는 conversion.html과 assets/conversion/에 있습니다. 재현·갱신 절차는 [docs/conversion-case.md](../docs/conversion-case.md)를 따릅니다.
 
 테마는 assets/theme.js가 스타일시트 로드 전에 적용합니다. 기본값은 기기의 prefers-color-scheme이며, 직접 선택은 aidocready-theme 키로 저장합니다. 색상은 style.css의 공통 변수에서 관리하고 원본 문서 이미지·PDF는 변형하지 않습니다. 인쇄는 라이트 색상을 사용합니다.
+
+선별 사례는 conversion.html, 전체 결과는 conversion-full.html입니다. assets/conversion/selected-cases.json의 줄 범위에 해당하는 실제 결과만 발췌하며, 관련 진단을 같은 범위로 필터링합니다.

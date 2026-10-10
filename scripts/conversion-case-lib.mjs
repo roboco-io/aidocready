@@ -36,3 +36,9 @@ export function validateConversionCase(data,report,version,markdownHash,reportHa
  if(data.markdownSha256!==markdownHash||data.reportSha256!==reportHash)throw new Error('Conversion case artifact hash mismatch');
  for(const severity of ['Error','Warning','Suggestion'])if(report.findings.filter(f=>f.severity===severity).length!==report.summary[severity])throw new Error('Conversion case summary does not match findings');
 }
+export function selectConversionExample(markdown,report,{startLine,endLine}){
+ const lines=markdown.replace(/\n$/,'').split('\n');
+ if(!Number.isInteger(startLine)||!Number.isInteger(endLine)||startLine<1||endLine<startLine||endLine>lines.length)throw new Error('Invalid conversion example source range');
+ const inside=n=>Number.isInteger(n)&&n>=startLine&&n<=endLine;
+ return {markdown:lines.slice(startLine-1,endLine).join('\n')+'\n',findings:report.findings.filter(f=>inside(f.location?.line)),limitations:report.coverage.limitations.filter(s=>inside(Number(s.match(/^line (\d+):/)?.[1])))};
+}

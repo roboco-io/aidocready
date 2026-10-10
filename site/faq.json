@@ -10,7 +10,7 @@
     },
     {
       "question": "hwp2md로 변환하면 AI Doc Ready 검사는 필요 없나요?",
-      "answer": "<p><a href=\"https://github.com/roboco-io/hwp2md\">hwp2md</a>는 HWP/HWPX를 Markdown으로 변환하고, AI Doc Ready는 변환된 문서의 구조를 검사합니다. <a href=\"conversion.html\">실제 샘플의 전체 비교</a>에서 원본·자동 변환 Markdown·검사 결과를 볼 수 있습니다. 변환 후에도 표 제목·번호·미지원 구조를 확인하고, 사실과 수치는 원문과 대조해야 합니다. HWP 입력은 먼저 변환해야 하며 AI Doc Ready의 직접 입력 범위는 Markdown/HWPX입니다.</p>"
+      "answer": "<p><a href=\"https://github.com/roboco-io/hwp2md\">hwp2md</a>는 HWP/HWPX를 Markdown으로 변환하고, AI Doc Ready는 변환된 문서의 구조를 검사합니다. <a href=\"conversion.html\">복잡한 표의 선별 사례</a>에서 원본 해당 부분·자동 변환·검사 결과를 볼 수 있습니다. <a href=\"conversion-full.html\">전체 결과</a>는 별도 페이지에서 확인합니다. 변환 후에도 표 제목·번호·미지원 구조를 확인하고, 사실과 수치는 원문과 대조해야 합니다. HWP 입력은 먼저 변환해야 하며 AI Doc Ready의 직접 입력 범위는 Markdown/HWPX입니다.</p>"
     },
     {
       "question": "AI 모델이나 API 키가 필요한가요?",
