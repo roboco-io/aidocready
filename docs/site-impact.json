@@ -1,9 +1,11 @@
 {
-  "status": "updated",
+  "status": "pending-release",
   "publicVersion": "0.2.0",
   "areas": [
-    "landing",
-    "faq"
+    "manual",
+    "faq",
+    "press"
   ],
-  "summary": "서술형 비교 다음에 동일한 여섯 확인 항목의 표·열거형 비교를 추가했습니다. 조건과 담당·시점을 유지하며 형식의 역할에 따른 선택을 설명하고 실제 CLI 검사 결과를 제공합니다."
+  "draftPath": "docs/site-drafts/format-policy.md",
+  "summary": "작업 중인 SKILL에 형식 선택 정책을 명시하고 Codex/Claude SDK 실측 평가를 추가합니다. 공개 npm 릴리스 전이므로 사이트에는 초안으로 관리합니다."
 }

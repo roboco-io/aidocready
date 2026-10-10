@@ -110,3 +110,7 @@ npm run test:package
 ## 제품과 웹사이트 유지 규칙
 
 개발 작업은 [AGENTS.md](AGENTS.md)를 따릅니다. 기능·명령·API·규칙·스킬·릴리스가 바뀌면 같은 변경 묶음에서 [웹사이트 영향](docs/site-impact.json)을 기록하고 매뉴얼·FAQ·보도자료를 갱신하거나 미출시 초안을 준비합니다. CI가 검토 누락과 실제 npm latest/공개 소스 참조의 불일치를 검사하며, 통과한 웹사이트를 GitHub Pages로 배포합니다. [상세 기준](docs/website-maintenance.md)을 확인하세요.
+
+### 형식 선택 정책과 실제 SDK 평가
+
+AI Doc Ready는 서술형을 무조건 우선하지 않습니다. 작업 중인 [형식 선택 정책](docs/format-policy.md)은 독자의 목적에 따라 서술형·목록·표를 선택하고 한 문서 안에서 혼합하도록 안내합니다. [Codex SDK·Claude Agent SDK 평가](evals/format-selection/README.md)는 정답을 숨긴 8개 사례, 실제 Markdown 구조와 부분적인 사실 보존 검사를 제공합니다. [실제 실행 결과와 발견한 한계](docs/format-eval-results.md)를 함께 확인하세요. 유료 호출은 명시적 실행에만 발생합니다. 이 정책 보완은 다음 스킬 릴리스에 포함될 예정입니다.

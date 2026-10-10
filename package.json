@@ -28,7 +28,8 @@
     "check:meta": "tsc && node scripts/export-profiles.mjs --check",
     "test:package": "node scripts/check-package.mjs",
     "check:site": "node scripts/check-site-sync.mjs && node scripts/build-site.mjs",
-    "check:site-release": "node scripts/check-site-release.mjs"
+    "check:site-release": "node scripts/check-site-release.mjs",
+    "test:agents": "node evals/format-selection/run.mjs"
   },
   "dependencies": {
     "kordoc": "4.21.9",

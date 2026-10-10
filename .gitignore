@@ -3,3 +3,5 @@ dist/
 *.tgz
 
 _site/
+
+evals/format-selection/results/
