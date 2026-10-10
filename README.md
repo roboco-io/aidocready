@@ -2,6 +2,8 @@
 
 **AI Doc Ready** (`aidocready`)는 사람과 AI가 보고서의 구조와 맥락을 이해하기 쉽도록 돕는 문서 검사 도구입니다. Markdown과 HWPX 보고서를 읽고, AI 친화적 작성 원칙에 근거한 구조 검사를 수행합니다. TypeScript로 구현했으며 Node.js 20 이상을 사용합니다.
 
+[제품 페이지](https://roboco.io/aidocready/) · [사용 매뉴얼](https://roboco.io/aidocready/manual.html) · [제품 FAQ](https://roboco.io/aidocready/faq.html) · [보도자료](https://roboco.io/aidocready/press-release.html)
+
 ## 프로젝트의 시작
 
 이 프로젝트는 행정안전부의 [「복잡한 표·그림 대신 고품질 텍스트로 행안부, 인공지능(AI) 친화적 보고서 전면 도입」 발표](https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940)를 계기로 시작되었습니다.
