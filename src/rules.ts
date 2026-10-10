@@ -1,3 +1,4 @@
+import {AidocreadyError} from './errors.js';
 import type { Rule, Profile } from './model.js';
 export const MOIS_SOURCE='https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940';
 export const rules: Rule[] = [
@@ -18,6 +19,6 @@ export const profiles: Record<Profile,string[]> = {
  recommended:rules.map(r=>r.id)
 };
 export function requireProfile(value:string):Profile {
- if(value!=='mois-core'&&value!=='recommended') throw new Error(`알 수 없는 profile: ${value}`);
+ if(value!=='mois-core'&&value!=='recommended') throw new AidocreadyError('INVALID_PROFILE',`알 수 없는 profile: ${value}`);
  return value;
 }

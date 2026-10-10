@@ -56,17 +56,17 @@ try {
   }else {
    if(!inputs.length)throw new AidocreadyError('INVALID_ARGUMENT','입력 파일이 필요합니다.');
    const results:Array<Awaited<ReturnType<typeof lintFile>>>=[];const errors:Array<{file:string;error:ReturnType<typeof operational>}>=[];
-   let paths:string[];
+   let paths:string[];let batchMode=false;
    if(inputs.includes('-')){
     if(inputs.length!==1)throw new AidocreadyError('INVALID_ARGUMENT','stdin은 다른 입력과 함께 사용할 수 없습니다.');
     const chunks:Buffer[]=[];let bytes=0;for await(const chunk of process.stdin){const buffer=Buffer.from(chunk);bytes+=buffer.length;assertByteLimit(bytes);chunks.push(buffer);}
     let text:string;try{text=new TextDecoder('utf-8',{fatal:true}).decode(Buffer.concat(chunks));}catch{throw new AidocreadyError('INVALID_ENCODING','stdin은 UTF-8 Markdown이어야 합니다.');}
     paths=[];results.push({...lintMarkdown(text,profile),file:'-',inputFormat:'markdown'});
-   }else{paths=await collectInputs(inputs);for(const path of paths){try{results.push(await lintFile(path,profile));}catch(e){errors.push({file:path,error:operational(e)});}}}
+   }else{const collected=await collectInputs(inputs);paths=collected.paths;batchMode=collected.batch;errors.push(...collected.failures.map(f=>({file:f.file,error:operational(f.error)})));for(const path of paths){try{results.push(await lintFile(path,profile));}catch(e){errors.push({file:path,error:operational(e)});}}}
    if(output)await protectInputs(output,[...paths,...(config?[config]:[])]);
    const summary={Error:0,Warning:0,Suggestion:0};for(const result of results)for(const level of ['Error','Warning','Suggestion'] as Severity[])summary[level]+=result.summary[level];
-   if(results.length===0&&errors.length===1)content=format==='json'?JSON.stringify({schemaVersion:1,...errors[0]},null,2):`${errors[0].file}: ${errors[0].error.message}`;
-   else if(results.length===1&&!errors.length)content=format==='json'?JSON.stringify(results[0],null,2):textResult(results[0]);
+   if(!batchMode&&results.length===0&&errors.length===1)content=format==='json'?JSON.stringify({schemaVersion:1,...errors[0]},null,2):`${errors[0].file}: ${errors[0].error.message}`;
+   else if(!batchMode&&results.length===1&&!errors.length)content=format==='json'?JSON.stringify(results[0],null,2):textResult(results[0]);
    else content=format==='json'?JSON.stringify({schemaVersion:1,results,errors,summary},null,2):[...results.map(textResult),...errors.map(e=>`${e.file}: ${e.error.message}`)].join('\n\n');
    const levels:Severity[]=['Error','Warning','Suggestion'];if(errors.length)process.exitCode=2;else if(results.some(r=>!r.coverage.complete)||levels.slice(0,levels.indexOf(failOn)+1).some(s=>summary[s]>0))process.exitCode=1;
   }

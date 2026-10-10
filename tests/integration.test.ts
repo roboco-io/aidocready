@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, writeFile, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, writeFile, readFile, rm, link } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -36,3 +36,7 @@ test('CLI output can never overwrite its input',()=>fixture(async dir=>{const pa
 test('Markdown stdin is checked without writing a document',()=>{const r=spawnSync(process.execPath,['--import','tsx','src/cli.ts','lint','-','--format','json'],{encoding:'utf8',input:good});assert.equal(r.status,0,r.stderr);assert.equal(JSON.parse(r.stdout).file,'-');});
 test('doctor reports local runtime and setup remains advisory',()=>{const r=cli('doctor','--format','json');assert.equal(r.status,0,r.stderr);assert.equal(JSON.parse(r.stdout).offlineCLI,true);assert.match(cli('setup').stdout,/SKILL.md/);});
 test('SDK input byte limit is enforced before parsing',()=>fixture(async dir=>{const path=join(dir,'a.md');await writeFile(path,good);await assert.rejects((lintFile as any)(path,'recommended',{maxBytes:2}),(e:any)=>e.code==='INPUT_TOO_LARGE');}));
+
+test('hard-linked result can never overwrite an original document',()=>fixture(async dir=>{const path=join(dir,'a.md'),output=join(dir,'hard.json');await writeFile(path,good);await link(path,output);const r=cli('lint',path,'--format','json','--output',output);assert.equal(r.status,2);assert.equal(await readFile(path,'utf8'),good);}));
+test('batch continues after a missing input and returns both results and errors',()=>fixture(async dir=>{const path=join(dir,'a.md');await writeFile(path,good);const r=cli('lint',path,join(dir,'missing.md'),'--format','json');assert.equal(r.status,2);const data=JSON.parse(r.stdout);assert.equal(data.results.length,1);assert.equal(data.errors[0].error.reason,'FILE_NOT_FOUND');}));
+test('directory batch envelope is stable even with one document',()=>fixture(async dir=>{await writeFile(join(dir,'a.md'),good);const r=cli('lint',dir,'--format','json');assert.equal(r.status,0);assert.equal(JSON.parse(r.stdout).results.length,1);}));
