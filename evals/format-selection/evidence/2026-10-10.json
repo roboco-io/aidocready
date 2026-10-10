@@ -1,0 +1,997 @@
+{
+  "summary": {
+    "startedAt": "2026-10-10T10:52:45.911Z",
+    "finishedAt": "2026-10-10T10:56:22.081Z",
+    "commit": "505fb53a1de328159cf385a873895c4f18ee2a0d",
+    "engineVersion": "0.2.0",
+    "policySha256": "c60f518c5cf0f9813181cd0bc3af445671db68b81986f1fa7119a7819b19c248",
+    "skillSha256": "c4781a64b6d7b31d173ecfec3678d7a7a7c67cfdc220213ae9db445a58c0a781",
+    "datasetSha256": "cab456b440707b65c3edf53eaa4efdf68a41ef9fecf14e181d9d99102ea7721c",
+    "sdkVersions": {
+      "@anthropic-ai/claude-agent-sdk": "0.3.296",
+      "@openai/codex-sdk": "0.162.1"
+    },
+    "repeats": 2,
+    "expectedRuns": 32,
+    "completedRuns": 32,
+    "passedRuns": 31,
+    "failedRuns": 1,
+    "unexecutedRuns": 0,
+    "providers": [
+      {
+        "provider": "codex",
+        "runs": 16,
+        "passed": 16,
+        "models": [
+          "gpt-6.1-sol"
+        ]
+      },
+      {
+        "provider": "claude",
+        "runs": 16,
+        "passed": 15,
+        "models": [
+          "claude-opus-5-5"
+        ]
+      }
+    ],
+    "limitations": [
+      "Small synthetic, policy-conditioned evaluation; not a statistical model ranking.",
+      "Literal fact and numeric checks are partial safeguards; manual semantic review is required.",
+      "No performance, comprehension or official-compliance claim."
+    ],
+    "results": [
+      {
+        "provider": "claude",
+        "caseId": "compare-values",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "compare-values",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "decision-reasons",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "ordered-procedure",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "decision-reasons",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "independent-checklist",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "ordered-procedure",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "term-descriptions",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "independent-checklist",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "mixed-report",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "missing-value",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "term-descriptions",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "explicit-user-format",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "compare-values",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "decision-reasons",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "mixed-report",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "ordered-procedure",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "independent-checklist",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "missing-value",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "term-descriptions",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "explicit-user-format",
+        "iteration": 1,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "mixed-report",
+        "iteration": 2,
+        "passed": false,
+        "issues": [
+          "preparation:lint_findings"
+        ]
+      },
+      {
+        "provider": "claude",
+        "caseId": "missing-value",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "compare-values",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "claude",
+        "caseId": "explicit-user-format",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "decision-reasons",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "ordered-procedure",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "independent-checklist",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "term-descriptions",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "mixed-report",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "missing-value",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      },
+      {
+        "provider": "codex",
+        "caseId": "explicit-user-format",
+        "iteration": 2,
+        "passed": true,
+        "issues": []
+      }
+    ],
+    "rescoreOnly": true,
+    "rescoredAt": "2026-10-10T10:59:56.064Z",
+    "gradingChanges": [
+      "Accept explicit equivalent uncertainty wording.",
+      "Require list facts inside distinct items and enforce requested paragraph count."
+    ],
+    "graderSha256": "b65eb51e0359087a3cceb2e3c234afc9fd307b1a0b6422da6e928e404fb16f72",
+    "oracleSha256": "18e43c6178427378b34fe29f9f424ebd35ca6959b25ee70cb9d63227b00143e2",
+    "sectionFormatChecks": {
+      "passed": 40,
+      "total": 40
+    }
+  },
+  "manualReview": [
+    "Claude decision-reasons iteration1: rationale inaccurately says only one comparison alternative; Markdown retains both alternatives.",
+    "Claude mixed-report iteration2: numbered heading 3 followed by ordered list 1-3 triggers existing engine Warning; not waived."
+  ],
+  "responses": [
+    {
+      "provider": "claude",
+      "caseId": "compare-values",
+      "iteration": 1,
+      "promptSha256": "bbef28c29c90168e6bc56b9e52e447d6932a8fb5b8d45b3c2b428e7dcfbf4018",
+      "model": "claude-opus-5-5",
+      "durationMs": 7692,
+      "response": {
+        "sections": [
+          {
+            "id": "comparison",
+            "format": "table",
+            "reason": "검토자가 세 대안의 이용료·용량·담당팀을 행과 열로 교차 비교해야 하므로 표가 적합합니다. 선택이나 계산은 넣지 않았고, 원문 값을 그대로 옮겼습니다.",
+            "markdown": "**표 1. 대안별 월 이용료·용량·담당팀 비교**\n\n| 대안 | 월 이용료 | 용량 | 담당팀 |\n| --- | --- | --- | --- |\n| 솔안 | 12000원 | 40GB | 동부팀 |\n| 달안 | 18000원 | 80GB | 서부팀 |\n| 별안 | 25000원 | 120GB | 남부팀 |"
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "compare-values",
+      "iteration": 1,
+      "promptSha256": "bbef28c29c90168e6bc56b9e52e447d6932a8fb5b8d45b3c2b428e7dcfbf4018",
+      "model": "gpt-6.1-sol",
+      "durationMs": 13777,
+      "response": {
+        "sections": [
+          {
+            "id": "comparison",
+            "format": "table",
+            "reason": "대안별 월 이용료·용량·담당팀의 정확한 값을 교차 비교하는 목적이므로, 목록이나 서술형보다 표가 적합합니다.",
+            "markdown": "표 1. 대안별 월 이용료·용량·담당팀\n\n| 대안 | 월 이용료 | 용량 | 담당팀 |\n| --- | --- | --- | --- |\n| 솔안 | 12000원 | 40GB | 동부팀 |\n| 달안 | 18000원 | 80GB | 서부팀 |\n| 별안 | 25000원 | 120GB | 남부팀 |"
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "decision-reasons",
+      "iteration": 1,
+      "promptSha256": "cc5fefc8719b67ef16a1f50a6592e6fe603cbb2516d3a92811683c6ab83bde76",
+      "model": "claude-opus-5-5",
+      "durationMs": 11174,
+      "response": {
+        "sections": [
+          {
+            "id": "decision",
+            "format": "prose",
+            "reason": "승인권자가 배경, 대안 제외 이유, 선택안의 조건과 한계를 서로 연결해 검토해야 하므로 서술형으로 작성했습니다. 비교할 대안이 하나뿐이고 항목이 서로 독립적이지 않아 표나 목록보다 서술형이 더 적합합니다.",
+            "markdown": "## 1. 문자 안내안 선택 근거와 한계\n\n접수 완료 화면을 닫은 뒤 확인 전화가 반복됐다. 화면 개선안은 화면 종료 후 별도 안내가 불가능하므로 단독 대안에서 제외했다. 이에 따라 문자 안내안을 선택했지만, 이 안은 수신 신청자에게만 제공한다.\n\n시범 운영은 운영책임자가 비용을 승인해야 시작한다. 운영 중 잘못된 안내가 발생하면 신규 발송을 중단한다. 또한 전화 감소 효과는 아직 확인되지 않았으므로, 승인 시 이 한계를 함께 검토해야 한다."
+          }
+        ],
+        "questions": [
+          "시범 운영 비용 금액은 원문에 없어 보고서에 적지 않았습니다. 승인 검토를 위해 비용 금액을 보고서에 추가할까요?",
+          "전화 감소 효과는 아직 확인되지 않았습니다. 시범 운영 기간에 이 효과를 측정할 지표와 기간을 보고서에 추가할까요?",
+          "문자 수신을 신청하지 않은 사람에게는 어떻게 안내할지 원문에 없습니다. 보완 계획이 있으면 알려 주시겠어요?"
+        ]
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "ordered-procedure",
+      "iteration": 1,
+      "promptSha256": "120be30344b63ed2fac0dcb077ad29672710aa7b69a9c2094b42f728a50ee11b",
+      "model": "claude-opus-5-5",
+      "durationMs": 6888,
+      "response": {
+        "sections": [
+          {
+            "id": "procedure",
+            "format": "list",
+            "reason": "각 단계가 이전 단계의 완료·성공을 선행 조건으로 하므로, 담당자가 순서대로 따라 수행할 수 있도록 번호 목록을 선택했습니다. 비교할 속성이 없어 표는 맞지 않습니다. 서술형으로 쓰면 단계 경계가 흐려질 수 있어 사용하지 않았습니다.",
+            "markdown": "## 작업 절차\n\n1. 먼저 백업본을 생성한다.\n2. 백업본을 생성한 후 복원 검증을 수행한다.\n3. 복원 검증이 성공한 경우에만 운영책임자 승인을 요청한다.\n4. 운영책임자가 승인한 뒤에만 배포를 시작한다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "decision-reasons",
+      "iteration": 1,
+      "promptSha256": "cc5fefc8719b67ef16a1f50a6592e6fe603cbb2516d3a92811683c6ab83bde76",
+      "model": "gpt-6.1-sol",
+      "durationMs": 12433,
+      "response": {
+        "sections": [
+          {
+            "id": "decision",
+            "format": "prose",
+            "reason": "승인권자가 선택 근거와 운영 조건·한계를 연결해 검토할 수 있도록 표나 목록보다 서술형이 적합합니다.",
+            "markdown": "접수 완료 화면을 닫은 뒤 확인 전화가 반복됐다. 화면 개선안은 화면 종료 후 별도 안내가 불가능해 단독 대안에서 제외했다. 문자 안내안을 선택했지만 수신 신청자에게만 제공한다.\n\n운영책임자가 비용을 승인해야 시범 운영을 시작한다. 잘못된 안내가 발생하면 신규 발송을 중단한다. 전화 감소 효과는 미확인이다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "independent-checklist",
+      "iteration": 1,
+      "promptSha256": "46762ae101fbe0070b51125358ef2cb2d8fe2849d1dbd110c309f6999369cc7b",
+      "model": "claude-opus-5-5",
+      "durationMs": 6510,
+      "response": {
+        "sections": [
+          {
+            "id": "checklist",
+            "format": "list",
+            "reason": "진행자가 서로 독립된 준비 항목을 하나씩 확인하는 용도이고 항목 사이에 선행 관계가 없어 순서 없는 불릿 목록을 선택했습니다. 비교할 속성이 없어 표는 필요하지 않습니다.",
+            "markdown": "## 준비 완료 확인 항목\n\n- 회의실 예약 확인\n- 접속 링크 확인\n- 안내문 배포 확인\n- 발표자료 준비 확인\n- 녹화 동의 확인"
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "ordered-procedure",
+      "iteration": 1,
+      "promptSha256": "120be30344b63ed2fac0dcb077ad29672710aa7b69a9c2094b42f728a50ee11b",
+      "model": "gpt-6.1-sol",
+      "durationMs": 12396,
+      "response": {
+        "sections": [
+          {
+            "id": "procedure",
+            "format": "list",
+            "reason": "담당자가 선행 조건과 작업 순서를 확인하며 수행해야 하므로, 서술형이나 표보다 번호 목록이 적합합니다.",
+            "markdown": "1. 먼저 백업본을 생성한다.\n2. 백업본 생성 후 복원 검증을 수행한다.\n3. 복원 검증이 성공한 경우에만 운영책임자 승인을 요청한다.\n4. 운영책임자가 승인한 뒤에만 배포를 시작한다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "term-descriptions",
+      "iteration": 1,
+      "promptSha256": "24688083de2740255caedd2a853357bc5346d373a15a638be97f3a0a19e741db",
+      "model": "claude-opus-5-5",
+      "durationMs": 7585,
+      "response": {
+        "sections": [
+          {
+            "id": "terms",
+            "format": "list",
+            "reason": "새 담당자가 상태 이름으로 뜻을 바로 찾을 수 있도록 상태별로 항목을 나눈 불릿 목록을 선택했습니다. 상태 이름과 뜻 두 가지만 있고 설명도 짧아서 표로 만들 필요가 없습니다. 항목 사이에 정해진 순서가 주어지지 않았으므로 번호는 붙이지 않았습니다. 원문의 상태 이름과 뜻은 바꾸지 않았습니다.",
+            "markdown": "- **작성 중**: 아직 제출하지 않은 상태.\n- **검토 중**: 제출했고 검토 결과를 기다리는 상태.\n- **승인 완료**: 승인권자의 승인이 끝난 상태."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "independent-checklist",
+      "iteration": 1,
+      "promptSha256": "46762ae101fbe0070b51125358ef2cb2d8fe2849d1dbd110c309f6999369cc7b",
+      "model": "gpt-6.1-sol",
+      "durationMs": 11218,
+      "response": {
+        "sections": [
+          {
+            "id": "checklist",
+            "format": "list",
+            "reason": "진행자가 독립된 준비 항목을 하나씩 확인하므로 불릿 목록이 적합합니다. 선행 관계가 없어 번호는 사용하지 않습니다.",
+            "markdown": "- 회의실 예약 확인\n- 접속 링크 확인\n- 안내문 배포 확인\n- 발표자료 준비 확인\n- 녹화 동의 확인"
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "mixed-report",
+      "iteration": 1,
+      "promptSha256": "55063f53aca728bde1482b67b4806f5a80f94fcdf572c59d5e554a50495c514c",
+      "model": "claude-opus-5-5",
+      "durationMs": 10895,
+      "response": {
+        "sections": [
+          {
+            "id": "background",
+            "format": "prose",
+            "reason": "수작업 확인의 한계, 시범 검증 필요성, 미확인 효과를 연결해 결정 이유를 이해하도록 서술형으로 작성했습니다.",
+            "markdown": "수작업 확인에 시간이 걸려 자동 안내를 검토한다. 다만 전체 적용 전에 시범 검증이 필요하다. 문의 감소 효과는 아직 확인되지 않았으므로(미확인), 시범 검증 결과를 보고 판단해야 한다."
+          },
+          {
+            "id": "options",
+            "format": "table",
+            "reason": "두 대안의 월 비용과 담당 팀이라는 같은 속성을 나란히 비교하도록 표로 작성했습니다.",
+            "markdown": "**표 1. 대안별 비용 및 담당**\n\n| 대안 | 월 비용 | 담당 |\n| --- | --- | --- |\n| 해안 | 월 9000원 | 동부팀 |\n| 산안 | 월 15000원 | 서부팀 |"
+          },
+          {
+            "id": "preparation",
+            "format": "list",
+            "reason": "각 단계가 앞 단계 완료를 전제로 하므로 순서대로 실행하도록 번호 목록으로 작성했습니다.",
+            "markdown": "1. 시험 계정을 만든다.\n2. 시험 계정 생성 후 발송 결과를 검증한다.\n3. 발송 결과 검증 후 운영책임자에게 승인을 요청한다."
+          }
+        ],
+        "questions": [
+          "문의 감소 효과는 아직 확인되지 않았습니다. 시범 검증에서 이 효과를 어떤 기준(지표·기간)으로 측정할지 정해져 있나요?"
+        ]
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "missing-value",
+      "iteration": 1,
+      "promptSha256": "2183cacc83dc8d9d6db5650cc9efb3b92297fc56a04184b31135f93502561f97",
+      "model": "claude-opus-5-5",
+      "durationMs": 11926,
+      "response": {
+        "sections": [
+          {
+            "id": "comparison",
+            "format": "table",
+            "reason": "두 대안의 월 이용료와 용량을 같은 기준으로 나란히 비교하고 정확한 값을 찾아보기 쉽도록 표로 작성했습니다. 서안의 월 이용료는 원문에 없어서 추정하지 않고 미제공으로 표시했습니다.",
+            "markdown": "**표 1. 대안별 월 이용료와 용량 비교**\n\n| 대안 | 월 이용료 | 용량 |\n|---|---|---|\n| 동안 | 11000원 | 20GB |\n| 서안 | 미제공 | 50GB |"
+          }
+        ],
+        "questions": [
+          "서안의 월 이용료는 얼마인가요? 값을 알려주시면 표 1의 '미제공' 칸에 채워 넣겠습니다."
+        ]
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "term-descriptions",
+      "iteration": 1,
+      "promptSha256": "24688083de2740255caedd2a853357bc5346d373a15a638be97f3a0a19e741db",
+      "model": "gpt-6.1-sol",
+      "durationMs": 14777,
+      "response": {
+        "sections": [
+          {
+            "id": "terms",
+            "format": "table",
+            "reason": "새 담당자가 상태별 뜻을 빠르게 조회할 수 있도록 표를 선택했습니다. 같은 속성을 열로 정렬하면 서술형보다 원하는 상태를 찾기 쉽습니다.",
+            "markdown": "표 1. 상태별 뜻\n\n| 상태 | 뜻 |\n| --- | --- |\n| 작성 중 | 아직 제출하지 않은 상태. |\n| 검토 중 | 제출했고 검토 결과를 기다리는 상태. |\n| 승인 완료 | 승인권자의 승인이 끝난 상태. |"
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "explicit-user-format",
+      "iteration": 1,
+      "promptSha256": "bd23a45ce259689af040f4d9b9acd010b6a63d3e1d2f14b7f673ac1243fd32f7",
+      "model": "claude-opus-5-5",
+      "durationMs": 4509,
+      "response": {
+        "sections": [
+          {
+            "id": "notice",
+            "format": "prose",
+            "reason": "요청하신 대로 불릿이나 표 없이 한 문단으로 썼습니다. 정보가 개방 시각 두 개와 이용 대상뿐이라 고객 안내문은 문장으로도 충분히 알아볼 수 있습니다.",
+            "markdown": "북관은 09:00에, 남관은 10:00에 개방하며, 두 건물 모두 예약자가 이용합니다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "compare-values",
+      "iteration": 2,
+      "promptSha256": "bbef28c29c90168e6bc56b9e52e447d6932a8fb5b8d45b3c2b428e7dcfbf4018",
+      "model": "claude-opus-5-5",
+      "durationMs": 5219,
+      "response": {
+        "sections": [
+          {
+            "id": "comparison",
+            "format": "table",
+            "reason": "세 대안의 월 이용료·용량·담당팀을 같은 기준으로 나란히 비교하고 정확한 값을 찾아보기 쉽도록 제목과 순서 표시를 붙인 표로 작성했습니다. 선택이나 계산은 넣지 않았습니다.",
+            "markdown": "**표 1. 대안별 월 이용료·용량·담당팀**\n\n| 대안 | 월 이용료 | 용량 | 담당팀 |\n| --- | --- | --- | --- |\n| 솔안 | 12000원 | 40GB | 동부팀 |\n| 달안 | 18000원 | 80GB | 서부팀 |\n| 별안 | 25000원 | 120GB | 남부팀 |"
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "decision-reasons",
+      "iteration": 2,
+      "promptSha256": "cc5fefc8719b67ef16a1f50a6592e6fe603cbb2516d3a92811683c6ab83bde76",
+      "model": "claude-opus-5-5",
+      "durationMs": 6208,
+      "response": {
+        "sections": [
+          {
+            "id": "decision",
+            "format": "prose",
+            "reason": "배경, 대안 제외 이유, 선택, 시작 조건과 중단 조건이 서로 연결됩니다. 승인권자가 판단의 근거와 한계를 이어서 검토할 수 있도록 서술형을 선택했습니다.",
+            "markdown": "접수 완료 화면을 닫은 뒤 확인 전화가 반복됐다. 화면 개선안은 화면 종료 후 별도 안내가 불가능하므로 단독 대안에서 제외했다. 이에 따라 문자 안내안을 선택했다. 다만 문자 안내는 수신 신청자에게만 제공된다.\n\n시범 운영은 운영책임자가 비용을 승인해야 시작한다. 잘못된 안내가 발생하면 신규 발송을 중단한다. 전화 감소 효과는 아직 확인되지 않았다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "mixed-report",
+      "iteration": 1,
+      "promptSha256": "55063f53aca728bde1482b67b4806f5a80f94fcdf572c59d5e554a50495c514c",
+      "model": "gpt-6.1-sol",
+      "durationMs": 15972,
+      "response": {
+        "sections": [
+          {
+            "id": "background",
+            "format": "prose",
+            "reason": "결정 배경과 검증 필요성을 연결해 이해해야 하므로 서술형이 적합합니다.",
+            "markdown": "수작업 확인에 시간이 걸려 자동 안내를 검토한다. 전체 적용 전에 시범 검증이 필요하다. 문의 감소 효과는 미확인이다."
+          },
+          {
+            "id": "options",
+            "format": "table",
+            "reason": "대안별 월 비용과 담당을 정확히 교차 비교할 수 있도록 표를 사용합니다.",
+            "markdown": "표 1. 대안별 월 비용과 담당\n\n| 대안 | 월 비용 | 담당 |\n| --- | --- | --- |\n| 해안 | 9000원 | 동부팀 |\n| 산안 | 15000원 | 서부팀 |"
+          },
+          {
+            "id": "preparation",
+            "format": "list",
+            "reason": "선행 작업을 완료한 뒤 다음 작업을 수행해야 하므로 번호 목록을 사용합니다.",
+            "markdown": "1. 시험 계정을 만든다.\n2. 시험 계정 생성 후 발송 결과를 검증한다.\n3. 발송 결과 검증 후 운영책임자에게 승인을 요청한다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "ordered-procedure",
+      "iteration": 2,
+      "promptSha256": "120be30344b63ed2fac0dcb077ad29672710aa7b69a9c2094b42f728a50ee11b",
+      "model": "claude-opus-5-5",
+      "durationMs": 6948,
+      "response": {
+        "sections": [
+          {
+            "id": "procedure",
+            "format": "list",
+            "reason": "단계마다 앞 단계를 마쳐야 다음 단계로 넘어갈 수 있으므로 번호 목록으로 순서와 선행 조건을 표시했습니다.",
+            "markdown": "1. 먼저 백업본을 생성한다.\n2. 백업본 생성 후 복원 검증을 수행한다.\n3. 복원 검증이 성공한 경우에만 운영책임자 승인을 요청한다.\n4. 운영책임자가 승인한 뒤에만 배포를 시작한다."
+          }
+        ],
+        "questions": [
+          "복원 검증이 실패하거나 운영책임자가 승인하지 않으면 어떻게 처리해야 하나요? 원문에 해당 내용이 없어 절차에 넣지 않았습니다."
+        ]
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "independent-checklist",
+      "iteration": 2,
+      "promptSha256": "46762ae101fbe0070b51125358ef2cb2d8fe2849d1dbd110c309f6999369cc7b",
+      "model": "claude-opus-5-5",
+      "durationMs": 6266,
+      "response": {
+        "sections": [
+          {
+            "id": "checklist",
+            "format": "list",
+            "reason": "진행자가 서로 독립된 준비 항목을 하나씩 확인하는 용도이고 항목 간 선행 관계가 없으므로 번호 없는 불릿 목록으로 작성했습니다.",
+            "markdown": "- 회의실 예약 확인\n- 접속 링크 확인\n- 안내문 배포 확인\n- 발표자료 준비 확인\n- 녹화 동의 확인"
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "missing-value",
+      "iteration": 1,
+      "promptSha256": "2183cacc83dc8d9d6db5650cc9efb3b92297fc56a04184b31135f93502561f97",
+      "model": "gpt-6.1-sol",
+      "durationMs": 12120,
+      "response": {
+        "sections": [
+          {
+            "id": "comparison",
+            "format": "table",
+            "reason": "대안별 월 이용료와 용량을 정확히 교차 비교할 수 있도록 표를 선택했습니다. 서술형보다 각 값을 쉽게 조회할 수 있습니다.",
+            "markdown": "표 1. 대안별 월 이용료와 용량 비교\n\n| 대안 | 월 이용료 | 용량 |\n| --- | --- | --- |\n| 동안 | 11000원 | 20GB |\n| 서안 | 미제공 | 50GB |"
+          }
+        ],
+        "questions": [
+          "서안의 월 이용료는 얼마인가요?"
+        ]
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "term-descriptions",
+      "iteration": 2,
+      "promptSha256": "24688083de2740255caedd2a853357bc5346d373a15a638be97f3a0a19e741db",
+      "model": "claude-opus-5-5",
+      "durationMs": 6841,
+      "response": {
+        "sections": [
+          {
+            "id": "terms",
+            "format": "table",
+            "reason": "새 담당자가 상태 이름으로 뜻을 빠르게 찾아보는 것이 목적이므로, 상태와 의미를 나란히 조회할 수 있는 표를 선택했습니다. 두 속성의 간단한 정보라 목록도 가능하지만, 상태가 늘어나도 같은 열에서 찾아보기 쉬운 표가 조회 목적에 더 적합합니다.",
+            "markdown": "**표 1. 상태별 의미**\n\n| 상태 | 의미 |\n| --- | --- |\n| 작성 중 | 아직 제출하지 않은 상태 |\n| 검토 중 | 제출했고 검토 결과를 기다리는 상태 |\n| 승인 완료 | 승인권자의 승인이 끝난 상태 |"
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "explicit-user-format",
+      "iteration": 1,
+      "promptSha256": "bd23a45ce259689af040f4d9b9acd010b6a63d3e1d2f14b7f673ac1243fd32f7",
+      "model": "gpt-6.1-sol",
+      "durationMs": 12168,
+      "response": {
+        "sections": [
+          {
+            "id": "notice",
+            "format": "prose",
+            "reason": "고객이 개방 시간과 이용 대상을 짧게 확인하도록, 사용자가 명시한 한 문단의 서술형을 적용했습니다.",
+            "markdown": "북관은 09:00에 개방하고, 남관은 10:00에 개방합니다. 두 건물 모두 예약자가 이용합니다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "mixed-report",
+      "iteration": 2,
+      "promptSha256": "55063f53aca728bde1482b67b4806f5a80f94fcdf572c59d5e554a50495c514c",
+      "model": "claude-opus-5-5",
+      "durationMs": 10230,
+      "response": {
+        "sections": [
+          {
+            "id": "background",
+            "format": "prose",
+            "reason": "결정 이유와 남은 불확실성을 이어서 이해할 수 있도록 서술형으로 작성했습니다.",
+            "markdown": "## 1. 배경\n\n수작업 확인에 시간이 걸려 자동 안내를 검토합니다. 다만 문의 감소 효과는 아직 확인되지 않았으므로, 전체 적용 전에 시범 검증이 필요합니다."
+          },
+          {
+            "id": "options",
+            "format": "table",
+            "reason": "두 대안의 월 비용과 담당 조직을 같은 기준에서 비교할 수 있도록 표로 작성했습니다.",
+            "markdown": "## 2. 대안 비교\n\n표 1. 대안별 월 비용과 담당 조직\n\n| 대안 | 월 비용 | 담당 |\n| --- | --- | --- |\n| 해안 | 9000원 | 동부팀 |\n| 산안 | 15000원 | 서부팀 |"
+          },
+          {
+            "id": "preparation",
+            "format": "list",
+            "reason": "앞 단계가 끝나야 다음 단계를 진행할 수 있어 번호 목록으로 작성했습니다.",
+            "markdown": "## 3. 준비 절차\n\n1. 시험 계정을 만듭니다.\n2. 시험 계정을 만든 후 발송 결과를 검증합니다.\n3. 발송 결과를 검증한 후 운영책임자에게 승인을 요청합니다."
+          }
+        ],
+        "questions": [
+          "문의 감소 효과를 확인할 시범 검증의 범위와 기간, 판단 기준이 정해졌나요?",
+          "두 대안 중 우선 검토 중인 대안이나 선택 기준이 있나요?"
+        ]
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "missing-value",
+      "iteration": 2,
+      "promptSha256": "2183cacc83dc8d9d6db5650cc9efb3b92297fc56a04184b31135f93502561f97",
+      "model": "claude-opus-5-5",
+      "durationMs": 5095,
+      "response": {
+        "sections": [
+          {
+            "id": "comparison",
+            "format": "table",
+            "reason": "두 대안의 월 이용료와 용량을 같은 기준으로 비교해야 하므로 표를 선택했습니다. 서안의 월 이용료는 추정하지 않고 미제공으로 표시했습니다.",
+            "markdown": "**표 1. 대안별 월 이용료와 용량 비교**\n\n| 대안 | 월 이용료 | 용량 |\n| --- | --- | --- |\n| 동안 | 11000원 | 20GB |\n| 서안 | 미제공 | 50GB |\n\n서안의 월 이용료는 제공되지 않아 추정하지 않고 미제공으로 표시했습니다. 확인되면 표에 반영합니다."
+          }
+        ],
+        "questions": [
+          "서안의 월 이용료는 얼마인가요?"
+        ]
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "compare-values",
+      "iteration": 2,
+      "promptSha256": "bbef28c29c90168e6bc56b9e52e447d6932a8fb5b8d45b3c2b428e7dcfbf4018",
+      "model": "gpt-6.1-sol",
+      "durationMs": 14075,
+      "response": {
+        "sections": [
+          {
+            "id": "comparison",
+            "format": "table",
+            "reason": "대안별 월 이용료·용량·담당팀을 교차 비교하고 정확한 값을 조회해야 하므로, 서술형이나 목록보다 표가 적합합니다.",
+            "markdown": "표 1. 대안별 월 이용료·용량·담당팀 비교\n\n| 대안 | 월 이용료 | 용량 | 담당팀 |\n| --- | --- | --- | --- |\n| 솔안 | 12000원 | 40GB | 동부팀 |\n| 달안 | 18000원 | 80GB | 서부팀 |\n| 별안 | 25000원 | 120GB | 남부팀 |"
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "claude",
+      "caseId": "explicit-user-format",
+      "iteration": 2,
+      "promptSha256": "bd23a45ce259689af040f4d9b9acd010b6a63d3e1d2f14b7f673ac1243fd32f7",
+      "model": "claude-opus-5-5",
+      "durationMs": 9172,
+      "response": {
+        "sections": [
+          {
+            "id": "notice",
+            "format": "prose",
+            "reason": "사용자가 불릿과 표 대신 한 문단의 문장으로 써 달라고 했으므로 이를 우선해 서술형으로 작성했습니다(FMT-USER). 항목이 두 건물의 개방 시각과 공통 이용 대상뿐이어서 한 문단으로도 정확한 값을 확인할 수 있습니다.",
+            "markdown": "북관은 09:00, 남관은 10:00에 개방하며, 두 건물 모두 예약자가 이용합니다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "decision-reasons",
+      "iteration": 2,
+      "promptSha256": "cc5fefc8719b67ef16a1f50a6592e6fe603cbb2516d3a92811683c6ab83bde76",
+      "model": "gpt-6.1-sol",
+      "durationMs": 14877,
+      "response": {
+        "sections": [
+          {
+            "id": "decision",
+            "format": "prose",
+            "reason": "승인권자가 선택 이유와 제공 범위, 운영 조건과 한계를 연결해 검토할 수 있도록 서술형을 선택했습니다. 항목별 목록이나 표보다 판단의 맥락을 설명하기에 적합합니다.",
+            "markdown": "접수 완료 화면을 닫은 뒤 확인 전화가 반복됐다. 화면 개선안은 화면 종료 후 별도 안내가 불가능해 단독 대안에서 제외했다. 문자 안내안을 선택했지만 수신 신청자에게만 제공한다.\n\n운영책임자가 비용을 승인해야 시범 운영을 시작한다. 잘못된 안내가 발생하면 신규 발송을 중단한다. 전화 감소 효과는 미확인이다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "ordered-procedure",
+      "iteration": 2,
+      "promptSha256": "120be30344b63ed2fac0dcb077ad29672710aa7b69a9c2094b42f728a50ee11b",
+      "model": "gpt-6.1-sol",
+      "durationMs": 11518,
+      "response": {
+        "sections": [
+          {
+            "id": "procedure",
+            "format": "list",
+            "reason": "담당자가 순서와 선행 조건을 확인하며 수행해야 하므로, 서술형이나 표보다 번호 목록이 적합합니다.",
+            "markdown": "1. 먼저 백업본을 생성한다.\n2. 백업본 생성 후 복원 검증을 수행한다.\n3. 복원 검증이 성공한 경우에만 운영책임자 승인을 요청한다.\n4. 운영책임자가 승인한 뒤에만 배포를 시작한다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "independent-checklist",
+      "iteration": 2,
+      "promptSha256": "46762ae101fbe0070b51125358ef2cb2d8fe2849d1dbd110c309f6999369cc7b",
+      "model": "gpt-6.1-sol",
+      "durationMs": 13464,
+      "response": {
+        "sections": [
+          {
+            "id": "checklist",
+            "format": "list",
+            "reason": "진행자가 독립된 준비 항목을 하나씩 확인하므로 불릿 목록이 적합합니다. 선행 관계가 없어 번호 목록은 필요하지 않으며, 표보다 간결하게 확인할 수 있습니다.",
+            "markdown": "- 회의실 예약 확인\n- 접속 링크 확인\n- 안내문 배포 확인\n- 발표자료 준비 확인\n- 녹화 동의 확인"
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "term-descriptions",
+      "iteration": 2,
+      "promptSha256": "24688083de2740255caedd2a853357bc5346d373a15a638be97f3a0a19e741db",
+      "model": "gpt-6.1-sol",
+      "durationMs": 13930,
+      "response": {
+        "sections": [
+          {
+            "id": "terms",
+            "format": "list",
+            "reason": "목록을 선택했습니다. 짧은 상태 설명을 빠르게 찾아보는 목적이므로 표의 열 구조 없이도 쉽게 조회할 수 있습니다.",
+            "markdown": "- **작성 중**: 아직 제출하지 않은 상태.\n- **검토 중**: 제출했고 검토 결과를 기다리는 상태.\n- **승인 완료**: 승인권자의 승인이 끝난 상태."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "mixed-report",
+      "iteration": 2,
+      "promptSha256": "55063f53aca728bde1482b67b4806f5a80f94fcdf572c59d5e554a50495c514c",
+      "model": "gpt-6.1-sol",
+      "durationMs": 15446,
+      "response": {
+        "sections": [
+          {
+            "id": "background",
+            "format": "prose",
+            "reason": "결정 배경과 검증 필요성을 연결해 이해하도록 서술형을 선택했습니다.",
+            "markdown": "수작업 확인에 시간이 걸려 자동 안내를 검토한다. 전체 적용 전에 시범 검증이 필요하다. 문의 감소 효과는 미확인이다."
+          },
+          {
+            "id": "options",
+            "format": "table",
+            "reason": "해안과 산안의 월 비용과 담당을 교차 비교하도록 표를 선택했습니다.",
+            "markdown": "표 1. 대안별 월 비용과 담당\n\n| 대안 | 월 비용 | 담당 |\n| --- | --- | --- |\n| 해안 | 9000원 | 동부팀 |\n| 산안 | 15000원 | 서부팀 |"
+          },
+          {
+            "id": "preparation",
+            "format": "list",
+            "reason": "각 단계의 선행 조건을 확인하며 실행하도록 번호 목록을 선택했습니다.",
+            "markdown": "1. 시험 계정을 만든다.\n2. 시험 계정 생성 후 발송 결과를 검증한다.\n3. 발송 결과 검증 후 운영책임자에게 승인을 요청한다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "missing-value",
+      "iteration": 2,
+      "promptSha256": "2183cacc83dc8d9d6db5650cc9efb3b92297fc56a04184b31135f93502561f97",
+      "model": "gpt-6.1-sol",
+      "durationMs": 14308,
+      "response": {
+        "sections": [
+          {
+            "id": "comparison",
+            "format": "table",
+            "reason": "대안별 월 이용료와 용량을 같은 열에서 비교할 수 있도록 표를 선택했습니다.",
+            "markdown": "표 1. 대안별 월 이용료와 용량\n\n| 대안 | 월 이용료 | 용량 |\n|---|---|---|\n| 동안 | 11000원 | 20GB |\n| 서안 | 미제공 | 50GB |"
+          }
+        ],
+        "questions": [
+          "서안의 월 이용료는 얼마인가요?"
+        ]
+      },
+      "toolCalls": []
+    },
+    {
+      "provider": "codex",
+      "caseId": "explicit-user-format",
+      "iteration": 2,
+      "promptSha256": "bd23a45ce259689af040f4d9b9acd010b6a63d3e1d2f14b7f673ac1243fd32f7",
+      "model": "gpt-6.1-sol",
+      "durationMs": 13603,
+      "response": {
+        "sections": [
+          {
+            "id": "notice",
+            "format": "prose",
+            "reason": "고객이 개방 시간과 이용 대상을 짧게 읽도록, 불릿이나 표 대신 한 문단으로 작성하라는 사용자 요청을 따랐습니다.",
+            "markdown": "북관은 09:00에 개방하고, 남관은 10:00에 개방합니다. 두 건물 모두 예약자가 이용합니다."
+          }
+        ],
+        "questions": []
+      },
+      "toolCalls": []
+    }
+  ]
+}
