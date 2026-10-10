@@ -58,7 +58,7 @@ export function lintBlocks(blocks:Block[],profileName:ProfileInput='recommended'
     mark(b.type==='table'?'MOIS-TABLE-CAPTION':'MOIS-FIGURE-CAPTION');
     const isAbove=prev&&(prev.sourceLine===undefined||b.sourceLine===undefined||prev.sourceLine<b.sourceLine);
     const upper=isAbove&&(prev.type==='paragraph'||prev.type==='heading')?caption(prev.text??'',kind):undefined;
-    const embedded=b.table?.caption?caption(b.table.caption,kind):undefined;
+    const embedded=b.table?.caption?.trim()?(caption(b.table.caption,kind)??{}):undefined;
     const c=upper??embedded;
     if(!c)add(b.type==='table'?'MOIS-TABLE-CAPTION':'MOIS-FIGURE-CAPTION',`${kind} 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.`,b,path);
     else {
