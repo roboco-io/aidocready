@@ -1,0 +1,48 @@
+{
+  "startedAt": "2026-10-10T11:19:44.415Z",
+  "finishedAt": "2026-10-10T11:19:58.590Z",
+  "authentication": {
+    "codex": {
+      "method": "subscription",
+      "source": "cli-login"
+    },
+    "claude": {
+      "method": "subscription",
+      "source": "cli-login"
+    }
+  },
+  "nodeVersion": "v26.10.0",
+  "sdkVersions": {
+    "@anthropic-ai/claude-agent-sdk": "0.3.296",
+    "@openai/codex-sdk": "0.162.1"
+  },
+  "completedRuns": 2,
+  "passedRuns": 2,
+  "failedRuns": 0,
+  "providers": [
+    {
+      "provider": "codex",
+      "runs": 1,
+      "passed": 1,
+      "models": [
+        "gpt-6.1-sol"
+      ]
+    },
+    {
+      "provider": "claude",
+      "runs": 1,
+      "passed": 1,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    }
+  ],
+  "codeHashes": {
+    "lib.mjs": "b65eb51e0359087a3cceb2e3c234afc9fd307b1a0b6422da6e928e404fb16f72",
+    "adapters.mjs": "b27d955f9e7fd4a963064e13931eb46be140ad8ea173d7cba653930e9c0a9635",
+    "auth.mjs": "29050e84a83f6a5029c8f5205a838ea5475622ca653e047e5f70a06f05cd3d93",
+    "run.mjs": "d4d20dbb1aa1731b78111e4ab593175c3f9d07baf8b1ca788c7d926b1103fd28",
+    "package-lock.json": "2053998cbb5fe8f78b0492db2c0f92fea1a67df8cf6e4acf776224fee496fbe1"
+  },
+  "scenario": "Existing subscription plus invalid dummy API keys. Codex provider/endpoint explicitly follow selected authentication; both SDKs selected subscription and passed."
+}
