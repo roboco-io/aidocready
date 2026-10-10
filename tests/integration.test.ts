@@ -1,0 +1,32 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp, writeFile, readFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { markdownToHwpx } from 'kordoc';
+import JSZip from 'jszip';
+import { lintFile } from '../src/input.js';
+const good='# 예산 보고서\n\n표 1. 사업 예산\n\n| 연도 | 예산 |\n| --- | --- |\n| 2025 | 10억 원 |\n| 2026 | 15억 원 |\n';
+async function fixture(run:(dir:string)=>Promise<void>) {const dir=await mkdtemp(join(tmpdir(),'aidocready-'));try{await run(dir);}finally{await rm(dir,{recursive:true,force:true});}}
+const cli=(...args:string[])=>spawnSync(process.execPath,['--import','tsx','src/cli.ts',...args],{encoding:'utf8'});
+test('real Kordoc HWPX roundtrip accepts upper caption without altering bytes',()=>fixture(async dir=>{const path=join(dir,'report.hwpx');const bytes=Buffer.from(await markdownToHwpx(good));await writeFile(path,bytes);const result=await lintFile(path);assert.equal(result.findings.length,0);assert.deepEqual(await readFile(path),bytes);}));
+test('real HWPX merged cells survive adapter and trigger review',()=>fixture(async dir=>{const path=join(dir,'merge.hwpx');await writeFile(path,Buffer.from(await markdownToHwpx('표 1. 예산\n\n<table><tr><td rowspan="2" colspan="2">예산</td><td>2025</td></tr><tr><td>10억 원</td></tr></table>')));const r=await lintFile(path);assert.ok(r.findings.some(f=>f.ruleId==='MOIS-MERGE-REVIEW'));}));
+test('JSON output includes findings and warning exit status',()=>fixture(async dir=>{const path=join(dir,'bad.md');await writeFile(path,'| 항목 | 값 |\n| --- | --- |\n| 예산 | 10억 원 |');const r=cli('lint',path,'--format','json','--fail-on','Warning');assert.equal(r.status,1,r.stderr);const json=JSON.parse(r.stdout);assert.equal(json.summary.Warning,1);assert.equal(json.file,path);}));
+test('clean Markdown CLI returns success',()=>fixture(async dir=>{const path=join(dir,'ok.md');await writeFile(path,good);const r=cli('lint',path);assert.equal(r.status,0,r.stderr);assert.match(r.stdout,/Error 0/);}));
+test('malformed HWPX is operational failure',()=>fixture(async dir=>{const path=join(dir,'broken.hwpx');await writeFile(path,'not a zip');const r=cli('lint',path,'--format','json');assert.equal(r.status,2);assert.equal(JSON.parse(r.stdout).error.code,'INPUT_ERROR');}));
+test('unknown option is rejected',()=>{const r=cli('lint','missing.md','--unknown');assert.equal(r.status,2);});
+test('missing file JSON is valid and exits 2',()=>{const r=cli('lint','missing.md','--format','json');assert.equal(r.status,2);assert.ok(JSON.parse(r.stdout).error);});
+test('real HWPX nested table structure reaches lint engine',()=>fixture(async dir=>{
+ const z=await JSZip.loadAsync(await markdownToHwpx('표 1. 예산\n\n| 항목 | 값 |\n| --- | --- |\n| 예산 | 10억 원 |'));
+ const xml=await z.file('Contents/section0.xml')!.async('string');
+ const innerZip=await JSZip.loadAsync(await markdownToHwpx('| 연도 | 예산 |\n| --- | --- |\n| 2025 | 10억 원 |'));
+ const innerXml=await innerZip.file('Contents/section0.xml')!.async('string');
+ const inner=innerXml.match(/<hp:tbl\b[\s\S]*?<\/hp:tbl>/)![0].replace('id="1001"','id="2001"');
+ z.file('Contents/section0.xml',xml.replace('</hp:subList>',`<hp:p id="9001" paraPrIDRef="0" styleIDRef="0"><hp:run charPrIDRef="0">${inner}</hp:run></hp:p></hp:subList>`));
+ const path=join(dir,'nested.hwpx');await writeFile(path,await z.generateAsync({type:'nodebuffer'}));
+ assert.ok((await lintFile(path)).findings.some(f=>f.ruleId==='MOIS-NESTED-TABLE'));
+}));
+test('incomplete coverage exits 1 even when no Error finding',()=>fixture(async dir=>{const path=join(dir,'html.md');await writeFile(path,'<table><tr><td>예산</td></tr></table>');const r=cli('lint',path,'--profile','mois-core','--format','json');assert.equal(r.status,1);assert.equal(JSON.parse(r.stdout).coverage.complete,false);}));
+test('invalid profile and output format are rejected',()=>{assert.equal(cli('lint','x.md','--profile','wrong').status,2);assert.equal(cli('lint','x.md','--format','wrong').status,2);});
+test('rules JSON separates official principle from implementation',()=>{const r=cli('rules','--format','json');assert.equal(r.status,0);const data=JSON.parse(r.stdout);assert.ok(data.rules.some((r:any)=>r.origin==='mois'&&r.source&&r.implementation));assert.ok(data.rules.some((r:any)=>r.origin==='aidocready'&&!r.source));});

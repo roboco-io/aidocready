@@ -1,0 +1,62 @@
+{
+  "name": "aidocready",
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "aidocready": "dist/cli.js"
+  },
+  "exports": "./dist/index.js",
+  "files": [
+    "dist",
+    "profiles",
+    "templates",
+    "skills",
+    "README.md",
+    "docs",
+    "examples"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/export-profiles.mjs",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "tsc --noEmit",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run check && npm test"
+  },
+  "dependencies": {
+    "kordoc": "4.21.9",
+    "remark-parse": "11.0.0",
+    "remark-gfm": "4.0.1",
+    "unified": "11.0.5"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "tsx": "^4.20.6",
+    "@types/node": "^20.19.0",
+    "jszip": "3.10.1"
+  },
+  "description": "Deterministic AI-friendly report linting for Markdown and HWPX, powered by Kordoc.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roboco-io/aidocready.git"
+  },
+  "homepage": "https://github.com/roboco-io/aidocready#readme",
+  "bugs": {
+    "url": "https://github.com/roboco-io/aidocready/issues"
+  },
+  "keywords": [
+    "ai",
+    "report",
+    "lint",
+    "markdown",
+    "hwpx",
+    "kordoc"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
