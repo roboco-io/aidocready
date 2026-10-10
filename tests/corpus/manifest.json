@@ -1,0 +1,15 @@
+{
+ "schemaVersion":1,
+ "datasetVersion":"2026-10-10.1",
+ "labelPolicy":"Human-reviewed expected diagnostics; no expected values generated from lint output. Rule accuracy on this small corpus is not official compliance accuracy.",
+ "cases":[
+  {"id":"mois-schedule","file":"mois-schedule.md","kind":"official-excerpt","source":"https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940","license":"공공누리 제1유형 출처표시","notes":"행정안전부 2026-08-24 PDF 3쪽 적용 후 일정 표의 일부를 Markdown으로 수동 전사. 셀 병합과 실제 레이아웃의 정답이 아니며, 제목 인식 회귀만 검사한다.","expected":[{"ruleId":"MOIS-CAPTION-NUMBER","path":"blocks[1]"}],"complete":true},
+  {"id":"numbered-table","file":"numbered-table.md","kind":"synthetic","expected":[],"complete":true},
+  {"id":"missing-caption","file":"missing-caption.md","kind":"synthetic","expected":[{"ruleId":"MOIS-TABLE-CAPTION","path":"blocks[0]"}],"complete":true},
+  {"id":"heading-jump","file":"heading-jump.md","kind":"synthetic","expected":[{"ruleId":"ADR-HEADING-LEVEL","path":"blocks[1]"}],"complete":true},
+  {"id":"paragraph-numbering","file":"paragraph-numbering.md","kind":"synthetic","expected":[{"ruleId":"MOIS-NUMBERING","path":"blocks[1]"}],"complete":true},
+  {"id":"unsupported-html","file":"unsupported-html.md","kind":"synthetic","expected":[{"ruleId":"ADR-INPUT-COVERAGE","path":"document"}],"complete":false},
+  {"id":"cell-heading","file":"cell-heading.json","kind":"synthetic-ir","expected":[{"ruleId":"ADR-HEADING-LEVEL","path":"blocks[3]"}],"complete":true},
+  {"id":"simple-merge","file":"simple-merge.json","kind":"synthetic-ir","expected":[],"complete":true}
+ ]
+}

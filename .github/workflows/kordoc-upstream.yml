@@ -138,6 +138,7 @@ jobs:
       - run: npm run check
       - run: npm test
       - run: npm run build
+      - run: npm run test:corpus
       - run: node dist/cli.js lint examples/report.md --fail-on Warning
       - run: node dist/cli.js lint examples/report.hwpx --fail-on Warning
   pull-request:
