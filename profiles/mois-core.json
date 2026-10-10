@@ -8,7 +8,7 @@
       "origin": "mois",
       "severity": "Warning",
       "principle": "표 상단에 제목 표기",
-      "implementation": "바로 앞 문단의 표 제목을 인식. 내장 캡션 위치는 별도 검토.",
+      "implementation": "바로 앞 문단의 표 제목과 꺾쇠/괄호로 감싼 제목을 인식. 내장 캡션 위치는 별도 검토.",
       "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
     },
     {
@@ -16,7 +16,7 @@
       "origin": "mois",
       "severity": "Warning",
       "principle": "그림 상단에 제목 표기",
-      "implementation": "바로 앞 문단의 그림 제목을 인식.",
+      "implementation": "바로 앞 문단의 그림 제목과 꺾쇠/괄호로 감싼 제목을 인식.",
       "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
     },
     {

@@ -19,6 +19,7 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm test
+      - run: npm run check:meta
       - run: npm run build
       - run: npm run test:corpus
       - run: node dist/cli.js lint examples/report.md --fail-on Warning

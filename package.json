@@ -24,7 +24,8 @@
     "check": "tsc --noEmit",
     "prepack": "npm run build",
     "prepublishOnly": "npm run check && npm test",
-    "test:corpus": "node scripts/check-corpus.mjs"
+    "test:corpus": "node scripts/check-corpus.mjs",
+    "check:meta": "tsc && node scripts/export-profiles.mjs --check"
   },
   "dependencies": {
     "kordoc": "4.21.9",

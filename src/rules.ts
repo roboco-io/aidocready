@@ -1,8 +1,8 @@
 import type { Rule, Profile } from './model.js';
 export const MOIS_SOURCE='https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940';
 export const rules: Rule[] = [
- {id:'MOIS-TABLE-CAPTION',origin:'mois',severity:'Warning',principle:'표 상단에 제목 표기',implementation:'바로 앞 문단의 표 제목을 인식. 내장 캡션 위치는 별도 검토.',source:MOIS_SOURCE},
- {id:'MOIS-FIGURE-CAPTION',origin:'mois',severity:'Warning',principle:'그림 상단에 제목 표기',implementation:'바로 앞 문단의 그림 제목을 인식.',source:MOIS_SOURCE},
+ {id:'MOIS-TABLE-CAPTION',origin:'mois',severity:'Warning',principle:'표 상단에 제목 표기',implementation:'바로 앞 문단의 표 제목과 꺾쇠/괄호로 감싼 제목을 인식. 내장 캡션 위치는 별도 검토.',source:MOIS_SOURCE},
+ {id:'MOIS-FIGURE-CAPTION',origin:'mois',severity:'Warning',principle:'그림 상단에 제목 표기',implementation:'바로 앞 문단의 그림 제목과 꺾쇠/괄호로 감싼 제목을 인식.',source:MOIS_SOURCE},
  {id:'MOIS-CAPTION-NUMBER',origin:'mois',severity:'Warning',principle:'번호 등으로 표·그림 순서 표시',implementation:'표/그림 + 양의 정수 표기를 인식. 다른 순서 표시는 사람이 검토.',source:MOIS_SOURCE},
  {id:'MOIS-MERGE-REVIEW',origin:'mois',severity:'Suggestion',principle:'셀은 단순하게 병합',implementation:'행·열 양방향 병합을 검토 후보로 표시. 공식 복잡도 판정이나 병합 금지 아님.',source:MOIS_SOURCE},
  {id:'MOIS-NESTED-TABLE',origin:'mois',severity:'Warning',principle:'시범운영에서 표 안의 표 등 복잡한 양식 지양',implementation:'셀 및 캡션 내부의 표를 탐색. 최신 핵심 원칙과 시범운영 설명을 구분.',source:MOIS_SOURCE},
