@@ -9,3 +9,7 @@ ROBOCO의 https://roboco.io/posts/cognitive-debt/ 중 서술형 문서가 결정
 두 파일을 공개 npm aidocready@0.2.0 CLI에서 --fail-on Warning으로 검사했다. 둘 다 진단 0개, coverage.complete true다. 이는 정적 구조 검사 결과이며 이해도·판단력·기억력의 개선을 측정한 것이 아니다. 원문과 개편 계획의 타당성은 별도로 검토해야 한다.
 
 파일은 site/assets/writing/에 있다. source-facts.json은 공통 가상 사실 목록, provenance.json은 작성 방식·출처 역할·버전·SHA-256을 기록한다. 기존 공식 PDF source.pdf는 참고 자료로 보존하며 이번 가상 사실의 출처로 표시하지 않는다. 이전 site/assets/prose/ 재구성 예시는 과거 공개 다운로드 보존용이다.
+
+## 표와 열거형의 비교
+
+서술형 비교 다음에는 발송 실패 대응 확인 항목을 표와 열거형으로 보여준다. assets/table-list/items.json의 동일한 여섯 항목에서 구성했다. 기존 source-facts.json의 F07/F08/F12만 발췌했고 새로운 순서나 운영 조건을 부여하지 않았다. 표에는 상단 제목을 붙였으며 두 작성본 모두 공개 CLI 진단 0개다. 목록 선택 이유는 행·열의 교차 비교가 필요 없는 확인 항목이라는 정보 성격에 있다. 모든 표가 나쁘거나 모든 글을 서술형으로 바꿔야 한다고 주장하지 않는다.

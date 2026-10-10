@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "profile": "recommended",
+  "profileOrigin": "builtin",
+  "findings": [],
+  "summary": {
+    "Error": 0,
+    "Warning": 0,
+    "Suggestion": 0
+  },
+  "checks": [
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "status": "checked",
+      "reasons": []
+    },
+    {
+      "ruleId": "MOIS-FIGURE-CAPTION",
+      "status": "not-applicable",
+      "reasons": []
+    },
+    {
+      "ruleId": "MOIS-CAPTION-NUMBER",
+      "status": "checked",
+      "reasons": []
+    },
+    {
+      "ruleId": "MOIS-MERGE-REVIEW",
+      "status": "checked",
+      "reasons": []
+    },
+    {
+      "ruleId": "MOIS-NESTED-TABLE",
+      "status": "checked",
+      "reasons": []
+    },
+    {
+      "ruleId": "MOIS-NUMBERING",
+      "status": "not-applicable",
+      "reasons": []
+    },
+    {
+      "ruleId": "ADR-HEADING-LEVEL",
+      "status": "checked",
+      "reasons": []
+    },
+    {
+      "ruleId": "ADR-NUMBER-SEQUENCE",
+      "status": "not-applicable",
+      "reasons": []
+    },
+    {
+      "ruleId": "ADR-CAPTION-SEQUENCE",
+      "status": "checked",
+      "reasons": []
+    },
+    {
+      "ruleId": "ADR-CAPTION-POSITION",
+      "status": "not-applicable",
+      "reasons": []
+    },
+    {
+      "ruleId": "ADR-INPUT-COVERAGE",
+      "status": "checked",
+      "reasons": []
+    }
+  ],
+  "coverage": {
+    "complete": true,
+    "limitations": [],
+    "manualReview": [
+      "문장 명확성 및 서술식 작성",
+      "불필요한 시각적 꾸미기",
+      "단순 병합 여부의 최종 판단",
+      "원문 사실·수치·의미 보존",
+      "캡션 위치 및 비표준 순서 표시"
+    ]
+  },
+  "parserWarnings": [],
+  "file": "table.md",
+  "inputFormat": "markdown"
+}
