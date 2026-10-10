@@ -13,3 +13,5 @@ FAQ 답변의 정본은 faq.json입니다. HTML과 다운로드 txt는 이 데�
 제품 변경 시 AGENTS.md와 [웹사이트 유지 규칙](../docs/website-maintenance.md)을 따른다. docs/site-impact.json의 검토 기록과 npm 공개 릴리스 검증을 통과한 변경만 Pages에 배포한다.
 
 실제 변환 사례는 conversion.html과 assets/conversion/에 있습니다. 재현·갱신 절차는 [docs/conversion-case.md](../docs/conversion-case.md)를 따릅니다.
+
+테마는 assets/theme.js가 스타일시트 로드 전에 적용합니다. 기본값은 기기의 prefers-color-scheme이며, 직접 선택은 aidocready-theme 키로 저장합니다. 색상은 style.css의 공통 변수에서 관리하고 원본 문서 이미지·PDF는 변형하지 않습니다. 인쇄는 라이트 색상을 사용합니다.
