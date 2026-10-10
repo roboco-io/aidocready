@@ -47,3 +47,7 @@ Markdown의 원시 HTML 구조는 검사하지 않습니다. 누락을 숨기지
 [SKILL.md](skills/aidocready/SKILL.md), [AGENTS.md 템플릿](templates/AGENTS.md), [CLAUDE.md 템플릿](templates/CLAUDE.md)을 제공합니다. 스킬 설치와 상시 지침 적용은 자동 수행하지 않습니다. 기존 상시 지침에는 관련 부분만 합치세요. 작성 → lint(JSON) → 출처 비교 → 수정 → 재검사의 루프를 사용합니다.
 
 공식 근거와 자체 해석은 [규칙 근거](docs/rule-provenance.md)를 확인하세요.
+
+## Kordoc 업스트림 대응
+
+매주 월요일 09:00 KST에 안정 릴리스를 확인합니다. 새 버전이 있으면 pi와 DeepSeek Flash가 호환성을 점검·수정하고, Node.js 20·22·24 검사 후 draft PR을 생성합니다. [운영·수동 테스트 안내](docs/upstream-maintenance.md)를 확인하세요.

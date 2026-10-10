@@ -1,0 +1,183 @@
+name: Kordoc upstream
+on:
+  schedule:
+    # Monday 09:00 Asia/Seoul (GitHub schedules are UTC).
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+    inputs:
+      audit_only:
+        description: 'Run pi audit even without a newer release (no edits or PR)'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: kordoc-upstream
+  cancel-in-progress: false
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      run_agent: ${{ steps.detect.outputs.runAgent }}
+      changed: ${{ steps.detect.outputs.changed }}
+      current: ${{ steps.detect.outputs.current }}
+      target: ${{ steps.detect.outputs.target }}
+      audit_only: ${{ steps.detect.outputs.auditOnly }}
+      base_sha: ${{ steps.base.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - id: base
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - id: detect
+        env:
+          AUDIT_ONLY: ${{ inputs.audit_only || false }}
+          PLAN_PATH: ${{ runner.temp }}/upstream-plan.json
+        run: node .github/scripts/kordoc-upstream.mjs detect
+      - uses: actions/upload-artifact@v4
+        with:
+          name: upstream-plan
+          path: ${{ runner.temp }}/upstream-plan.json
+          retention-days: 7
+  adapt:
+    needs: detect
+    if: needs.detect.outputs.run_agent == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PI_OFFLINE: '1'
+      PI_TELEMETRY: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.detect.outputs.base_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/download-artifact@v4
+        with:
+          name: upstream-plan
+          path: ${{ runner.temp }}
+      - name: Set isolated runtime paths
+        run: |
+          printf 'PLAN_PATH=%s/upstream-plan.json\nPROMPT_PATH=%s/upstream-prompt.txt\nPI_CODING_AGENT_DIR=%s/pi-agent\n' "$RUNNER_TEMP" "$RUNNER_TEMP" "$RUNNER_TEMP" >> "$GITHUB_ENV"
+      - name: Prepare trusted maintenance tools
+        run: |
+          mkdir -p "$RUNNER_TEMP/upstream-tools" "$PI_CODING_AGENT_DIR"
+          cp .github/scripts/*.mjs "$RUNNER_TEMP/upstream-tools/"
+          cp .github/pi/models.json "$PI_CODING_AGENT_DIR/models.json"
+          node "$RUNNER_TEMP/upstream-tools/kordoc-upstream.mjs" prompt
+      - run: npm ci
+      - name: Install stable Kordoc update
+        if: needs.detect.outputs.changed == 'true'
+        env:
+          KORDOC_TARGET: ${{ needs.detect.outputs.target }}
+        run: npm install --save-exact --ignore-scripts "kordoc@$KORDOC_TARGET"
+      - name: Install pinned pi CLI
+        run: npm install --prefix "$RUNNER_TEMP/pi-cli" --ignore-scripts --no-audit --no-fund --save-exact @earendil-works/pi-coding-agent@1.1.0
+      - name: Adapt with pi and DeepSeek Flash
+        timeout-minutes: 20
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets[vars.KORDOC_DEEPSEEK_SECRET || 'DEEPSEEK_API_KEY'] }}
+        run: |
+          if [ -z "$DEEPSEEK_API_KEY" ]; then
+            echo 'Missing DeepSeek Actions secret. Set DEEPSEEK_API_KEY or KORDOC_DEEPSEEK_SECRET.' >&2
+            exit 1
+          fi
+          "$RUNNER_TEMP/pi-cli/node_modules/.bin/pi" --version
+          "$RUNNER_TEMP/pi-cli/node_modules/.bin/pi" --provider deepseek --model deepseek-flash --thinking high --print --mode json --no-session --no-extensions --no-mcp --no-skills --no-prompt-templates --no-context-files --no-approve "@$PROMPT_PATH" > "$RUNNER_TEMP/pi-events.jsonl"
+          node "$RUNNER_TEMP/upstream-tools/pi-result.mjs"
+      - name: Verify change scope
+        run: node "$RUNNER_TEMP/upstream-tools/kordoc-upstream.mjs" validate
+      - name: Prepare tested patch
+        run: |
+          git add -N src tests docs profiles README.md package.json package-lock.json
+          mkdir -p "$RUNNER_TEMP/upstream-result"
+          git diff --binary HEAD > "$RUNNER_TEMP/upstream-result/changes.patch"
+          cp "$PLAN_PATH" "$RUNNER_TEMP/upstream-result/upstream-plan.json"
+          cp "$RUNNER_TEMP/pi-summary.md" "$RUNNER_TEMP/upstream-result/pi-summary.md"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: upstream-result
+          path: ${{ runner.temp }}/upstream-result/
+          retention-days: 7
+  verify:
+    needs: [detect, adapt]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.detect.outputs.base_sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: upstream-result
+          path: ${{ runner.temp }}/upstream-result
+      - name: Apply candidate patch
+        run: |
+          if [ -s "$RUNNER_TEMP/upstream-result/changes.patch" ]; then
+            git apply "$RUNNER_TEMP/upstream-result/changes.patch"
+          fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+      - run: node dist/cli.js lint examples/report.md --fail-on Warning
+      - run: node dist/cli.js lint examples/report.hwpx --fail-on Warning
+  pull-request:
+    needs: [detect, adapt, verify]
+    if: needs.detect.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/download-artifact@v4
+        with:
+          name: upstream-result
+          path: ${{ runner.temp }}/upstream-result
+      - name: Apply verified patch
+        env:
+          VERIFIED_BASE: ${{ needs.detect.outputs.base_sha }}
+        run: |
+          if [ "$(git rev-parse HEAD)" != "$VERIFIED_BASE" ]; then
+            echo 'main changed while testing; rerun against current main.' >&2
+            exit 1
+          fi
+          git apply "$RUNNER_TEMP/upstream-result/changes.patch"
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/kordoc-${{ needs.detect.outputs.target }}
+          base: main
+          commit-message: 'chore: adapt to Kordoc ${{ needs.detect.outputs.target }}'
+          title: 'chore: adapt to Kordoc ${{ needs.detect.outputs.target }}'
+          body: |
+            Weekly upstream maintenance with pi 1.1.0 and DeepSeek Flash.
+
+            Kordoc: ${{ needs.detect.outputs.current }} → ${{ needs.detect.outputs.target }}
+            Upstream: https://github.com/chrisryugj/kordoc/releases/tag/v${{ needs.detect.outputs.target }}
+            Validation: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Typecheck, full tests, build and Markdown/HWPX CLI checks passed on Node.js 20, 22 and 24.
+            See the workflow artifact for pi's compatibility summary. Merge and npm publishing remain manual.
+          draft: true
