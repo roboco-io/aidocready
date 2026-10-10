@@ -1,11 +1,11 @@
 {
-  "status": "pending-release",
+  "status": "updated",
   "publicVersion": "0.2.0",
   "areas": [
+    "landing",
     "manual",
     "faq",
     "press"
   ],
-  "draftPath": "docs/site-drafts/format-policy.md",
-  "summary": "작업 중인 SKILL에 형식 선택 정책을 명시하고 Codex/Claude SDK 실측 평가를 추가합니다. 공개 npm 릴리스 전이므로 사이트에는 초안으로 관리합니다."
+  "summary": "SNS 공유용 썸네일과 모든 공개 페이지의 Open Graph·Twitter Card 메타데이터를 추가합니다. 이미지 경로·실제 크기를 빌드에서 검증합니다. 제품 버전과 미출시 형식 선택 정책 초안은 유지합니다."
 }
