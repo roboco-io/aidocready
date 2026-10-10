@@ -34,7 +34,7 @@ npm test
 npm run check
 ```
 
-로컬 개발 중에는 빌드한 `node dist/cli.js` 명령으로 실행합니다. 아래 개선 기능은 GitHub 소스를 빌드한 개발본 기준이며, 기존 npm 0.1.0에는 아직 반영되지 않았습니다.
+로컬 개발 중에는 빌드한 `node dist/cli.js` 명령으로 실행합니다. 아래 개선 기능은 GitHub 소스를 빌드한 0.2.0 개발본 기준이며, 기존 npm 0.1.0에는 아직 반영되지 않았습니다.
 
 ```sh
 node dist/cli.js lint reports/ --format json --output result.json
