@@ -1,0 +1,51 @@
+{
+  "version": "0.2.0",
+  "executedAt": "2026-10-10",
+  "method": "Codex applies published aidocready SKILL.md; editorial rewrite followed by CLI lint; not automatic CLI conversion",
+  "sourceMarkdownSha256": "d1a1538e29303a3153e19fa70d45e1d408ceb7116c7df17987c2a31a76ca00c1",
+  "skillSha256": "0f7ddf0781d6cf8e914986031c6e3b7810cc1f5840b4100e7b62257b3bc59a70",
+  "examples": [
+    {
+      "id": "table",
+      "sourceLines": [
+        8,
+        17
+      ],
+      "sourceEvidence": "Original HWPX preview confirms the shared workplace cell covers all three fields. Ditto values are expanded only from that merge.",
+      "checks": [
+        "3개 직위, 총 3명 유지",
+        "각 분야의 전문임기제 가급·1명·임용일 ~ ‘26.3.31. 유지",
+        "병합된 문화체육관광부 종무실·세종시 근무를 각 분야에 연결",
+        "연장 가능 조건의 근무실적·행안부 협의·관련 법령 유지"
+      ],
+      "limits": "원문 날짜 표기를 유지했습니다. 지원 일정이나 기간 해석을 추가하지 않았습니다.",
+      "artifacts": {
+        "table-before.md": "4fe857d99c6b363467f26a96a610c60ee3d3a0de8ce3b5e662cac7d094d4707b",
+        "table-before-lint.json": "dcded386b6c6841bc9674d4d0fe035983d24b15ee542decb0558c7db62cd58ca",
+        "table-after.md": "e95026a4c2cfe00cdf888f14fe55e9d20d10fdbb4a4180559ccbd695c6a909de",
+        "table-after-lint.json": "d4541e35e4fda0376ffe4726eb3bd33b16d3dcb2c0d55776470b25036f6d0b32"
+      }
+    },
+    {
+      "id": "list",
+      "sourceLines": [
+        22,
+        24
+      ],
+      "sourceEvidence": "Five enumerated duties from the 종무(불교) row; before is a text excerpt of that cell, not unedited converter output.",
+      "checks": [
+        "담당 분야와 직급을 실제 표의 주체로 명시",
+        "종무업무 보좌, 현안 파악, 자료 수집․분석 유지",
+        "통계자료 구축, 연구과제·정책 아이디어 발굴․수행 유지",
+        "불교계 네트워크 구축과 국내외 사례조사 분석 등 유지"
+      ],
+      "limits": "담당 업무의 의미를 대조했으며 실사용 검색·추론 성능은 측정하지 않았습니다.",
+      "artifacts": {
+        "list-before.md": "9f0a0712bb02bdb4024471a23c85254f371e31e5f361e65210013c4534dcdcbc",
+        "list-before-lint.json": "24da801b0dbcd666b7b6362bb3b49aa50c7b91582d5870b0f1d97a9a85d9f61d",
+        "list-after.md": "7a53fd2b22e749b0b60954cbe2c69634e3bd9d5a16597d69629d4f53dbd15f86",
+        "list-after-lint.json": "1b3b39b5b3862ffa7e8690b9fac89b460b15e4dca4b9b92cc0594ac1f621a0b3"
+      }
+    }
+  ]
+}

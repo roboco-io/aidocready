@@ -1,3 +1,4 @@
+import {validateProseExample} from './prose-example-lib.mjs';
 import {createHash} from 'node:crypto';
 import {renderConversionMarkdown,validateConversionCase,selectConversionExample} from './conversion-case-lib.mjs';
 import {execFileSync} from 'node:child_process';
@@ -39,6 +40,25 @@ tokens.CASE_SELECTED=selectedCases.map(c=>{
  const diagnoses=example.findings.map(f=>`<div class="selected-diagnostic"><b>${esc(f.severity)} · ${esc(f.ruleId)} · ${f.location.line}번째 줄</b><p>${esc(f.message)}</p></div>`).join('');
  return `<section class="selected-case" id="${esc(c.id)}"><h2>${esc(c.title)}</h2><p>${esc(c.description)}</p><div class="selected-comparison"><article><h3>원본 해당 부분</h3><a href="assets/conversion/${esc(c.id)}.png"><img src="assets/conversion/${esc(c.id)}.png" alt="${esc(c.title)}의 원본 표 발췌" loading="lazy"></a><p class="micro">참고 PDF ${c.pdfPage}번째 페이지에서 발췌 · 이미지를 누르면 크게 볼 수 있습니다.</p></article><article><h3>실제 자동 변환 결과</h3><div class="selected-markdown">${renderConversionMarkdown(example.markdown)}</div><details class="raw-output"><summary>Markdown 원문 보기 · ${c.startLine}–${c.endLine}번째 줄</summary><pre>${esc(example.markdown)}</pre></details></article></div><div class="selected-review"><h3>검사 결과와 사람이 확인할 부분</h3>${diagnoses||'<p>이 발췌 구간의 정적 진단: 없음</p>'}${example.limitations.length?'<p class="micro">이 구간에 HTML 구조 미지원 안내가 있습니다. 전체 검사에서 해당 구조는 검증하지 못했습니다.</p>':''}<p>${esc(c.review)}</p></div><a href="conversion-full.html#findings">전체 결과에서 진단과 검사 한계 확인</a></section>`;
 }).join('');
+const proseRoot=join(source,'assets','prose');
+const proseMeta=JSON.parse(await readFile(join(proseRoot,'provenance.json'),'utf8'));
+if(proseMeta.version!==product.version||proseMeta.sourceMarkdownSha256!==hash(caseMarkdown)||proseMeta.skillSha256!==hash(releaseFile('skills/aidocready/SKILL.md')))throw new Error('Prose example release, source or skill mismatch');
+for(const example of proseMeta.examples){
+ const texts={};const reports={};
+ for(const phase of ['before','after']){
+  for(const suffix of ['.md','-lint.json']){
+   const file=example.id+'-'+phase+suffix;const content=await readFile(join(proseRoot,file),'utf8');
+   if(hash(content)!==example.artifacts[file])throw new Error('Prose example artifact hash mismatch: '+file);
+   if(suffix==='.md')texts[phase]=content;else reports[phase]=JSON.parse(content);
+  }
+ }
+ validateProseExample(example,texts.before,texts.after,caseMarkdown);
+ for(const report of Object.values(reports))for(const severity of ['Error','Warning','Suggestion'])if(report.findings.filter(f=>f.severity===severity).length!==report.summary[severity])throw new Error('Prose report summary mismatch');
+ const key=example.id.toUpperCase();
+ tokens['PROSE_'+key+'_BEFORE']=renderConversionMarkdown(texts.before);
+ tokens['PROSE_'+key+'_AFTER']=renderConversionMarkdown(example.id==='table'?texts.after.split(/\n\s*\n/).find(p=>p.startsWith('종무(천주교) 분야')):texts.after);
+ tokens['PROSE_'+key+'_REPORT']=`<p class="prose-check">구조 검사: 재구성 전 Warning ${reports.before.summary.Warning}개 → 재구성 후 Warning ${reports.after.summary.Warning}개</p><p class="micro">정적 입력 검사 범위(coverage.complete): ${reports.before.coverage.complete} → ${reports.after.coverage.complete}. 사실 보존이나 AI 이해도를 판정한 결과가 아닙니다.</p>`;
+}
 const replace=s=>s.replace(/\{\{([A-Z_]+)\}\}/g,(m,key)=>key in tokens?String(tokens[key]):m);
 const pages={'conversion-full.html':{title:'전체 변환·검사 결과 — AI Doc Ready',description:'공개 샘플의 전체 Markdown, 원본 PDF, 진단과 검사 한계 확인.'},'conversion.html':{title:'실제 문서 변환·검사 비교 — AI Doc Ready',description:'복잡한 표 세 사례의 원본, 실제 자동 변환과 검사 한계를 비교하세요.'},'index.html':{title:'AI Doc Ready — 보고서의 구조를 점검하세요',description:'Markdown·HWPX 보고서를 로컬에서 검사하는 오픈소스 CLI. 사용 매뉴얼, 제품 FAQ와 보도자료.'},'manual.html':{title:'사용 매뉴얼 — AI Doc Ready',description:`AI Doc Ready ${product.version} 설치, 문서 검사, JSON, 프로파일, 에이전트 연결과 CI 사용 방법.`},'faq.html':{title:'제품 FAQ — AI Doc Ready',description:'고객의 질문에서 출발하는 AI Doc Ready PR/FAQ. 지원 범위, 가격, 검증 방법과 제품 전략.'},'press-release.html':{title:`보도자료 — AI Doc Ready ${product.version} 공개`,description:`Markdown·HWPX 보고서의 AI 친화적 구조를 로컬에서 점검하는 AI Doc Ready ${product.version} 제품 보도자료.`}};
 const logo='<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 4h21l9 9v30H9z" fill="#225bd6"/><path d="M29 5v10h9" fill="none" stroke="#adc7ff" stroke-width="3"/><path d="m17 27 6 6 11-13" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>';

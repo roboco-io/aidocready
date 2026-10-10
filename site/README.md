@@ -17,3 +17,5 @@ FAQ 답변의 정본은 faq.json입니다. HTML과 다운로드 txt는 이 데�
 테마는 assets/theme.js가 스타일시트 로드 전에 적용합니다. 기본값은 기기의 prefers-color-scheme이며, 직접 선택은 aidocready-theme 키로 저장합니다. 색상은 style.css의 공통 변수에서 관리하고 원본 문서 이미지·PDF는 변형하지 않습니다. 인쇄는 라이트 색상을 사용합니다.
 
 선별 사례는 conversion.html, 전체 결과는 conversion-full.html입니다. assets/conversion/selected-cases.json의 줄 범위에 해당하는 실제 결과만 발췌하며, 관련 진단을 같은 범위로 필터링합니다.
+
+소개 페이지의 서술형 예시는 공개 SKILL을 적용한 Codex 작성과 실제 CLI 검사 결과이며 CLI 자동 변환으로 표시하지 않습니다. [작성·검증 기록](../docs/prose-examples.md)을 참고하세요.

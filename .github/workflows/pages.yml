@@ -19,6 +19,7 @@ on:
       - 'scripts/build-site.mjs'
       - 'scripts/site-lib.mjs'
       - 'scripts/conversion-case-lib.mjs'
+      - 'scripts/prose-example-lib.mjs'
       - 'tests/site.test.ts'
       - 'examples/**'
       - 'skills/**'

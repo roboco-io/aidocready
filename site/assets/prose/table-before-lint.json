@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "profile": "recommended",
+  "profileOrigin": "builtin",
+  "findings": [
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 1 | 임용예정인원 (3개 직위, 총 3명) |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[0]",
+        "line": 1
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 임용예정직급(분야) | 선발예정인원 | 채용기간 | 근무예정부서(근무지) |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[1]",
+        "line": 4
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "ADR-INPUT-COVERAGE",
+      "origin": "aidocready",
+      "severity": "Warning",
+      "message": "입력의 일부 구조를 검사하지 못했습니다. coverage.limitations를 확인하세요.",
+      "excerpt": "| 1 | 임용예정인원 (3개 직위, 총 3명) |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#adr-input-coverage",
+      "location": {
+        "path": "document",
+        "line": 1
+      }
+    }
+  ],
+  "summary": {
+    "Error": 0,
+    "Warning": 3,
+    "Suggestion": 0
+  },
+  "checks": [
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "MOIS-FIGURE-CAPTION",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "MOIS-CAPTION-NUMBER",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "MOIS-MERGE-REVIEW",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "MOIS-NESTED-TABLE",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "MOIS-NUMBERING",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "ADR-HEADING-LEVEL",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "ADR-NUMBER-SEQUENCE",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "ADR-CAPTION-SEQUENCE",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "ADR-CAPTION-POSITION",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "ADR-INPUT-COVERAGE",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    }
+  ],
+  "coverage": {
+    "complete": false,
+    "limitations": [
+      "line 6: HTML 구조는 정적 검사하지 않습니다.",
+      "line 6: HTML 구조는 정적 검사하지 않습니다.",
+      "line 7: HTML 구조는 정적 검사하지 않습니다.",
+      "line 8: HTML 구조는 정적 검사하지 않습니다."
+    ],
+    "manualReview": [
+      "문장 명확성 및 서술식 작성",
+      "불필요한 시각적 꾸미기",
+      "단순 병합 여부의 최종 판단",
+      "원문 사실·수치·의미 보존",
+      "캡션 위치 및 비표준 순서 표시"
+    ]
+  },
+  "parserWarnings": [],
+  "file": "table-before.md",
+  "inputFormat": "markdown"
+}
