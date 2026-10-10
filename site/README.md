@@ -11,3 +11,5 @@ FAQ 답변의 정본은 faq.json입니다. HTML과 다운로드 txt는 이 데�
 2026-10-10 브라우저 QA: 데스크톱·390px 모바일 4페이지, 예시 전환, 명령 복사, FAQ 펼치기/접기, 인쇄 호출, 모바일 메뉴, 다운로드와 JavaScript 오류 없음 확인.
 
 제품 변경 시 AGENTS.md와 [웹사이트 유지 규칙](../docs/website-maintenance.md)을 따른다. docs/site-impact.json의 검토 기록과 npm 공개 릴리스 검증을 통과한 변경만 Pages에 배포한다.
+
+실제 변환 사례는 conversion.html과 assets/conversion/에 있습니다. 재현·갱신 절차는 [docs/conversion-case.md](../docs/conversion-case.md)를 따릅니다.

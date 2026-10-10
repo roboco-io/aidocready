@@ -1,7 +1,7 @@
 import {isDeepStrictEqual} from 'node:util';
 export const siteAreas=['landing','manual','faq','press'];
 const packageFields=['name','description','version','engines','dependencies','optionalDependencies','peerDependencies','bin','exports','main','module','types','files','license','homepage'];
-const areaPaths={landing:['site/index.html'],manual:['site/manual.html'],faq:['site/faq.html','site/faq.json'],press:['site/press-release.html']};
+const areaPaths={landing:['site/index.html','site/conversion.html'],manual:['site/manual.html'],faq:['site/faq.html','site/faq.json'],press:['site/press-release.html']};
 export function checkSiteImpact({paths,before,after,review,publicVersion}){
  const packageChanged=paths.includes('package.json')&&packageFields.some(key=>!isDeepStrictEqual(before?.[key],after?.[key]));
  const sourceChanged=paths.some(p=>/^(src\/|profiles\/|skills\/|templates\/|examples\/)/.test(p)||['README.md','CHANGELOG.md','docs/rules.md','docs/rule-provenance.md','docs/offline-usage.md'].includes(p));

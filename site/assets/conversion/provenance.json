@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "executedAt": "2026-10-10",
+  "converterRepo": "https://github.com/roboco-io/hwp2md",
+  "converterRef": "2b6a230827a437545ce1a20468b20747869a2982",
+  "sourcePath": "testdata/한글 테스트.hwpx",
+  "sourceOrigin": "https://www.korean-culture.org/operT2st/view.do?seq=1047514",
+  "mode": "native, Stage 1 only; no LLM/API",
+  "sourceSha256": "1fee8835b909d72cb9adbfd04ae8f3161704108de2568841c5266be8fa180124",
+  "markdownSha256": "d1a1538e29303a3153e19fa70d45e1d408ceb7116c7df17987c2a31a76ca00c1",
+  "reportSha256": "0f6bb6e0e95d82c555a9208f67842818623ce847cdb8824b5a938ea26b82f2c4"
+}

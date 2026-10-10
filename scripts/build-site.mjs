@@ -1,3 +1,5 @@
+import {createHash} from 'node:crypto';
+import {renderConversionMarkdown,validateConversionCase} from './conversion-case-lib.mjs';
 import {execFileSync} from 'node:child_process';
 import {readFile,writeFile,mkdir,rm,cp,copyFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
@@ -15,10 +17,26 @@ const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll
 if(!/^\d{4}-\d{2}-\d{2}$/.test(product.releaseDate))throw new Error('Invalid release date');
 const [year,month,day]=product.releaseDate.split('-').map(Number);
 const tokens={VERSION:product.version,REPO_URL:product.repoUrl,SITE_URL:product.siteUrl,TESTS:product.tests,CORPUS_CASES:product.corpusCases,RELEASE_DATE:`${year}년 ${month}월 ${day}일`};
+const caseRoot=join(source,'assets','conversion');
+const caseMeta=JSON.parse(await readFile(join(caseRoot,'provenance.json'),'utf8'));
+const caseMarkdown=await readFile(join(caseRoot,'converted.md'),'utf8');
+const caseReportText=await readFile(join(caseRoot,'lint.json'),'utf8');
+const caseReport=JSON.parse(caseReportText);
+const hash=s=>createHash('sha256').update(s).digest('hex');
+validateConversionCase(caseMeta,caseReport,product.version,hash(caseMarkdown),hash(caseReportText));
+if(hash(await readFile(join(caseRoot,'original.hwpx')))!==caseMeta.sourceSha256)throw new Error('Conversion source hash mismatch');
+const ruleCounts=Object.entries(caseReport.findings.reduce((a,f)=>(a[f.ruleId]=(a[f.ruleId]??0)+1,a),{}));
+Object.assign(tokens,{
+ CASE_WARNINGS:caseReport.summary.Warning,CASE_REF:esc(caseMeta.converterRef),CASE_SOURCE:caseMeta.converterRepo+'/blob/'+caseMeta.converterRef+'/'+encodeURIComponent(caseMeta.sourcePath).replaceAll('%2F','/'),
+ CASE_MARKDOWN:renderConversionMarkdown(caseMarkdown),CASE_RAW:esc(caseMarkdown),
+ CASE_SUMMARY:`<strong>Warning ${caseReport.summary.Warning}개</strong><span>${ruleCounts.map(([rule,count])=>esc(rule)+' '+count+'개').join(' · ')}</span>`,
+ CASE_FINDINGS:caseReport.findings.map((f,i)=>`<details class="finding"><summary><span>${i+1}. ${esc(f.severity)} · ${esc(f.location.line)}번째 줄</span><strong>${esc(f.ruleId)}</strong></summary><div><p>${esc(f.message)}</p><pre>${esc(f.excerpt)}</pre><a href="${esc(f.helpUrl)}">규칙의 근거와 인식 문법</a></div></details>`).join(''),
+ CASE_COVERAGE:esc(JSON.stringify({coverage:caseReport.coverage,checks:caseReport.checks},null,2))
+});
 const replace=s=>s.replace(/\{\{([A-Z_]+)\}\}/g,(m,key)=>key in tokens?String(tokens[key]):m);
-const pages={'index.html':{title:'AI Doc Ready — 보고서의 구조를 점검하세요',description:'Markdown·HWPX 보고서를 로컬에서 검사하는 오픈소스 CLI. 사용 매뉴얼, 제품 FAQ와 보도자료.'},'manual.html':{title:'사용 매뉴얼 — AI Doc Ready',description:`AI Doc Ready ${product.version} 설치, 문서 검사, JSON, 프로파일, 에이전트 연결과 CI 사용 방법.`},'faq.html':{title:'제품 FAQ — AI Doc Ready',description:'고객의 질문에서 출발하는 AI Doc Ready PR/FAQ. 지원 범위, 가격, 검증 방법과 제품 전략.'},'press-release.html':{title:`보도자료 — AI Doc Ready ${product.version} 공개`,description:`Markdown·HWPX 보고서의 AI 친화적 구조를 로컬에서 점검하는 AI Doc Ready ${product.version} 제품 보도자료.`}};
+const pages={'conversion.html':{title:'실제 문서 변환·검사 비교 — AI Doc Ready',description:'hwp2md 샘플의 원본, 실제 자동 변환 Markdown과 전체 AI Doc Ready 검사 결과를 비교하세요.'},'index.html':{title:'AI Doc Ready — 보고서의 구조를 점검하세요',description:'Markdown·HWPX 보고서를 로컬에서 검사하는 오픈소스 CLI. 사용 매뉴얼, 제품 FAQ와 보도자료.'},'manual.html':{title:'사용 매뉴얼 — AI Doc Ready',description:`AI Doc Ready ${product.version} 설치, 문서 검사, JSON, 프로파일, 에이전트 연결과 CI 사용 방법.`},'faq.html':{title:'제품 FAQ — AI Doc Ready',description:'고객의 질문에서 출발하는 AI Doc Ready PR/FAQ. 지원 범위, 가격, 검증 방법과 제품 전략.'},'press-release.html':{title:`보도자료 — AI Doc Ready ${product.version} 공개`,description:`Markdown·HWPX 보고서의 AI 친화적 구조를 로컬에서 점검하는 AI Doc Ready ${product.version} 제품 보도자료.`}};
 const logo='<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 4h21l9 9v30H9z" fill="#225bd6"/><path d="M29 5v10h9" fill="none" stroke="#adc7ff" stroke-width="3"/><path d="m17 27 6 6 11-13" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-const menu=[['index.html','소개'],['manual.html','사용 매뉴얼'],['faq.html','FAQ'],['press-release.html','보도자료']];
+const menu=[['index.html','소개'],['conversion.html','실제 사례'],['manual.html','사용 매뉴얼'],['faq.html','FAQ'],['press-release.html','보도자료']];
 const footer=`<footer class="footer"><div class="wrap footer-row"><div><strong>AI Doc Ready</strong> · v${esc(product.version)}<br>© 2026 roboco-io · MIT 오픈소스</div><div class="footer-links"><a href="${product.repoUrl}">GitHub</a><a href="https://www.npmjs.com/package/aidocready/v/${product.version}">npm</a><a href="https://github.com/chrisryugj/kordoc">Kordoc</a><a href="${product.repoUrl}/issues">문의·제보</a></div></div></footer>`;
 await rm(output,{recursive:true,force:true});await mkdir(output,{recursive:true});await cp(join(source,'assets'),join(output,'assets'),{recursive:true});
 for(const [from,to] of [['examples/report.md','report.md'],['examples/report.hwpx','report.hwpx'],['examples/profile.json','profile.json'],['skills/aidocready/SKILL.md','SKILL.md'],['templates/AGENTS.md','AGENTS.md'],['templates/CLAUDE.md','CLAUDE.md']])await writeFile(join(output,'assets',to),releaseFile(from));

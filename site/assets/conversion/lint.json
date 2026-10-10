@@ -1,0 +1,1332 @@
+{
+  "schemaVersion": 1,
+  "profile": "recommended",
+  "profileOrigin": "builtin",
+  "findings": [
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 문화체육관광부 공무원 경력경쟁채용시험 공고<br><br>문화체육관광부에서는 공무원임용시험령 제3조 및 제47조에 따라 우수 인재의 공직유치를 위한 국가공무원 경력경쟁채용시험을 다음과 같이 공고하여 시행하오니 많은 응시 바랍니다. <br><br>2024년  2월  5일<br>문화체육관",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[1]",
+        "line": 5
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 1 | 임용예정인원 (3개 직위, 총 3명) |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[2]",
+        "line": 8
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 임용예정직급(분야) | 선발예정인원 | 채용기간 | 근무예정부서(근무지) |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[3]",
+        "line": 11
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 2 | 임용예정직무 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[5]",
+        "line": 19
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 채용분야 | 임용예정직급 | 담당 업무 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[6]",
+        "line": 22
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 3 | 근거 법령 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[8]",
+        "line": 30
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 4 | 응시 자격 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[10]",
+        "line": 35
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 채용분야 | 직위별 요건 |  |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[18]",
+        "line": 52
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 채용분야 | 우대요건 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[39]",
+        "line": 88
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 5 | 시험 방법 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[71]",
+        "line": 135
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 6 | 시험 일정 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[87]",
+        "line": 170
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 구분 | 시험공고 | 원서접수 | 서류전형<br>합격자 발표 | 면접시험 | 최종합격자<br>발표 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[88]",
+        "line": 173
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 7 | 응시원서 접수 및 제출서류 안내 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[94]",
+        "line": 187
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 주  소 | 방문접수 시 연락처 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[98]",
+        "line": 196
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 구분 | 서류 | 비고 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[108]",
+        "line": 218
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 8 | 임용예정일, 채용기간 및 보수 관련 사항 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[121]",
+        "line": 258
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 구   분 | 연봉한계액  (단위 : 천원) |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[127]",
+        "line": 271
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 9 | 안내 및 참고사항 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[131]",
+        "line": 282
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "|  | ◁ 경력경쟁채용시험 국민제보 ▷ |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[141]",
+        "line": 303
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "|  |  |  |  |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[144]",
+        "line": 312
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "ADR-NUMBER-SEQUENCE",
+      "origin": "aidocready",
+      "severity": "Warning",
+      "message": "같은 단계의 번호가 연속되지 않습니다.",
+      "excerpt": "가. ｢성폭력범죄의 처벌 등에 관한 특례법｣ 제2조에 따른 성폭력범죄",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#adr-number-sequence",
+      "location": {
+        "path": "blocks[161]",
+        "line": 339
+      }
+    },
+    {
+      "ruleId": "ADR-NUMBER-SEQUENCE",
+      "origin": "aidocready",
+      "severity": "Warning",
+      "message": "같은 단계의 번호가 연속되지 않습니다.",
+      "excerpt": "1.   다른 수험생의 답안지를 보거나 본인의 답안지를 보여주는 행위",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#adr-number-sequence",
+      "location": {
+        "path": "blocks[172]",
+        "line": 356
+      }
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 채용 분야 |  |  | 임용예정직급 |  | 선발예정인원 | 근무예정부서(근무지) |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[181]",
+        "line": 368
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 채용 분야 |  |  | 임용예정직급 |  | 선발예정인원 | 근무예정부서(근무지) |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[184]",
+        "line": 387
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 채용 분야 |  |  | 임용예정직급 |  | 선발예정인원 | 근무예정부서(근무지) |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[187]",
+        "line": 406
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 구       분 | 내       용 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[192]",
+        "line": 429
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 응  시  원  서 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[200]",
+        "line": 458
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 응  시  원  서 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[207]",
+        "line": 490
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 응  시  원  서 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[214]",
+        "line": 522
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| ｢국민기초생활 보장법｣에 따른 수급자·차상위계층 또는 ｢한부모가족지원법｣에 따른 보호대상자,  ｢장애인연금법｣에 따른 수급자 및 2명 이상의 미성년 자녀가 있는 자로서 응시수수료를 면제받을 경우 수입인지 대신 해당 증명서 첨부 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[225]",
+        "line": 572
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| ※<br>응시<br>번호 |  | 응시<br>분야 | 전문임기제 가급 (종무(불교)) | 응시<br>자격<br>요건 | □<br>경력1 | □<br>경력2 | □<br>경력3 | □<br>학위4 | □<br>학위5 | □<br>학위6 | 성<br>명 |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[229]",
+        "line": 581
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 경<br><br>력 | 근무기관<br>(부서) | 근무기간 |  | 직 위<br>(직급) | 담당업무 | 근무형태 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[231]",
+        "line": 586
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 경<br><br>력 | 근무기관<br>(부서) | 근무기간 |  |  | 직 위<br>(직급) |  | 담당업무 |  |  | 근무형태 |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[233]",
+        "line": 596
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| ※<br>응시<br>번호 |  | 응시<br>분야 | 전문임기제 가급 (종무(천주교)) | 응시<br>자격<br>요건 | □<br>경력1 | □<br>경력2 | □<br>경력3 | □<br>학위4 | □<br>학위5 | □<br>학위6 | 성<br>명 |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[241]",
+        "line": 621
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 경<br><br>력 | 근무기관<br>(부서) | 근무기간 |  | 직 위<br>(직급) | 담당업무 | 근무형태 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[243]",
+        "line": 626
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 경<br><br>력 | 근무기관<br>(부서) | 근무기간 |  |  | 직 위<br>(직급) |  | 담당업무 |  |  | 근무형태 |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[245]",
+        "line": 636
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| ※<br>응시<br>번호 |  | 응시<br>분야 | 전문임기제 가급 (종무(개신교)) | 응시<br>자격<br>요건 | □<br>경력1 | □<br>경력2 | □<br>경력3 | □<br>학위4 | □<br>학위5 | □<br>학위6 | 성<br>명 |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[253]",
+        "line": 661
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 경<br><br>력 | 근무기관<br>(부서) | 근무기간 |  | 직 위<br>(직급) | 담당업무 | 근무형태 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[255]",
+        "line": 666
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 경<br><br>력 | 근무기관<br>(부서) | 근무기간 |  |  | 직 위<br>(직급) |  | 담당업무 |  |  | 근무형태 |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[257]",
+        "line": 676
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 성    명 |  | 응시직급 및 분야 |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[306]",
+        "line": 792
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| ◎ 자기소개서 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[307]",
+        "line": 795
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 성    명 |  | 응시직급 및 분야 |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[310]",
+        "line": 805
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| ◎ 직무수행계획서 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[311]",
+        "line": 808
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 본인은 문화체육관광부에서 시행하는 경력채용시험 응시자로서 학위, 경력, 자격증, 어학능력, 수상실적 또는 기타 제출한 자료의 진위 검증을 위한 확인서 발급에 동의하며, 자료 진위여부 확인을 위해 발급기관에 다음과 같이 개인정보를 제공하는 것에 동의합니다. <br><br>(1) 제공받",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[315]",
+        "line": 820
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 확인서 발급에 동의하십니까? | □ 동의함 | □ 동의하지 않음 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[316]",
+        "line": 823
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 개인정보 제공에 동의하십니까? | □ 동의함 | □ 동의하지 않음 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[317]",
+        "line": 826
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 본인이 서명‧날인한 동의서의 복사본은 자료의 진위 검증을 위해서 원본과 동일하게 유효하다는 것을 인정합니다. |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[319]",
+        "line": 831
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 원본과 동일하게 유효함을 동의하십니까? | □ 동의함 | □ 동의하지 않음 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[320]",
+        "line": 834
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 본 기관에서는 공무원 채용 및 관리를 위해 ｢개인정보 보호법｣제15조, 제17조 등 관계 법령에 따라 아래와 같이 개인정보를 수집 및 이용하고자 합니다.<br>(1) 개인정보 수집 및 이용 목적 : 공무원 채용 및 관리<br>(2) 개인정보 수집 항목(필수) : 성명, 주민등록번호*",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[327]",
+        "line": 849
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 위와 같이 개인정보 수집 및 이용에 동의하십니까? | □ 동의함 | □ 동의하지 않음 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[328]",
+        "line": 852
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 공무원 채용 및 관리를 위해 개인정보(고유식별정보)를 수집하고 있습니다.<br>(1) 고유식별정보 수집 및 이용 목적 : 공무원 채용 및 관리<br>(2) 고유식별정보 수집 항목 : 주민등록번호<br>(3) 민감정보 보유 및 이용기간 : 최종합격자 발표일로부터 5년<br>    * ",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[330]",
+        "line": 857
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 위와 같이 고유식별정보 수집 및 이용에 동의하십니까? | □ 동의함 | □ 동의하지 않음 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[331]",
+        "line": 860
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 공무원 채용 및 관리를 위해 개인정보(민감정보)를 수집하고 있습니다.<br>(1) 민감정보 수집 및 이용 목적 : 공무원 채용 및 관리<br>(2) 민감정보 수집 항목 : 범죄경력정보<br>(3) 민감정보 보유 및 이용기간 : 최종합격자 발표일로부터 5년개인정보 활용 목적 달성 이후",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[333]",
+        "line": 865
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 위와 같이 민감정보 수집 및 이용에 동의하십니까?  □ 동의함       □ 동의하지 않음 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[334]",
+        "line": 868
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 본인이 서명·날인한 동의서의 복사본은 자료의 진위 검증을 위해서 원본과 동일하게 유효함을 인정하고, 이에 동의하십니까? | □ 동의함 | □ 동의하지 않음 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[338]",
+        "line": 876
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 위와 같이 확인서 발급에 동의하십니까? | □ 동의함 | □ 동의하지 않음 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[339]",
+        "line": 879
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 위와 같이 개인정보를 제3자에게 제공하는 데 동의하십니까? | □ 동의함 | □ 동의하지 않음 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[340]",
+        "line": 882
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 이 시험에서 부정행위를 한 사람은 시험을 정지 또는 무효로 하거나 합격을 취소하고, 그 처분이 있은 날부터 5년간 공무원 임용을 위한 시험의 응시자격을 정지합니다. 부정행위로 처분 받을 경우 다른 공무원 시험 실시기관이 조회할 수 있도록 인사혁신처에 개인정보를 제공하고 있습니다.<b",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[342]",
+        "line": 887
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 위와 같이 개인정보를 제3자에게 제공하는데 동의하십니까? | □ 동의함 | □ 동의하지 않음 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[343]",
+        "line": 890
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 성 명 |  | 직무분야 | 응시직급 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[349]",
+        "line": 903
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| 성 명 |  | 직무분야 | 응시직급 |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[354]",
+        "line": 919
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "origin": "mois",
+      "severity": "Warning",
+      "message": "표 바로 위에 제목을 표기하세요. 캡션 인식 문법은 규칙 문서를 확인하세요.",
+      "excerpt": "| ￭ 채용절차의 공정화에 관한 법률 시행규칙[별지 제3호서식] |  |  |",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#mois-table-caption",
+      "location": {
+        "path": "blocks[358]",
+        "line": 933
+      },
+      "source": "https://mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=128940"
+    },
+    {
+      "ruleId": "ADR-INPUT-COVERAGE",
+      "origin": "aidocready",
+      "severity": "Warning",
+      "message": "입력의 일부 구조를 검사하지 못했습니다. coverage.limitations를 확인하세요.",
+      "excerpt": "title: 0000부 공고 제2022",
+      "helpUrl": "https://github.com/roboco-io/aidocready/blob/main/docs/rules.md#adr-input-coverage",
+      "location": {
+        "path": "document",
+        "line": 2
+      }
+    }
+  ],
+  "summary": {
+    "Error": 0,
+    "Warning": 63,
+    "Suggestion": 0
+  },
+  "checks": [
+    {
+      "ruleId": "MOIS-TABLE-CAPTION",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "MOIS-FIGURE-CAPTION",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "MOIS-CAPTION-NUMBER",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "MOIS-MERGE-REVIEW",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "MOIS-NESTED-TABLE",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "MOIS-NUMBERING",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "ADR-HEADING-LEVEL",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "ADR-NUMBER-SEQUENCE",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "ADR-CAPTION-SEQUENCE",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "ADR-CAPTION-POSITION",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    },
+    {
+      "ruleId": "ADR-INPUT-COVERAGE",
+      "status": "unsupported",
+      "reasons": [
+        "입력 일부 구조가 미지원입니다. coverage.limitations를 확인하세요."
+      ]
+    }
+  ],
+  "coverage": {
+    "complete": false,
+    "limitations": [
+      "line 5: HTML 구조는 정적 검사하지 않습니다.",
+      "line 5: HTML 구조는 정적 검사하지 않습니다.",
+      "line 5: HTML 구조는 정적 검사하지 않습니다.",
+      "line 5: HTML 구조는 정적 검사하지 않습니다.",
+      "line 5: HTML 구조는 정적 검사하지 않습니다.",
+      "line 13: HTML 구조는 정적 검사하지 않습니다.",
+      "line 13: HTML 구조는 정적 검사하지 않습니다.",
+      "line 14: HTML 구조는 정적 검사하지 않습니다.",
+      "line 15: HTML 구조는 정적 검사하지 않습니다.",
+      "line 24: HTML 구조는 정적 검사하지 않습니다.",
+      "line 24: HTML 구조는 정적 검사하지 않습니다.",
+      "line 24: HTML 구조는 정적 검사하지 않습니다.",
+      "line 24: HTML 구조는 정적 검사하지 않습니다.",
+      "line 25: HTML 구조는 정적 검사하지 않습니다.",
+      "line 25: HTML 구조는 정적 검사하지 않습니다.",
+      "line 25: HTML 구조는 정적 검사하지 않습니다.",
+      "line 25: HTML 구조는 정적 검사하지 않습니다.",
+      "line 26: HTML 구조는 정적 검사하지 않습니다.",
+      "line 26: HTML 구조는 정적 검사하지 않습니다.",
+      "line 26: HTML 구조는 정적 검사하지 않습니다.",
+      "line 26: HTML 구조는 정적 검사하지 않습니다.",
+      "line 54: HTML 구조는 정적 검사하지 않습니다.",
+      "line 54: HTML 구조는 정적 검사하지 않습니다.",
+      "line 54: HTML 구조는 정적 검사하지 않습니다.",
+      "line 54: HTML 구조는 정적 검사하지 않습니다.",
+      "line 54: HTML 구조는 정적 검사하지 않습니다.",
+      "line 54: HTML 구조는 정적 검사하지 않습니다.",
+      "line 55: HTML 구조는 정적 검사하지 않습니다.",
+      "line 55: HTML 구조는 정적 검사하지 않습니다.",
+      "line 56: HTML 구조는 정적 검사하지 않습니다.",
+      "line 57: HTML 구조는 정적 검사하지 않습니다.",
+      "line 57: HTML 구조는 정적 검사하지 않습니다.",
+      "line 57: HTML 구조는 정적 검사하지 않습니다.",
+      "line 57: HTML 구조는 정적 검사하지 않습니다.",
+      "line 57: HTML 구조는 정적 검사하지 않습니다.",
+      "line 57: HTML 구조는 정적 검사하지 않습니다.",
+      "line 58: HTML 구조는 정적 검사하지 않습니다.",
+      "line 58: HTML 구조는 정적 검사하지 않습니다.",
+      "line 59: HTML 구조는 정적 검사하지 않습니다.",
+      "line 60: HTML 구조는 정적 검사하지 않습니다.",
+      "line 60: HTML 구조는 정적 검사하지 않습니다.",
+      "line 60: HTML 구조는 정적 검사하지 않습니다.",
+      "line 60: HTML 구조는 정적 검사하지 않습니다.",
+      "line 60: HTML 구조는 정적 검사하지 않습니다.",
+      "line 60: HTML 구조는 정적 검사하지 않습니다.",
+      "line 61: HTML 구조는 정적 검사하지 않습니다.",
+      "line 61: HTML 구조는 정적 검사하지 않습니다.",
+      "line 62: HTML 구조는 정적 검사하지 않습니다.",
+      "line 90: HTML 구조는 정적 검사하지 않습니다.",
+      "line 90: HTML 구조는 정적 검사하지 않습니다.",
+      "line 90: HTML 구조는 정적 검사하지 않습니다.",
+      "line 90: HTML 구조는 정적 검사하지 않습니다.",
+      "line 173: HTML 구조는 정적 검사하지 않습니다.",
+      "line 173: HTML 구조는 정적 검사하지 않습니다.",
+      "line 175: HTML 구조는 정적 검사하지 않습니다.",
+      "line 175: HTML 구조는 정적 검사하지 않습니다.",
+      "line 175: HTML 구조는 정적 검사하지 않습니다.",
+      "line 198: HTML 구조는 정적 검사하지 않습니다.",
+      "line 220: HTML 구조는 정적 검사하지 않습니다.",
+      "line 228: HTML 구조는 정적 검사하지 않습니다.",
+      "line 306: HTML 구조는 정적 검사하지 않습니다.",
+      "line 314: HTML 구조는 정적 검사하지 않습니다.",
+      "line 314: HTML 구조는 정적 검사하지 않습니다.",
+      "line 314: HTML 구조는 정적 검사하지 않습니다.",
+      "line 314: HTML 구조는 정적 검사하지 않습니다.",
+      "line 370: HTML 구조는 정적 검사하지 않습니다.",
+      "line 372: HTML 구조는 정적 검사하지 않습니다.",
+      "line 372: HTML 구조는 정적 검사하지 않습니다.",
+      "line 372: HTML 구조는 정적 검사하지 않습니다.",
+      "line 372: HTML 구조는 정적 검사하지 않습니다.",
+      "line 374: HTML 구조는 정적 검사하지 않습니다.",
+      "line 374: HTML 구조는 정적 검사하지 않습니다.",
+      "line 378: HTML 구조는 정적 검사하지 않습니다.",
+      "line 378: HTML 구조는 정적 검사하지 않습니다.",
+      "line 378: HTML 구조는 정적 검사하지 않습니다.",
+      "line 378: HTML 구조는 정적 검사하지 않습니다.",
+      "line 378: HTML 구조는 정적 검사하지 않습니다.",
+      "line 378: HTML 구조는 정적 검사하지 않습니다.",
+      "line 378: HTML 구조는 정적 검사하지 않습니다.",
+      "line 379: HTML 구조는 정적 검사하지 않습니다.",
+      "line 379: HTML 구조는 정적 검사하지 않습니다.",
+      "line 380: HTML 구조는 정적 검사하지 않습니다.",
+      "line 381: HTML 구조는 정적 검사하지 않습니다.",
+      "line 381: HTML 구조는 정적 검사하지 않습니다.",
+      "line 381: HTML 구조는 정적 검사하지 않습니다.",
+      "line 381: HTML 구조는 정적 검사하지 않습니다.",
+      "line 389: HTML 구조는 정적 검사하지 않습니다.",
+      "line 391: HTML 구조는 정적 검사하지 않습니다.",
+      "line 391: HTML 구조는 정적 검사하지 않습니다.",
+      "line 391: HTML 구조는 정적 검사하지 않습니다.",
+      "line 391: HTML 구조는 정적 검사하지 않습니다.",
+      "line 393: HTML 구조는 정적 검사하지 않습니다.",
+      "line 393: HTML 구조는 정적 검사하지 않습니다.",
+      "line 397: HTML 구조는 정적 검사하지 않습니다.",
+      "line 397: HTML 구조는 정적 검사하지 않습니다.",
+      "line 397: HTML 구조는 정적 검사하지 않습니다.",
+      "line 397: HTML 구조는 정적 검사하지 않습니다.",
+      "line 397: HTML 구조는 정적 검사하지 않습니다.",
+      "line 397: HTML 구조는 정적 검사하지 않습니다.",
+      "line 397: HTML 구조는 정적 검사하지 않습니다.",
+      "line 397: HTML 구조는 정적 검사하지 않습니다.",
+      "line 398: HTML 구조는 정적 검사하지 않습니다.",
+      "line 398: HTML 구조는 정적 검사하지 않습니다.",
+      "line 398: HTML 구조는 정적 검사하지 않습니다.",
+      "line 399: HTML 구조는 정적 검사하지 않습니다.",
+      "line 400: HTML 구조는 정적 검사하지 않습니다.",
+      "line 400: HTML 구조는 정적 검사하지 않습니다.",
+      "line 400: HTML 구조는 정적 검사하지 않습니다.",
+      "line 400: HTML 구조는 정적 검사하지 않습니다.",
+      "line 408: HTML 구조는 정적 검사하지 않습니다.",
+      "line 410: HTML 구조는 정적 검사하지 않습니다.",
+      "line 410: HTML 구조는 정적 검사하지 않습니다.",
+      "line 410: HTML 구조는 정적 검사하지 않습니다.",
+      "line 410: HTML 구조는 정적 검사하지 않습니다.",
+      "line 412: HTML 구조는 정적 검사하지 않습니다.",
+      "line 412: HTML 구조는 정적 검사하지 않습니다.",
+      "line 416: HTML 구조는 정적 검사하지 않습니다.",
+      "line 416: HTML 구조는 정적 검사하지 않습니다.",
+      "line 416: HTML 구조는 정적 검사하지 않습니다.",
+      "line 416: HTML 구조는 정적 검사하지 않습니다.",
+      "line 416: HTML 구조는 정적 검사하지 않습니다.",
+      "line 416: HTML 구조는 정적 검사하지 않습니다.",
+      "line 416: HTML 구조는 정적 검사하지 않습니다.",
+      "line 416: HTML 구조는 정적 검사하지 않습니다.",
+      "line 417: HTML 구조는 정적 검사하지 않습니다.",
+      "line 417: HTML 구조는 정적 검사하지 않습니다.",
+      "line 417: HTML 구조는 정적 검사하지 않습니다.",
+      "line 418: HTML 구조는 정적 검사하지 않습니다.",
+      "line 419: HTML 구조는 정적 검사하지 않습니다.",
+      "line 419: HTML 구조는 정적 검사하지 않습니다.",
+      "line 419: HTML 구조는 정적 검사하지 않습니다.",
+      "line 419: HTML 구조는 정적 검사하지 않습니다.",
+      "line 431: HTML 구조는 정적 검사하지 않습니다.",
+      "line 431: HTML 구조는 정적 검사하지 않습니다.",
+      "line 431: HTML 구조는 정적 검사하지 않습니다.",
+      "line 431: HTML 구조는 정적 검사하지 않습니다.",
+      "line 431: HTML 구조는 정적 검사하지 않습니다.",
+      "line 432: HTML 구조는 정적 검사하지 않습니다.",
+      "line 432: HTML 구조는 정적 검사하지 않습니다.",
+      "line 434: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 437: HTML 구조는 정적 검사하지 않습니다.",
+      "line 438: HTML 구조는 정적 검사하지 않습니다.",
+      "line 439: HTML 구조는 정적 검사하지 않습니다.",
+      "line 439: HTML 구조는 정적 검사하지 않습니다.",
+      "line 439: HTML 구조는 정적 검사하지 않습니다.",
+      "line 439: HTML 구조는 정적 검사하지 않습니다.",
+      "line 439: HTML 구조는 정적 검사하지 않습니다.",
+      "line 439: HTML 구조는 정적 검사하지 않습니다.",
+      "line 440: HTML 구조는 정적 검사하지 않습니다.",
+      "line 440: HTML 구조는 정적 검사하지 않습니다.",
+      "line 440: HTML 구조는 정적 검사하지 않습니다.",
+      "line 441: HTML 구조는 정적 검사하지 않습니다.",
+      "line 441: HTML 구조는 정적 검사하지 않습니다.",
+      "line 441: HTML 구조는 정적 검사하지 않습니다.",
+      "line 442: HTML 구조는 정적 검사하지 않습니다.",
+      "line 442: HTML 구조는 정적 검사하지 않습니다.",
+      "line 464: HTML 구조는 정적 검사하지 않습니다.",
+      "line 465: HTML 구조는 정적 검사하지 않습니다.",
+      "line 467: HTML 구조는 정적 검사하지 않습니다.",
+      "line 475: HTML 구조는 정적 검사하지 않습니다.",
+      "line 475: HTML 구조는 정적 검사하지 않습니다.",
+      "line 496: HTML 구조는 정적 검사하지 않습니다.",
+      "line 497: HTML 구조는 정적 검사하지 않습니다.",
+      "line 499: HTML 구조는 정적 검사하지 않습니다.",
+      "line 507: HTML 구조는 정적 검사하지 않습니다.",
+      "line 507: HTML 구조는 정적 검사하지 않습니다.",
+      "line 528: HTML 구조는 정적 검사하지 않습니다.",
+      "line 529: HTML 구조는 정적 검사하지 않습니다.",
+      "line 531: HTML 구조는 정적 검사하지 않습니다.",
+      "line 539: HTML 구조는 정적 검사하지 않습니다.",
+      "line 539: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 581: HTML 구조는 정적 검사하지 않습니다.",
+      "line 586: HTML 구조는 정적 검사하지 않습니다.",
+      "line 586: HTML 구조는 정적 검사하지 않습니다.",
+      "line 586: HTML 구조는 정적 검사하지 않습니다.",
+      "line 586: HTML 구조는 정적 검사하지 않습니다.",
+      "line 588: HTML 구조는 정적 검사하지 않습니다.",
+      "line 588: HTML 구조는 정적 검사하지 않습니다.",
+      "line 588: HTML 구조는 정적 검사하지 않습니다.",
+      "line 588: HTML 구조는 정적 검사하지 않습니다.",
+      "line 590: HTML 구조는 정적 검사하지 않습니다.",
+      "line 590: HTML 구조는 정적 검사하지 않습니다.",
+      "line 596: HTML 구조는 정적 검사하지 않습니다.",
+      "line 596: HTML 구조는 정적 검사하지 않습니다.",
+      "line 596: HTML 구조는 정적 검사하지 않습니다.",
+      "line 596: HTML 구조는 정적 검사하지 않습니다.",
+      "line 598: HTML 구조는 정적 검사하지 않습니다.",
+      "line 598: HTML 구조는 정적 검사하지 않습니다.",
+      "line 598: HTML 구조는 정적 검사하지 않습니다.",
+      "line 598: HTML 구조는 정적 검사하지 않습니다.",
+      "line 600: HTML 구조는 정적 검사하지 않습니다.",
+      "line 600: HTML 구조는 정적 검사하지 않습니다.",
+      "line 600: HTML 구조는 정적 검사하지 않습니다.",
+      "line 600: HTML 구조는 정적 검사하지 않습니다.",
+      "line 602: HTML 구조는 정적 검사하지 않습니다.",
+      "line 602: HTML 구조는 정적 검사하지 않습니다.",
+      "line 602: HTML 구조는 정적 검사하지 않습니다.",
+      "line 602: HTML 구조는 정적 검사하지 않습니다.",
+      "line 602: HTML 구조는 정적 검사하지 않습니다.",
+      "line 602: HTML 구조는 정적 검사하지 않습니다.",
+      "line 602: HTML 구조는 정적 검사하지 않습니다.",
+      "line 602: HTML 구조는 정적 검사하지 않습니다.",
+      "line 602: HTML 구조는 정적 검사하지 않습니다.",
+      "line 604: HTML 구조는 정적 검사하지 않습니다.",
+      "line 604: HTML 구조는 정적 검사하지 않습니다.",
+      "line 604: HTML 구조는 정적 검사하지 않습니다.",
+      "line 604: HTML 구조는 정적 검사하지 않습니다.",
+      "line 604: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 621: HTML 구조는 정적 검사하지 않습니다.",
+      "line 626: HTML 구조는 정적 검사하지 않습니다.",
+      "line 626: HTML 구조는 정적 검사하지 않습니다.",
+      "line 626: HTML 구조는 정적 검사하지 않습니다.",
+      "line 626: HTML 구조는 정적 검사하지 않습니다.",
+      "line 628: HTML 구조는 정적 검사하지 않습니다.",
+      "line 628: HTML 구조는 정적 검사하지 않습니다.",
+      "line 628: HTML 구조는 정적 검사하지 않습니다.",
+      "line 628: HTML 구조는 정적 검사하지 않습니다.",
+      "line 630: HTML 구조는 정적 검사하지 않습니다.",
+      "line 630: HTML 구조는 정적 검사하지 않습니다.",
+      "line 636: HTML 구조는 정적 검사하지 않습니다.",
+      "line 636: HTML 구조는 정적 검사하지 않습니다.",
+      "line 636: HTML 구조는 정적 검사하지 않습니다.",
+      "line 636: HTML 구조는 정적 검사하지 않습니다.",
+      "line 638: HTML 구조는 정적 검사하지 않습니다.",
+      "line 638: HTML 구조는 정적 검사하지 않습니다.",
+      "line 638: HTML 구조는 정적 검사하지 않습니다.",
+      "line 638: HTML 구조는 정적 검사하지 않습니다.",
+      "line 640: HTML 구조는 정적 검사하지 않습니다.",
+      "line 640: HTML 구조는 정적 검사하지 않습니다.",
+      "line 640: HTML 구조는 정적 검사하지 않습니다.",
+      "line 640: HTML 구조는 정적 검사하지 않습니다.",
+      "line 642: HTML 구조는 정적 검사하지 않습니다.",
+      "line 642: HTML 구조는 정적 검사하지 않습니다.",
+      "line 642: HTML 구조는 정적 검사하지 않습니다.",
+      "line 642: HTML 구조는 정적 검사하지 않습니다.",
+      "line 642: HTML 구조는 정적 검사하지 않습니다.",
+      "line 642: HTML 구조는 정적 검사하지 않습니다.",
+      "line 642: HTML 구조는 정적 검사하지 않습니다.",
+      "line 642: HTML 구조는 정적 검사하지 않습니다.",
+      "line 642: HTML 구조는 정적 검사하지 않습니다.",
+      "line 644: HTML 구조는 정적 검사하지 않습니다.",
+      "line 644: HTML 구조는 정적 검사하지 않습니다.",
+      "line 644: HTML 구조는 정적 검사하지 않습니다.",
+      "line 644: HTML 구조는 정적 검사하지 않습니다.",
+      "line 644: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 661: HTML 구조는 정적 검사하지 않습니다.",
+      "line 666: HTML 구조는 정적 검사하지 않습니다.",
+      "line 666: HTML 구조는 정적 검사하지 않습니다.",
+      "line 666: HTML 구조는 정적 검사하지 않습니다.",
+      "line 666: HTML 구조는 정적 검사하지 않습니다.",
+      "line 668: HTML 구조는 정적 검사하지 않습니다.",
+      "line 668: HTML 구조는 정적 검사하지 않습니다.",
+      "line 668: HTML 구조는 정적 검사하지 않습니다.",
+      "line 668: HTML 구조는 정적 검사하지 않습니다.",
+      "line 670: HTML 구조는 정적 검사하지 않습니다.",
+      "line 670: HTML 구조는 정적 검사하지 않습니다.",
+      "line 676: HTML 구조는 정적 검사하지 않습니다.",
+      "line 676: HTML 구조는 정적 검사하지 않습니다.",
+      "line 676: HTML 구조는 정적 검사하지 않습니다.",
+      "line 676: HTML 구조는 정적 검사하지 않습니다.",
+      "line 678: HTML 구조는 정적 검사하지 않습니다.",
+      "line 678: HTML 구조는 정적 검사하지 않습니다.",
+      "line 678: HTML 구조는 정적 검사하지 않습니다.",
+      "line 678: HTML 구조는 정적 검사하지 않습니다.",
+      "line 680: HTML 구조는 정적 검사하지 않습니다.",
+      "line 680: HTML 구조는 정적 검사하지 않습니다.",
+      "line 680: HTML 구조는 정적 검사하지 않습니다.",
+      "line 680: HTML 구조는 정적 검사하지 않습니다.",
+      "line 682: HTML 구조는 정적 검사하지 않습니다.",
+      "line 682: HTML 구조는 정적 검사하지 않습니다.",
+      "line 682: HTML 구조는 정적 검사하지 않습니다.",
+      "line 682: HTML 구조는 정적 검사하지 않습니다.",
+      "line 682: HTML 구조는 정적 검사하지 않습니다.",
+      "line 682: HTML 구조는 정적 검사하지 않습니다.",
+      "line 682: HTML 구조는 정적 검사하지 않습니다.",
+      "line 682: HTML 구조는 정적 검사하지 않습니다.",
+      "line 682: HTML 구조는 정적 검사하지 않습니다.",
+      "line 684: HTML 구조는 정적 검사하지 않습니다.",
+      "line 684: HTML 구조는 정적 검사하지 않습니다.",
+      "line 684: HTML 구조는 정적 검사하지 않습니다.",
+      "line 684: HTML 구조는 정적 검사하지 않습니다.",
+      "line 684: HTML 구조는 정적 검사하지 않습니다.",
+      "line 797: HTML 구조는 정적 검사하지 않습니다.",
+      "line 798: HTML 구조는 정적 검사하지 않습니다.",
+      "line 798: HTML 구조는 정적 검사하지 않습니다.",
+      "line 798: HTML 구조는 정적 검사하지 않습니다.",
+      "line 810: HTML 구조는 정적 검사하지 않습니다.",
+      "line 811: HTML 구조는 정적 검사하지 않습니다.",
+      "line 811: HTML 구조는 정적 검사하지 않습니다.",
+      "line 811: HTML 구조는 정적 검사하지 않습니다.",
+      "line 820: HTML 구조는 정적 검사하지 않습니다.",
+      "line 820: HTML 구조는 정적 검사하지 않습니다.",
+      "line 820: HTML 구조는 정적 검사하지 않습니다.",
+      "line 820: HTML 구조는 정적 검사하지 않습니다.",
+      "line 820: HTML 구조는 정적 검사하지 않습니다.",
+      "line 820: HTML 구조는 정적 검사하지 않습니다.",
+      "line 849: HTML 구조는 정적 검사하지 않습니다.",
+      "line 849: HTML 구조는 정적 검사하지 않습니다.",
+      "line 849: HTML 구조는 정적 검사하지 않습니다.",
+      "line 857: HTML 구조는 정적 검사하지 않습니다.",
+      "line 857: HTML 구조는 정적 검사하지 않습니다.",
+      "line 857: HTML 구조는 정적 검사하지 않습니다.",
+      "line 857: HTML 구조는 정적 검사하지 않습니다.",
+      "line 857: HTML 구조는 정적 검사하지 않습니다.",
+      "line 865: HTML 구조는 정적 검사하지 않습니다.",
+      "line 865: HTML 구조는 정적 검사하지 않습니다.",
+      "line 865: HTML 구조는 정적 검사하지 않습니다.",
+      "line 873: HTML 구조는 정적 검사하지 않습니다.",
+      "line 873: HTML 구조는 정적 검사하지 않습니다.",
+      "line 873: HTML 구조는 정적 검사하지 않습니다.",
+      "line 873: HTML 구조는 정적 검사하지 않습니다.",
+      "line 873: HTML 구조는 정적 검사하지 않습니다.",
+      "line 873: HTML 구조는 정적 검사하지 않습니다.",
+      "line 873: HTML 구조는 정적 검사하지 않습니다.",
+      "line 887: HTML 구조는 정적 검사하지 않습니다.",
+      "line 887: HTML 구조는 정적 검사하지 않습니다.",
+      "line 887: HTML 구조는 정적 검사하지 않습니다.",
+      "line 887: HTML 구조는 정적 검사하지 않습니다.",
+      "line 887: HTML 구조는 정적 검사하지 않습니다.",
+      "line 887: HTML 구조는 정적 검사하지 않습니다.",
+      "line 906: HTML 구조는 정적 검사하지 않습니다.",
+      "line 906: HTML 구조는 정적 검사하지 않습니다.",
+      "line 906: HTML 구조는 정적 검사하지 않습니다.",
+      "line 906: HTML 구조는 정적 검사하지 않습니다.",
+      "line 908: HTML 구조는 정적 검사하지 않습니다.",
+      "line 908: HTML 구조는 정적 검사하지 않습니다.",
+      "line 908: HTML 구조는 정적 검사하지 않습니다.",
+      "line 908: HTML 구조는 정적 검사하지 않습니다.",
+      "line 908: HTML 구조는 정적 검사하지 않습니다.",
+      "line 908: HTML 구조는 정적 검사하지 않습니다.",
+      "line 908: HTML 구조는 정적 검사하지 않습니다.",
+      "line 908: HTML 구조는 정적 검사하지 않습니다.",
+      "line 908: HTML 구조는 정적 검사하지 않습니다.",
+      "line 908: HTML 구조는 정적 검사하지 않습니다.",
+      "line 908: HTML 구조는 정적 검사하지 않습니다.",
+      "line 909: HTML 구조는 정적 검사하지 않습니다.",
+      "line 909: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 922: HTML 구조는 정적 검사하지 않습니다.",
+      "line 924: HTML 구조는 정적 검사하지 않습니다.",
+      "line 924: HTML 구조는 정적 검사하지 않습니다.",
+      "line 924: HTML 구조는 정적 검사하지 않습니다.",
+      "line 924: HTML 구조는 정적 검사하지 않습니다.",
+      "line 924: HTML 구조는 정적 검사하지 않습니다.",
+      "line 924: HTML 구조는 정적 검사하지 않습니다.",
+      "line 924: HTML 구조는 정적 검사하지 않습니다.",
+      "line 924: HTML 구조는 정적 검사하지 않습니다.",
+      "line 924: HTML 구조는 정적 검사하지 않습니다.",
+      "line 924: HTML 구조는 정적 검사하지 않습니다.",
+      "line 925: HTML 구조는 정적 검사하지 않습니다.",
+      "line 925: HTML 구조는 정적 검사하지 않습니다.",
+      "line 940: HTML 구조는 정적 검사하지 않습니다.",
+      "line 943: HTML 구조는 정적 검사하지 않습니다.",
+      "line 943: HTML 구조는 정적 검사하지 않습니다.",
+      "line 948: HTML 구조는 정적 검사하지 않습니다.",
+      "line 948: HTML 구조는 정적 검사하지 않습니다."
+    ],
+    "manualReview": [
+      "문장 명확성 및 서술식 작성",
+      "불필요한 시각적 꾸미기",
+      "단순 병합 여부의 최종 판단",
+      "원문 사실·수치·의미 보존",
+      "캡션 위치 및 비표준 순서 표시"
+    ]
+  },
+  "parserWarnings": [],
+  "file": "converted.md",
+  "inputFormat": "markdown"
+}

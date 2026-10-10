@@ -7,6 +7,7 @@ on:
       - 'src/**'
       - 'profiles/**'
       - 'package.json'
+      - 'package-lock.json'
       - 'CHANGELOG.md'
       - 'docs/**'
       - 'README.md'
@@ -17,6 +18,7 @@ on:
       - 'scripts/check-site-release.mjs'
       - 'scripts/build-site.mjs'
       - 'scripts/site-lib.mjs'
+      - 'scripts/conversion-case-lib.mjs'
       - 'tests/site.test.ts'
       - 'examples/**'
       - 'skills/**'
@@ -43,6 +45,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - run: npm ci
       - uses: actions/configure-pages@v5
       - name: Check website synchronization
         env:

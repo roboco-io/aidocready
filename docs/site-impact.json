@@ -1,6 +1,10 @@
 {
   "status": "updated",
   "publicVersion": "0.2.0",
-  "areas": ["manual", "faq", "press"],
-  "summary": "공개 기능은 유지하면서 버전 표기를 정본으로 통합하고, 향후 코드 변경의 웹 검토 및 npm 공개 릴리스 검증을 저장소 규칙과 CI에 연결했습니다."
+  "areas": [
+    "landing",
+    "manual",
+    "faq"
+  ],
+  "summary": "hwp2md 실제 샘플의 자동 변환과 공개 CLI 검사 결과를 첫 화면에서 발췌하고 별도 비교 페이지에서 원본·전체 Markdown·전체 진단·재현 명령을 제공합니다. 미지원 구조와 서식용 표의 검토 한계를 설명합니다."
 }
