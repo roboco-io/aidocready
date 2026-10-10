@@ -1,0 +1,11 @@
+{
+  "name": "AI Doc Ready",
+  "package": "aidocready",
+  "version": "0.2.0",
+  "releaseDate": "2026-10-10",
+  "siteUrl": "https://roboco.io/aidocready/",
+  "repoUrl": "https://github.com/roboco-io/aidocready",
+  "tests": 77,
+  "corpusCases": 8,
+  "releaseRef": "d1cedad1048166e67880244a199007e2090eae18"
+}
