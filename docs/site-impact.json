@@ -1,11 +1,6 @@
 {
-  "status": "updated",
+  "status": "no-public-impact",
   "publicVersion": "0.3.0",
-  "areas": [
-    "landing",
-    "manual",
-    "faq",
-    "press"
-  ],
-  "summary": "npm 0.3.0 공개와 실제 gitHead를 확인해 공개 문서·버전·검증 수치를 갱신했습니다. 명령어 없는 작성 지침 전문·복사·다운로드와 ChatGPT·Claude 설정 절차, 새 setup 옵션을 소개하며 공개 npm CLI로 사례·demo를 재검사하고 provenance 해시를 갱신했습니다."
+  "areas": [],
+  "summary": "Kordoc 4.21.9→4.21.23 변경은 PDF 표·줄·머리말 파싱과 서식 보존 채우기/패치, 그리고 `ocr` 활성 시에만 동작하는 HWP/HWPX 삽입 그림 OCR입니다. aidocready는 HWPX를 parse(...,{layoutTables:'keep',keepTrailingEmptyCols:true,ocr:false}) 옵션으로만 읽고 IR blocks를 사용하므로, 예제 Markdown/HWPX 진단·공개 CLI 옵션·JSON 스키마·규칙·프로파일·API가 그대로입니다. 설치 타입 정의 변경도 주석과 미사용 autoFit.safety 선택 필드뿐이며, 4.21.9와 4.21.23의 예제 HWPX IR blocks가 동일함을 확인했습니다. 사용자에게 안내할 공개 동작 변화가 없어 사이트 문서는 수정하지 않습니다."
 }
