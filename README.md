@@ -1,5 +1,7 @@
 # AI Doc Ready
 
+> 0.3.0 출시 준비 중입니다. 현재 npm 공개 버전은 0.2.0이며, 아래 0.3.0 명령은 게시 후 사용할 수 있습니다. 명령어 없는 작성 지침은 지금 복사해 사용할 수 있습니다.
+
 **AI Doc Ready** (`aidocready`)는 사람과 AI가 보고서의 구조와 맥락을 이해하기 쉽도록 돕는 문서 검사 도구입니다. Markdown과 HWPX 보고서를 읽고, AI 친화적 작성 원칙에 근거한 구조 검사를 수행합니다. TypeScript로 구현했으며 Node.js 20 이상을 사용합니다.
 
 [제품 페이지](https://roboco.io/aidocready/) · [사용 매뉴얼](https://roboco.io/aidocready/manual.html) · [제품 FAQ](https://roboco.io/aidocready/faq.html) · [보도자료](https://roboco.io/aidocready/press-release.html)
