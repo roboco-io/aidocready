@@ -1,5 +1,5 @@
 {
-  "status": "updated",
+  "status": "pending-release",
   "publicVersion": "0.2.0",
   "areas": [
     "landing",
@@ -7,5 +7,6 @@
     "faq",
     "press"
   ],
-  "summary": "SNS 공유용 썸네일과 모든 공개 페이지의 Open Graph·Twitter Card 메타데이터를 추가합니다. 이미지 경로·실제 크기를 빌드에서 검증합니다. 제품 버전과 미출시 형식 선택 정책 초안은 유지합니다."
+  "summary": "ChatGPT·Claude 웹/앱의 개인·프로젝트 지침에 저장할 작성 정책을 setup --target으로 내보냅니다. 미출시 기능이므로 공개 사이트와 공개 버전은 유지하며 소개·매뉴얼·FAQ·보도자료 초안을 준비합니다. 기존 형식 선택 정책 초안도 유지합니다.",
+  "draftPath": "docs/site-drafts/writing-instructions.md"
 }

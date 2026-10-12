@@ -19,8 +19,8 @@
 ## 빠른 시작
 
 ```sh
-npx aidocready@0.2.0 lint report.md
-npx aidocready@0.2.0 lint report.hwpx --format json
+npx aidocready@0.3.0 lint report.md
+npx aidocready@0.3.0 lint report.hwpx --format json
 ```
 
 ## 로컬 개발
@@ -36,7 +36,7 @@ npm test
 npm run check
 ```
 
-로컬 개발 중에는 빌드한 `node dist/cli.js` 명령으로 실행합니다. 0.2.0은 일괄 검사, 사용자 프로파일, 결과 파일 출력과 상태 확인을 지원합니다.
+로컬 개발 중에는 빌드한 `node dist/cli.js` 명령으로 실행합니다. 0.3.0은 일괄 검사, 사용자 프로파일, 결과 파일 출력과 상태 확인을 지원합니다.
 
 ```sh
 node dist/cli.js lint reports/ --format json --output result.json
@@ -74,6 +74,20 @@ Markdown의 원시 HTML 구조는 검사하지 않습니다. 누락을 숨기지
 정적 lint 통과는 문장 명확성, 서술식 작성, 꾸미기 적절성 또는 사실 보존의 보증이 아닙니다. `coverage.complete`는 이 MVP가 지원하는 구조의 검사 누락 여부이며 공식 원칙 전체 준수 여부가 아닙니다. 호스트 에이전트가 원문과 비교하고 사람이 최종 검토합니다. 문서 내용·수치·해석을 자동 생성하거나 수정하는 기능은 없습니다.
 
 ## 에이전트 사용
+
+### ChatGPT·Claude 웹/앱 작성 지침
+
+0.3.0은 보고서를 작성하는 단계부터 행안부 원칙을 적용하도록 돕는 지침을 제공합니다.
+
+```sh
+npx aidocready@0.3.0 setup --target chatgpt
+npx aidocready@0.3.0 setup --target claude
+npx aidocready@0.3.0 setup --target chatgpt --output report-instructions.txt
+```
+
+출력한 작성 지침을 ChatGPT·Claude의 개인 지침 또는 프로젝트 지침에 기존 내용과 합쳐 저장하세요. 계정 설정은 직접 저장합니다. `--output`은 작성 지침만 새 파일로 내보내며 기존 파일을 덮어쓰지 않습니다. CLI 없이 [작성 지침](templates/REPORT-WRITING.md)을 복사할 수도 있습니다. [설정 방법과 한계](docs/writing-instructions.md)를 확인하세요.
+
+### 로컬 에이전트
 
 [SKILL.md](skills/aidocready/SKILL.md), [AGENTS.md 템플릿](templates/AGENTS.md), [CLAUDE.md 템플릿](templates/CLAUDE.md)을 제공합니다. 스킬 설치와 상시 지침 적용은 자동 수행하지 않습니다. 기존 상시 지침에는 관련 부분만 합치세요. 작성 → lint(JSON) → 출처 비교 → 수정 → 재검사의 루프를 사용합니다.
 
@@ -113,4 +127,4 @@ npm run test:package
 
 ### 형식 선택 정책과 실제 SDK 평가
 
-AI Doc Ready는 서술형을 무조건 우선하지 않습니다. 작업 중인 [형식 선택 정책](docs/format-policy.md)은 독자의 목적에 따라 서술형·목록·표를 선택하고 한 문서 안에서 혼합하도록 안내합니다. [Codex SDK·Claude Agent SDK 평가](evals/format-selection/README.md)는 정답을 숨긴 8개 사례, 실제 Markdown 구조와 부분적인 사실 보존 검사를 제공합니다. [실제 실행 결과와 발견한 한계](docs/format-eval-results.md)를 함께 확인하세요. 유료 호출은 명시적 실행에만 발생합니다. 이 정책 보완은 다음 스킬 릴리스에 포함될 예정입니다.
+AI Doc Ready는 서술형을 무조건 우선하지 않습니다. 작업 중인 [형식 선택 정책](docs/format-policy.md)은 독자의 목적에 따라 서술형·목록·표를 선택하고 한 문서 안에서 혼합하도록 안내합니다. [Codex SDK·Claude Agent SDK 평가](evals/format-selection/README.md)는 정답을 숨긴 8개 사례, 실제 Markdown 구조와 부분적인 사실 보존 검사를 제공합니다. [실제 실행 결과와 발견한 한계](docs/format-eval-results.md)를 함께 확인하세요. 유료 호출은 명시적 실행에만 발생합니다. 이 정책 보완은 0.3.0 스킬에 포함됩니다.

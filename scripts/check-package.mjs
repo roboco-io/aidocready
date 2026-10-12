@@ -13,11 +13,15 @@ try {
  execFileSync(npm,['install','--ignore-scripts','--omit=optional','--omit=dev','--no-audit','--no-fund',join(scratch,pack.filename)],{cwd:scratch,stdio:'pipe',timeout:180000});
  const binary=join(scratch,'node_modules/aidocready/dist/cli.js');
  assert.equal(execFileSync(process.execPath,[binary,'--version'],{encoding:'utf8'}).trim(),pkg.version);
+ for(const target of ['chatgpt','claude']){
+  const setup=JSON.parse(execFileSync(process.execPath,[binary,'setup','--target',target,'--format','json'],{encoding:'utf8'}));
+  assert.equal(setup.target,target);assert.equal(setup.automaticSetup,false);assert.ok(setup.instructions.length>0);
+ }
  for(const format of ['md','hwpx']){
   const result=JSON.parse(execFileSync(process.execPath,[binary,'lint',join(root,`examples/report.${format}`),'--format','json'],{encoding:'utf8'}));assert.deepEqual(result.findings,[]);
  }
  await writeFile(join(scratch,'consume.mjs'),`import assert from 'node:assert/strict';\nimport {lintFile,lintMarkdown,loadProfile,VERSION} from 'aidocready';\nassert.equal(VERSION,${JSON.stringify(pkg.version)});\nassert.equal(typeof loadProfile,'function');\nassert.equal(lintMarkdown('본문이다.').findings.length,0);\nassert.equal((await lintFile(${JSON.stringify(join(root,'examples/report.hwpx'))})).findings.length,0);\n`);
  execFileSync(process.execPath,['consume.mjs'],{cwd:scratch,stdio:'pipe',timeout:30000});
- for(const path of ['profiles/mois-core.json','profiles/recommended.json','skills/aidocready/SKILL.md','templates/AGENTS.md','templates/CLAUDE.md'])assert.ok((await readFile(join(scratch,'node_modules/aidocready',path),'utf8')).length>0);
+ for(const path of ['profiles/mois-core.json','profiles/recommended.json','skills/aidocready/SKILL.md','templates/AGENTS.md','templates/CLAUDE.md','templates/REPORT-WRITING.md'])assert.ok((await readFile(join(scratch,'node_modules/aidocready',path),'utf8')).length>0);
  console.log('Clean npm tarball install: CLI, public API, HWPX without optional dependencies, and skill assets passed.');
 } finally {await rm(scratch,{recursive:true,force:true});}

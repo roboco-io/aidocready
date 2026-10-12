@@ -10,10 +10,11 @@ import {lintMarkdown} from './index.js';
 import {rules} from './rules.js';
 import {loadProfile,resolveProfile,type ProfileInput} from './profiles.js';
 import {collectInputs,protectInputs} from './files.js';
+import {writingSetup} from './writing-setup.js';
 import type {LintResult,Severity} from './model.js';
 const args=process.argv.slice(2);
 const wantsJson=args.some((arg,i)=>arg==='--format'&&args[i+1]==='json');
-const usage='aidocready lint <files|directories|-> [--format text|json] [--profile recommended|mois-core | --config profile.json] [--output result.json] [--fail-on Error|Warning|Suggestion]\naidocready rules [rule-id] [--format text|json]\naidocready doctor [--format text|json]\naidocready setup';
+const usage='aidocready lint <files|directories|-> [--format text|json] [--profile recommended|mois-core | --config profile.json] [--output result.json] [--fail-on Error|Warning|Suggestion]\naidocready rules [rule-id] [--format text|json]\naidocready doctor [--format text|json]\naidocready setup [--target chatgpt|claude] [--format text|json] [--output instructions.txt]';
 function operational(error:unknown){return {code:'INPUT_ERROR',reason:error instanceof AidocreadyError?error.code:'INVALID_ARGUMENT',...(error instanceof AidocreadyError&&error.causeCode?{causeCode:error.causeCode}:{}),message:error instanceof Error?error.message:String(error)};}
 function textResult(result:LintResult&{file:string}){
  const lines=result.findings.map(f=>`${f.severity} ${f.ruleId} [${f.origin}] ${result.file}:${f.location.line??f.location.path}: ${f.message}`);
@@ -26,21 +27,24 @@ try {
  else if(args[0]==='--version')console.log(VERSION);
  else {
   const command=args.shift()!;if(!['lint','rules','doctor','setup'].includes(command))throw new AidocreadyError('INVALID_ARGUMENT',`알 수 없는 명령: ${command}`);
-  const inputs:string[]=[];let format='text',config:string|undefined,output:string|undefined;let profile:ProfileInput='recommended';let specifiedProfile=false;let failOn:Severity='Error';
+  const inputs:string[]=[];let format='text',config:string|undefined,output:string|undefined,target:string|undefined;let profile:ProfileInput='recommended';let specifiedProfile=false;let failOn:Severity='Error';
   while(args.length){
    const arg=args.shift()!;
    if(arg==='--'){inputs.push(...args);break;}
    if(arg.startsWith('-')&&arg!=='-'){
-    if(!['--format','--profile','--config','--output','--fail-on'].includes(arg))throw new AidocreadyError('INVALID_ARGUMENT',`알 수 없는 옵션: ${arg}`);
+    if(!['--format','--profile','--config','--output','--fail-on','--target'].includes(arg))throw new AidocreadyError('INVALID_ARGUMENT',`알 수 없는 옵션: ${arg}`);
     const value=args.shift();if(!value||value.startsWith('--'))throw new AidocreadyError('INVALID_ARGUMENT',`${arg} 값이 필요합니다.`);
     if(arg==='--format'){if(!['text','json'].includes(value))throw new AidocreadyError('INVALID_ARGUMENT','format은 text 또는 json이어야 합니다.');format=value;}
     if(arg==='--profile'){profile=value;specifiedProfile=true;}
     if(arg==='--config')config=value;
     if(arg==='--output')output=value;
+    if(arg==='--target')target=value;
     if(arg==='--fail-on'){if(!['Error','Warning','Suggestion'].includes(value))throw new AidocreadyError('INVALID_ARGUMENT','fail-on은 Error, Warning, Suggestion이어야 합니다.');failOn=value as Severity;}
    }else inputs.push(arg);
   }
   if(config&&specifiedProfile)throw new AidocreadyError('INVALID_ARGUMENT','--config와 --profile 중 하나만 사용하세요.');
+  if(target&&command!=='setup')throw new AidocreadyError('INVALID_ARGUMENT','--target은 setup 명령에서만 사용하세요.');
+  if(target&&(config||specifiedProfile))throw new AidocreadyError('INVALID_ARGUMENT','작성 지침은 고정 정책입니다. --target과 --config/--profile을 함께 사용할 수 없습니다.');
   if(config)profile=await loadProfile(config);const selected=resolveProfile(profile);
   let content:string;
   if(command==='rules'){
@@ -50,9 +54,14 @@ try {
    content=format==='json'?JSON.stringify({schemaVersion:1,profile:selected.id,rules:chosen},null,2):chosen.map(r=>`${r.id} [${r.origin}] ${r.severity}: ${r.principle}\n  구현: ${r.implementation}`).join('\n');
   }else if(command==='doctor'||command==='setup'){
    if(inputs.length)throw new AidocreadyError('INVALID_ARGUMENT','이 명령은 입력 파일을 받지 않습니다.');
+   if(target){
+    const info=await writingSetup(target);
+    content=format==='json'?JSON.stringify(info,null,2):output?info.instructions:`${info.setupSteps.join('\n')}\n\n아래 작성 지침을 붙여 넣기 하세요. 계정 설정은 직접 저장해야 합니다.\n\n${info.instructions}`;
+   }else{
    const skillPath=fileURLToPath(new URL('../skills/aidocready/SKILL.md',import.meta.url));
    const info={version:VERSION,nodeVersion:process.versions.node,kordocVersion:KORDOC_VERSION,supportedFormats:['Markdown','HWPX'],offlineCLI:true,skillPath,agents:['Codex','Claude Code','pi'],instructions:'SKILL.md를 에이전트의 설정된 스킬 디렉터리에 복사하세요. AGENTS.md/CLAUDE.md 템플릿은 기존 지침에 필요한 내용만 합치세요. setup은 파일을 변경하지 않습니다.'};
-   content=format==='json'?JSON.stringify(info,null,2):`AI Doc Ready ${VERSION}\nNode.js ${info.nodeVersion} / Kordoc ${KORDOC_VERSION}\nSKILL.md: ${skillPath}\n${info.instructions}`;
+   content=format==='json'?JSON.stringify(info,null,2):`AI Doc Ready ${VERSION}\nNode.js ${info.nodeVersion} / Kordoc ${KORDOC_VERSION}\nSKILL.md: ${skillPath}\n${info.instructions}${command==='setup'?'\nChatGPT·Claude 웹/앱 작성 지침: setup --target chatgpt 또는 setup --target claude':''}`;
+   }
   }else {
    if(!inputs.length)throw new AidocreadyError('INVALID_ARGUMENT','입력 파일이 필요합니다.');
    const results:Array<Awaited<ReturnType<typeof lintFile>>>=[];const errors:Array<{file:string;error:ReturnType<typeof operational>}>=[];
@@ -70,6 +79,6 @@ try {
    else content=format==='json'?JSON.stringify({schemaVersion:1,results,errors,summary},null,2):[...results.map(textResult),...errors.map(e=>`${e.file}: ${e.error.message}`)].join('\n\n');
    const levels:Severity[]=['Error','Warning','Suggestion'];if(errors.length)process.exitCode=2;else if(results.some(r=>!r.coverage.complete)||levels.slice(0,levels.indexOf(failOn)+1).some(s=>summary[s]>0))process.exitCode=1;
   }
-  if(output){await protectInputs(output,config?[config]:[]);try{await writeFile(output,content+'\n');}catch(e){throw new AidocreadyError('FILE_WRITE_FAILED',`결과 파일을 쓸 수 없습니다: ${output}`,(e as NodeJS.ErrnoException).code);}}else console.log(content);
+  if(output){await protectInputs(output,config?[config]:[]);try{await writeFile(output,content+'\n',target?{flag:'wx'}:undefined);}catch(e){throw new AidocreadyError('FILE_WRITE_FAILED',`결과 파일을 쓸 수 없습니다: ${output}`,(e as NodeJS.ErrnoException).code);}}else console.log(content);
  }
 }catch(error){if(wantsJson)console.log(JSON.stringify({schemaVersion:1,error:operational(error)}));else console.error(operational(error).message+'\n'+usage);process.exitCode=2;}
