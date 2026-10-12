@@ -31,3 +31,5 @@ ChatGPT·Claude에서 보고서 작성 단계부터 행안부 원칙을 적용�
 이 패치는 아직 적용하지 않는다. npm 0.3.0 공개 후 실제 npm gitHead로 releaseRef를 갱신하고, 공개 npm CLI로 모든 사례와 demo.json을 다시 검사해 JSON·provenance 해시를 갱신한다. 패치의 사례 결과는 로컬 0.3.0 CLI로 준비한 자료이며 공개 npm 검사 완료를 뜻하지 않는다. 기존 작성 예시를 새 스킬로 다시 작성한 것으로 표시하지 않는다. docs/site-impact.json은 현재 pending-release이며, 공개 문서 반영 시 updated로 바꾸고 check:site·check:site-release와 Pages 배포·실제 URL을 확인한다.
 
 미리보기: /private/tmp/aidocready-release-preview/_site. 자산 재검사 스크립트: /private/tmp/aidocready-refresh-release-assets.mjs. 게시 후 AIDOCREADY_RELEASE_BINARY에 설치한 공개 npm CLI 경로를 지정해 다시 실행할 수 있다.
+
+2026-10-12 npm 재로그인 후 인증이 복구됐음을 확인했습니다. 게시용 README와 설정 가이드의 준비 중 안내를 정리하고 npm 게시를 진행합니다. 공개 페이지는 npm 확인 후 반영합니다.
