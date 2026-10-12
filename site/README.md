@@ -19,3 +19,5 @@ FAQ 답변의 정본은 faq.json입니다. HTML과 다운로드 txt는 이 데�
 선별 사례는 conversion.html, 전체 결과는 conversion-full.html입니다. assets/conversion/selected-cases.json의 줄 범위에 해당하는 실제 결과만 발췌하며, 관련 진단을 같은 범위로 필터링합니다.
 
 소개 페이지의 서술형 예시는 공개 SKILL을 적용한 Codex 작성과 실제 CLI 검사 결과이며 CLI 자동 변환으로 표시하지 않습니다. [작성·검증 기록](../docs/prose-examples.md)을 참고하세요.
+
+2026-10-12: npm 0.3.0의 실제 gitHead로 공개 자료를 갱신했습니다. 명령어 없는 작성 지침은 releaseRef의 templates/REPORT-WRITING.md를 매뉴얼 전문과 다운로드에 함께 사용합니다. 390px·1440px 미리보기에서 복사·다운로드·FAQ·가로 넘침을 확인했습니다.

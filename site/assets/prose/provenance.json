@@ -1,9 +1,9 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "executedAt": "2026-10-10",
   "method": "Codex applies published aidocready SKILL.md; editorial rewrite followed by CLI lint; not automatic CLI conversion",
   "sourceMarkdownSha256": "d1a1538e29303a3153e19fa70d45e1d408ceb7116c7df17987c2a31a76ca00c1",
-  "skillSha256": "0f7ddf0781d6cf8e914986031c6e3b7810cc1f5840b4100e7b62257b3bc59a70",
+  "skillSha256": "c4781a64b6d7b31d173ecfec3678d7a7a7c67cfdc220213ae9db445a58c0a781",
   "examples": [
     {
       "id": "table",
@@ -21,9 +21,9 @@
       "limits": "원문 날짜 표기를 유지했습니다. 지원 일정이나 기간 해석을 추가하지 않았습니다.",
       "artifacts": {
         "table-before.md": "4fe857d99c6b363467f26a96a610c60ee3d3a0de8ce3b5e662cac7d094d4707b",
-        "table-before-lint.json": "dcded386b6c6841bc9674d4d0fe035983d24b15ee542decb0558c7db62cd58ca",
+        "table-before-lint.json": "c3be4e2beebb34195177562e70465132b2c6a4c2ba2ed91b1b39b562557fc1f1",
         "table-after.md": "e95026a4c2cfe00cdf888f14fe55e9d20d10fdbb4a4180559ccbd695c6a909de",
-        "table-after-lint.json": "d4541e35e4fda0376ffe4726eb3bd33b16d3dcb2c0d55776470b25036f6d0b32"
+        "table-after-lint.json": "fb89632fe2fac589d3292d97bef9e88733aaa66416907ded719b9a809556269c"
       }
     },
     {
@@ -42,10 +42,17 @@
       "limits": "담당 업무의 의미를 대조했으며 실사용 검색·추론 성능은 측정하지 않았습니다.",
       "artifacts": {
         "list-before.md": "9f0a0712bb02bdb4024471a23c85254f371e31e5f361e65210013c4534dcdcbc",
-        "list-before-lint.json": "24da801b0dbcd666b7b6362bb3b49aa50c7b91582d5870b0f1d97a9a85d9f61d",
+        "list-before-lint.json": "46c6d6d63a71694d63b0011e88fb28dfd4fc747ebe9f17275765fb780b3656b9",
         "list-after.md": "7a53fd2b22e749b0b60954cbe2c69634e3bd9d5a16597d69629d4f53dbd15f86",
-        "list-after-lint.json": "1b3b39b5b3862ffa7e8690b9fac89b460b15e4dca4b9b92cc0594ac1f621a0b3"
+        "list-after-lint.json": "2dfcd23a892c8d0621d7313debf79fa8387ce171ffebeebff5401aba64bc4f81"
       }
     }
-  ]
+  ],
+  "lintRecheckedAt": "2026-10-12",
+  "originalWritingVersion": "0.2.0",
+  "note": "기존 작성 예시를 보존하고 0.3.0 CLI로 구조 검사를 다시 실행했습니다. 새 스킬로 다시 작성한 결과는 아닙니다.",
+  "cliReleaseRef": "42bdf0e97b07e1a8b5ce1e8690567e5c919f05b2",
+  "cliPackageIntegrity": "sha512-3i6y3b+/w4tKgHSt5iUf3tdPJbIpDT0Z18onTf9WwD2WSq0NrO1RFSxr1cKyDlnRAQRQy4I0HREN32SCICDoLg==",
+  "originalSkillSha256": "0f7ddf0781d6cf8e914986031c6e3b7810cc1f5840b4100e7b62257b3bc59a70",
+  "originalWritingRef": "d1cedad1048166e67880244a199007e2090eae18"
 }

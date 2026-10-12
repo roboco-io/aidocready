@@ -21,3 +21,7 @@ HTML 줄바꿈 등의 미지원 구조가 있어 coverage.complete는 false다. 
 공개 엔진 버전이 바뀌면 해당 npm 버전으로 실제 검사한 JSON과 provenance를 함께 갱신한다. 변환기 커밋이나 원본을 바꾸면 자동 변환도 다시 수행한다. 메인의 발췌 표/설명/진단 위치와 전체 결과를 대조하고 docs/site-impact.json을 갱신한다. 빌더의 읽기 보기는 텍스트를 이스케이프하며 HTML은 `<br>`만 표시한다. 원본 HTML·링크·이미지는 실행하지 않는다. 다운로드 Markdown이 변환기의 정확한 결과다.
 
 웹사이트의 conversion.html은 복잡한 표 3개를 선별한다. 전체 원본 비교·변환 Markdown·검사 진단·한계·재현 명령은 conversion-full.html에 둔다. selected-cases.json은 변경하지 않은 변환 파일의 1부터 시작하는 줄 범위와 참고 PDF의 영역(1600px 렌더 기준)을 지정한다. 영역 PNG는 해당 좌표로 PDF를 직접 렌더한 발췌다. 일부 사례는 진단이 없으며 이것을 검사 통과로 설명하지 않는다.
+
+## 0.3.0 재검사
+
+2026-10-12 공개 npm aidocready@0.3.0으로 기존 Markdown과 예시를 다시 검사했습니다. CLI gitHead는 42bdf0e97b07e1a8b5ce1e8690567e5c919f05b2입니다. 원본과 작성 예시는 보존하고 JSON과 provenance 해시를 갱신했습니다. 작성 예시를 새 스킬로 다시 생성한 것으로 해석하지 않습니다.

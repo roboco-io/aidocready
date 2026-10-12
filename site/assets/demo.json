@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "before": {
     "schemaVersion": 1,
     "profile": "recommended",
@@ -92,7 +92,9 @@
         "캡션 위치 및 비표준 순서 표시"
       ]
     },
-    "parserWarnings": []
+    "parserWarnings": [],
+    "file": "-",
+    "inputFormat": "markdown"
   },
   "after": {
     "schemaVersion": 1,
@@ -172,6 +174,8 @@
         "캡션 위치 및 비표준 순서 표시"
       ]
     },
-    "parserWarnings": []
+    "parserWarnings": [],
+    "file": "-",
+    "inputFormat": "markdown"
   }
 }

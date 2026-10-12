@@ -1,8 +1,8 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "executedAt": "2026-10-10",
   "method": "Codex가 동일한 가상 사실 목록으로 작성한 비교용 열거형 초안과 공개 AI Doc Ready SKILL 지침을 적용한 서술형 초안. 독립 A/B 실험이나 자동 변환 결과가 아님.",
-  "skillSha256": "0f7ddf0781d6cf8e914986031c6e3b7810cc1f5840b4100e7b62257b3bc59a70",
+  "skillSha256": "c4781a64b6d7b31d173ecfec3678d7a7a7c67cfdc220213ae9db445a58c0a781",
   "sharedFacts": [
     "민원 처리 기간 단축",
     "처리 결과 통지",
@@ -25,10 +25,17 @@
   "artifacts": {
     "with.md": "cda937815007e08f386617672321ac82a91ef7171e9b734f6dd7116c05e92834",
     "without.md": "72e7ccce6317c460ef126e7e53a43089ce547e5d0466b4b9952377735820a808",
-    "with-lint.json": "f3bad8a1d44f4d2bae0c22c8ec6eacd2455166d420d14d7f1ec84cb42fd48555",
-    "without-lint.json": "01b5263aa74f92415bf92011187999f9610fa1381d393645e10581f40d99371f"
+    "with-lint.json": "48070be1d8a86d2b4f574c39cfbdb2adce37f146e48168bb520776086a4cb3ef",
+    "without-lint.json": "ca583b87340c0bf332e521cc835d31cc7d8ec52b83174f82d822587ee11e73b2"
   },
   "sourceUrl": "https://roboco.io/posts/cognitive-debt/",
   "sourceRole": "서술형에서 선택 이유와 실패 조건을 검토 가능하게 드러낸다는 구성 관점만 참고. 시나리오 사실이나 실증 효과의 출처가 아님.",
-  "sourceFactsSha256": "3da464b18ec1a9c74ebcd83eecc9276b26329d4f35a5a09d7f3635e0953bb3e9"
+  "sourceFactsSha256": "3da464b18ec1a9c74ebcd83eecc9276b26329d4f35a5a09d7f3635e0953bb3e9",
+  "lintRecheckedAt": "2026-10-12",
+  "originalWritingVersion": "0.2.0",
+  "note": "기존 작성 예시를 보존하고 0.3.0 CLI로 구조 검사를 다시 실행했습니다. 새 스킬로 다시 작성한 결과는 아닙니다.",
+  "cliReleaseRef": "42bdf0e97b07e1a8b5ce1e8690567e5c919f05b2",
+  "cliPackageIntegrity": "sha512-3i6y3b+/w4tKgHSt5iUf3tdPJbIpDT0Z18onTf9WwD2WSq0NrO1RFSxr1cKyDlnRAQRQy4I0HREN32SCICDoLg==",
+  "originalSkillSha256": "0f7ddf0781d6cf8e914986031c6e3b7810cc1f5840b4100e7b62257b3bc59a70",
+  "originalWritingRef": "d1cedad1048166e67880244a199007e2090eae18"
 }

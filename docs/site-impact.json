@@ -1,12 +1,11 @@
 {
-  "status": "pending-release",
-  "publicVersion": "0.2.0",
+  "status": "updated",
+  "publicVersion": "0.3.0",
   "areas": [
     "landing",
     "manual",
     "faq",
     "press"
   ],
-  "summary": "0.3.0 작성 지침 기능과 명령어 없는 ChatGPT·Claude 설정 안내를 출시합니다. npm 게시 후 실제 공개 버전·gitHead와 사례를 확인해 소개·매뉴얼·FAQ·보도자료 변경 초안을 반영합니다. 공개 사이트는 게시 확인 전까지 0.2.0을 유지합니다.",
-  "draftPath": "docs/site-drafts/writing-instructions.md"
+  "summary": "npm 0.3.0 공개와 실제 gitHead를 확인해 공개 문서·버전·검증 수치를 갱신했습니다. 명령어 없는 작성 지침 전문·복사·다운로드와 ChatGPT·Claude 설정 절차, 새 setup 옵션을 소개하며 공개 npm CLI로 사례·demo를 재검사하고 provenance 해시를 갱신했습니다."
 }

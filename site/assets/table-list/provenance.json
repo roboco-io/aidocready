@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "executedAt": "2026-10-10",
   "method": "기존 가상 민원 알림 보고서의 F07/F08/F12를 확인 항목으로 발췌. 동일 items.json에서 표와 열거형을 구성했으며 실행 순서를 새로 지정하지 않음.",
   "sourceFactsSha256": "3da464b18ec1a9c74ebcd83eecc9276b26329d4f35a5a09d7f3635e0953bb3e9",
@@ -7,7 +7,10 @@
   "artifacts": {
     "table.md": "24f441a7a9b3993f4ba16e0411bc86e667b3673ce2d963be9133c98575d842b3",
     "list.md": "3680aa99a7a3548f7e09bf37e27d0550f3f0d1ef533a08e5246162e1f3e2a05c",
-    "table-lint.json": "9ecf6b38927c9c448fd825c6933161353d90c4388738f28a1e0b3761083cf9f5",
-    "list-lint.json": "2e8b6f9a6e31a5c86528f568b738e0d0400b94e325a0a8b37c39b1e6f36dfd9c"
-  }
+    "table-lint.json": "c507126c92ffa601e84c1e5b34934b154caa9cf48cd977227bce4aa65e0c7347",
+    "list-lint.json": "ddc2547669314c2aa9ea57341012da68e359090031904730ad408e95d7db8beb"
+  },
+  "lintRecheckedAt": "2026-10-12",
+  "cliReleaseRef": "42bdf0e97b07e1a8b5ce1e8690567e5c919f05b2",
+  "cliPackageIntegrity": "sha512-3i6y3b+/w4tKgHSt5iUf3tdPJbIpDT0Z18onTf9WwD2WSq0NrO1RFSxr1cKyDlnRAQRQy4I0HREN32SCICDoLg=="
 }
