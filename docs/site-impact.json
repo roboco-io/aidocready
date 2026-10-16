@@ -7,5 +7,5 @@
     "faq",
     "press"
   ],
-  "summary": "npm 0.3.0 공개와 실제 gitHead를 확인해 공개 문서·버전·검증 수치를 갱신했습니다. 명령어 없는 작성 지침 전문·복사·다운로드와 ChatGPT·Claude 설정 절차, 새 setup 옵션을 소개하며 공개 npm CLI로 사례·demo를 재검사하고 provenance 해시를 갱신했습니다."
+  "summary": "공유 head 템플릿(scripts/build-site.mjs)에 Google Analytics 4 측정 태그(G-9G1SGM9SZQ)를 추가해 모든 공개 페이지에서 방문 통계를 수집합니다. 제품 기능과 문서 내용은 바뀌지 않았습니다."
 }
