@@ -32,7 +32,7 @@
     "test:agents": "node evals/format-selection/run.mjs"
   },
   "dependencies": {
-    "kordoc": "4.21.9",
+    "kordoc": "4.22.13",
     "remark-parse": "11.0.0",
     "remark-gfm": "4.0.1",
     "unified": "11.0.5"

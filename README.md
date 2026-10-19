@@ -14,7 +14,7 @@
 
 ## Kordoc과의 역할 분담
 
-한국 문서 처리 라이브러리 [Kordoc](https://github.com/chrisryugj/kordoc)을 기반으로 HWPX를 읽습니다. Kordoc은 문서 파싱을 담당하고, AI Doc Ready는 추출한 구조에 보고서 검사 규칙을 적용합니다. Kordoc 4.21.9를 수정하지 않은 라이브러리 의존성으로 사용합니다.
+한국 문서 처리 라이브러리 [Kordoc](https://github.com/chrisryugj/kordoc)을 기반으로 HWPX를 읽습니다. Kordoc은 문서 파싱을 담당하고, AI Doc Ready는 추출한 구조에 보고서 검사 규칙을 적용합니다. Kordoc 4.22.13을 수정하지 않은 라이브러리 의존성으로 사용합니다.
 
 ## 빠른 시작
 

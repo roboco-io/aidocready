@@ -1,11 +1,6 @@
 {
-  "status": "updated",
+  "status": "no-public-impact",
   "publicVersion": "0.3.0",
-  "areas": [
-    "landing",
-    "manual",
-    "faq",
-    "press"
-  ],
-  "summary": "공유 head 템플릿(scripts/build-site.mjs)에 Google Analytics 4 측정 태그(G-9G1SGM9SZQ)를 추가해 모든 공개 페이지에서 방문 통계를 수집합니다. 제품 기능과 문서 내용은 바뀌지 않았습니다."
+  "areas": [],
+  "summary": "Kordoc을 4.21.9에서 4.22.13으로 올렸습니다. aidocready가 사용하는 parse 옵션·IR 필드·규칙·CLI/API/출력 계약은 그대로이고, 전체 테스트와 Markdown/HWPX 예제 검사 결과도 동일해 사용자가 안내받을 공개 동작 변화가 없습니다. README의 현재 의존성 버전 표기만 갱신했습니다."
 }
