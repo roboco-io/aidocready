@@ -1,11 +1,6 @@
 {
-  "status": "updated",
+  "status": "no-public-impact",
   "publicVersion": "0.3.0",
-  "areas": [
-    "landing",
-    "manual",
-    "faq",
-    "press"
-  ],
-  "summary": "공유 head 템플릿(scripts/build-site.mjs)에 Google Analytics 4 측정 태그(G-9G1SGM9SZQ)를 추가해 모든 공개 페이지에서 방문 통계를 수집합니다. 제품 기능과 문서 내용은 바뀌지 않았습니다."
+  "areas": [],
+  "summary": "Kordoc 의존성을 4.21.9에서 4.24.7로 갱신하고 README의 현재 의존성 표기를 맞췄습니다. 업스트림 변경은 OCR·HWPML·템플릿 생성·렌더·패치의 내부 수정이며, CLI 명령·옵션·JSON 스키마·규칙·프로파일·지원 형식과 Markdown/HWPX 예제의 검사 결과는 바뀌지 않아 공개 사이트 문서를 수정할 필요가 없습니다."
 }
