@@ -1,11 +1,6 @@
 {
-  "status": "updated",
+  "status": "no-public-impact",
   "publicVersion": "0.3.0",
-  "areas": [
-    "landing",
-    "manual",
-    "faq",
-    "press"
-  ],
-  "summary": "공유 head 템플릿(scripts/build-site.mjs)에 Google Analytics 4 측정 태그(G-9G1SGM9SZQ)를 추가해 모든 공개 페이지에서 방문 통계를 수집합니다. 제품 기능과 문서 내용은 바뀌지 않았습니다."
+  "areas": [],
+  "summary": "Kordoc을 4.21.9에서 4.24.37로 올렸지만 공개 동작은 그대로입니다. 업스트림 변경은 PDF/OCR 표 구조와 선택적 OCR 옵션 개선이며, aidocready는 OCR을 끄고 HWPX 파싱 IR만 사용합니다. 예제 HWPX와 변환 사례 원본을 두 버전으로 파싱해 블록·경고가 동일함을 확인했고 CLI 명령·JSON·규칙·진단·지원 형식은 바뀌지 않았습니다. README의 현재 의존성 표기만 4.24.37로 맞췄습니다."
 }
